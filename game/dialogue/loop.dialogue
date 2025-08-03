@@ -116,7 +116,16 @@ Tomas:
 	"Just... make it stop."
 do GameManager.tomas_done_begin_talking()
 => END
-
+~ key_ans
+Tomas:
+	"This key... So you found it."
+Tomas:
+	"..."
+Tomas:
+	"Put it back, little one."
+Tomas:
+	"...Just... let it stay locked. Please."
+=> END
 
 ~ tomas_progress_1_talking_begin
 Tomas:

@@ -100,6 +100,8 @@ func tomas_recieve_item(item_name: String) -> void:
 		create_dialogue("tommy_craft_ans")
 	elif item_name == "Smooth Mask":
 		create_dialogue("failure_mask_ans")
+	elif item_name == "Key":
+		create_dialogue("key_ans")
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
 		create_dialogue("tomas_receive_none")
