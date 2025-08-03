@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Loop"
-run/main_scene="uid://b1au01m7lrbfp"
+run/main_scene="uid://cc38lc6r2x5fv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,11 @@ Inventory="*res://game/system/inventory/inventory.tscn"
 [dialogue_manager]
 
 runtime/balloon_path="res://game/dialogue_ballon/balloon.tscn"
+
+[display]
+
+window/size/viewport_width=980
+window/size/viewport_height=560
 
 [editor_plugins]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc38lc6r2x5fv"]
+
+[ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
+[ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
+
+[node name="Game" type="Node"]
+
+[node name="Map" parent="." instance=ExtResource("1_7aouk")]
+
+[node name="Coco" parent="." instance=ExtResource("2_vv3et")]
+
+[node name="Camera2D" type="Camera2D" parent="Coco"]
+position = Vector2(-1, -1)
+zoom = Vector2(3.15, 3.15)
