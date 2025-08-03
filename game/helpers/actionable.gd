@@ -13,6 +13,8 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var is_always_active: bool = false
 @export var transition_area: TransitionArea = null
 @export var boss_progress_to_active: int = 0
+@export var clean_body: StaticBody2D
+@export var clean_show: Node2D
 var system_name: String = "[Actionable]"
 
 @onready var root = $".."
@@ -57,6 +59,11 @@ func action() -> void:
 		hide_root()
 	else:
 		print(system_name, "Unknown action type:", action_type)
+		if clean_body != null:
+			clean_body.get_child(0).disabled = true
+		if clean_show != null:
+			clean_show.show()
+			print(system_name, "Clean show node hidden.")
 		return
 
 	if !is_always_active:
@@ -93,6 +100,13 @@ func reset() -> void:
 		)
 	else:
 		active = true
+	if clean_body != null:
+		clean_body.get_child(0).disabled = false
+		print(system_name, "Clean body reset done.")
+	if clean_show != null:
+		clean_show.hide()
+		print(system_name, "Clean show node reset done.")
+
 	print(system_name, "Actionable reset done.")
 
 
@@ -101,6 +115,8 @@ func hide_root() -> void:
 		print(system_name, "Root node is null, cannot hide.")
 		return
 	root.hide()
+	turn_off_collision()
+
 	print(system_name, "Root node hidden(cleaned).")
 
 
@@ -109,4 +125,17 @@ func show_root() -> void:
 		print(system_name, "Root node is null, cannot show.")
 		return
 	root.show()
+	turn_on_collision()
 	print(system_name, "Root node shown.")
+
+func turn_off_collision() -> void:
+	var collision_shape := get_node("CollisionShape2D") as CollisionShape2D
+	if collision_shape:
+		collision_shape.set_deferred("disabled", true)
+		print(system_name, "Collision shape turned off.")
+
+func turn_on_collision() -> void:
+	var collision_shape := get_node("CollisionShape2D") as CollisionShape2D
+	if collision_shape:
+		collision_shape.set_deferred("disabled", false)
+		print(system_name, "Collision shape turned on.")
