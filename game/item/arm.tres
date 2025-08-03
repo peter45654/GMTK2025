@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=2 format=3 uid="uid://bphy1lg2aqmv"]
+
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="1_8a4m7"]
+
+[resource]
+script = ExtResource("1_8a4m7")
+name = "Puppet Arms"
+description = "The arms of the unfinished puppet."
+expression = "print(\"TestItemSelect\")"
+metadata/_custom_type_script = "uid://b43niu5gjbdar"

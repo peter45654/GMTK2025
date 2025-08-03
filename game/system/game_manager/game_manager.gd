@@ -8,7 +8,7 @@ const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialo
 var system_name: String = "[GameManager]"
 var is_need_wait_for_talking: bool = false
 var start_show_black_block_time: float = 0.0
-var tomas_progress: int = 2
+var tomas_progress: int = 0
 var tomas_is_talking_during_reset: bool = false
 
 

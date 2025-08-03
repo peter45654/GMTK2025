@@ -1,9 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://4cojtoqyld2c"]
+[gd_scene load_steps=2 format=3 uid="uid://4cojtoqyld2c"]
 
 [ext_resource type="Script" uid="uid://dgaabcyg3dbh0" path="res://game/system/inventory/inventory.gd" id="1_nbhwu"]
-[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="2_dcl7m"]
-[ext_resource type="Resource" uid="uid://bebnt1pqnxfd" path="res://game/item/testItem.tres" id="3_j2vue"]
 
 [node name="Inventory" type="Node"]
 script = ExtResource("1_nbhwu")
-items = Array[ExtResource("2_dcl7m")]([ExtResource("3_j2vue")])

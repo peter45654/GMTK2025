@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=32 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -6,13 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
-[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="6_r514v"]
-[ext_resource type="Resource" uid="uid://bebnt1pqnxfd" path="res://game/item/testItem.tres" id="7_j0spt"]
-[ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
+[ext_resource type="Resource" uid="uid://bvypmspy8rw36" path="res://game/item/key.tres" id="7_l4dfk"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="7_ngn8n"]
 [ext_resource type="Resource" uid="uid://b5j6tycvdiskw" path="res://game/item/boy_item_paper.tres" id="8_2nnov"]
 [ext_resource type="Resource" uid="uid://qoj56wnk6fcs" path="res://game/item/failure_wooden_horse.tres" id="8_4osd1"]
-[ext_resource type="Script" uid="uid://maxt4u4wso1q" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
+[ext_resource type="Script" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
 [ext_resource type="Resource" uid="uid://l8h4mds1qiuo" path="res://game/item/failure_mask.tres" id="9_ru4j2"]
 [ext_resource type="Resource" uid="uid://bwwegvqibmiqf" path="res://game/item/tommy_craft.tres" id="10_ru4j2"]
 [ext_resource type="Resource" uid="uid://cax0ro5a2plix" path="res://game/item/boy_item_carving_knife.tres" id="13_0xtou"]
@@ -21,10 +19,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
-atlas = ExtResource("7_ngn8n")
-region = Rect2(50, 21, 13, 13)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
 
@@ -84,24 +78,6 @@ is_always_active = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Table/Paper/Actionable"]
 shape = SubResource("CircleShape2D_og0sj")
 
-[node name="Paper2" type="Sprite2D" parent="Map/LivingRoom/Object/Table" index="2"]
-position = Vector2(-35.5286, -32.9531)
-rotation = 0.0026403
-texture = SubResource("AtlasTexture_5cwhe")
-
-[node name="Actionable" parent="Map/LivingRoom/Object/Table/Paper2" instance=ExtResource("4_gy5jl")]
-action_type = 5
-item_to_claim = ExtResource("3_l4dfk")
-dialogue_resource = ExtResource("5_l4dfk")
-dialogue_start = "check_item_failed"
-dialogue_option = "check_item_pass"
-is_always_active = true
-items_to_check = Array[ExtResource("6_r514v")]([ExtResource("7_l4dfk"), ExtResource("7_j0spt")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Table/Paper2/Actionable"]
-position = Vector2(5.72205e-06, 4.02331e-06)
-shape = SubResource("CircleShape2D_og0sj")
-
 [node name="Tomas" parent="Map/LivingRoom/Object" index="19" instance=ExtResource("3_ykdcs")]
 position = Vector2(25, 13)
 
@@ -120,14 +96,7 @@ rotation = -1.57079
 [node name="TransionPosWorkShopToLive" type="Node2D" parent="Map/LivingRoom/Object" index="22"]
 position = Vector2(169, 43)
 
-[node name="Coco" parent="Map/LivingRoom/Object" index="23" groups=["Player"] instance=ExtResource("2_vv3et")]
-position = Vector2(104, 35)
-
-[node name="Camera2D" type="Camera2D" parent="Map/LivingRoom/Object/Coco"]
-position = Vector2(-1, -1)
-zoom = Vector2(3.15, 3.15)
-
-[node name="Door2" type="Node2D" parent="Map/LivingRoom/Object" index="24"]
+[node name="Door2" type="Node2D" parent="Map/LivingRoom/Object" index="23"]
 position = Vector2(24, 90)
 
 [node name="Actionable" parent="Map/LivingRoom/Object/Door2" node_paths=PackedStringArray("transition_area") instance=ExtResource("4_gy5jl")]
@@ -142,7 +111,7 @@ unlocked_item_name = "Key"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Door2/Actionable"]
 shape = SubResource("CircleShape2D_4osd1")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map/LivingRoom/Object" index="25"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/LivingRoom/Object" index="24"]
 position = Vector2(24, 90)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/StaticBody2D"]
@@ -204,6 +173,27 @@ dialogue_start = " clean_bottle"
 position = Vector2(272.073, -4.98388)
 shape = SubResource("CircleShape2D_gy5jl")
 
+[node name="LivingRoomBlackShadowSingles93" parent="Map/Workshop/Other" index="0"]
+visible = false
+
+[node name="Table5" parent="Map/Workshop/Other" index="1"]
+visible = false
+
+[node name="LivingRoomBlackShadowSingles118" parent="Map/Workshop/Other" index="2"]
+visible = false
+
+[node name="LivingRoomBlackShadowSingles121" parent="Map/Workshop/Other" index="3"]
+visible = false
+
+[node name="LivingRoomBlackShadowSingles122" parent="Map/Workshop/Other" index="4"]
+visible = false
+
+[node name="BathroomBlackShadowSingles1" parent="Map/Workshop/Other" index="5"]
+visible = false
+
+[node name="LivingRoomBlackShadowSingles24" parent="Map/Workshop/Other" index="6"]
+visible = false
+
 [node name="TransionPos" type="Node2D" parent="Map/Workshop/Objects" index="17"]
 position = Vector2(185, 5)
 
@@ -242,6 +232,13 @@ clean_show = NodePath("../../../CartOn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Cart/Actionable"]
 shape = SubResource("CircleShape2D_gy5jl")
+
+[node name="Coco" parent="Map/Workshop/Objects" index="20" groups=["Player"] instance=ExtResource("2_vv3et")]
+position = Vector2(325, -1)
+
+[node name="Camera2D" type="Camera2D" parent="Map/Workshop/Objects/Coco"]
+position = Vector2(-1, -1)
+zoom = Vector2(3.15, 3.15)
 
 [node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="6"]
 polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
