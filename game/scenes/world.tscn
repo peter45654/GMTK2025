@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://044opjcmk7ol" path="res://game/world/tree.tscn" id="3_mrach"]
 [ext_resource type="PackedScene" uid="uid://byqyiy823ab7s" path="res://game/world/apple_tree.tscn" id="5_h6ns3"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="6_h5iv0"]
-[ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/nathan/nathan.tscn" id="6_ilwpu"]
+[ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="6_ilwpu"]
 [ext_resource type="Resource" uid="uid://b426p4338gqma" path="res://game/dialogue/main.dialogue" id="7_nepmf"]
 [ext_resource type="Resource" uid="uid://bft4urxe83gkd" path="res://game/dialogue/test_custom_option.dialogue" id="8_ifrqp"]
 

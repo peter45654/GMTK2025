@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=7 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
+[ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_wowgv"]
+[ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_ykdcs"]
+[ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_ykdcs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gy5jl"]
+radius = 8.0
 
 [node name="Game" type="Node"]
 
@@ -12,3 +18,12 @@
 [node name="Camera2D" type="Camera2D" parent="Coco"]
 position = Vector2(-1, -1)
 zoom = Vector2(3.15, 3.15)
+
+[node name="Tomas" parent="." instance=ExtResource("3_wowgv")]
+position = Vector2(97, 32)
+
+[node name="Actionable" parent="Tomas" instance=ExtResource("4_ykdcs")]
+dialogue_resource = ExtResource("5_ykdcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tomas/Actionable"]
+shape = SubResource("CircleShape2D_gy5jl")

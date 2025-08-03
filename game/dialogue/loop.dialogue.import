@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://k4o4lhowpe3o"
+path="res://.godot/imported/loop.dialogue-361f5e463be8b35c3e42208ae825a2ac.tres"
+
+[deps]
+
+source_file="res://game/dialogue/loop.dialogue"
+dest_files=["res://.godot/imported/loop.dialogue-361f5e463be8b35c3e42208ae825a2ac.tres"]
+
+[params]
+
+defaults=true
