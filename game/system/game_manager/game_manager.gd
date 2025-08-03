@@ -102,6 +102,15 @@ func tomas_recieve_item(item_name: String) -> void:
 		create_dialogue("failure_mask_ans")
 	elif item_name == "Key":
 		create_dialogue("key_ans")
+	elif item_name == "Puppet Blueprint":
+		tomas_progress = 3
+		create_dialogue("boy_item_paper_ans")
+	elif item_name == "Carving Knife":
+		create_dialogue("boy_item_carving_knife_ans")
+	elif item_name == "Unfinished Wooden Mechanism":
+		create_dialogue("boy_item_gear_ans")
+	elif item_name == "Uncarved Wood":
+		create_dialogue("boy_item_nice_wood_ans")
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
 		create_dialogue("tomas_receive_none")

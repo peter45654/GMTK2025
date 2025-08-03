@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=31 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -7,13 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
 [ext_resource type="Resource" path="res://game/item/Key.tres" id="7_l4dfk"]
+[ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="7_ngn8n"]
+[ext_resource type="Resource" uid="uid://b5j6tycvdiskw" path="res://game/item/boy_item_paper.tres" id="8_2nnov"]
 [ext_resource type="Resource" uid="uid://qoj56wnk6fcs" path="res://game/item/failure_wooden_horse.tres" id="8_4osd1"]
 [ext_resource type="Script" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
 [ext_resource type="Resource" uid="uid://l8h4mds1qiuo" path="res://game/item/failure_mask.tres" id="9_ru4j2"]
 [ext_resource type="Resource" uid="uid://bwwegvqibmiqf" path="res://game/item/tommy_craft.tres" id="10_ru4j2"]
+[ext_resource type="Resource" uid="uid://cax0ro5a2plix" path="res://game/item/boy_item_carving_knife.tres" id="13_0xtou"]
+[ext_resource type="Resource" uid="uid://cl8onvn3au6fm" path="res://game/item/boy_item_nice_wood.tres" id="14_dyrm1"]
+[ext_resource type="Resource" uid="uid://cmsjyxbcyt255" path="res://game/item/boy_item_gear.tres" id="15_r514v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
+atlas = ExtResource("7_ngn8n")
+region = Rect2(50, 21, 13, 13)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
 
@@ -42,6 +51,9 @@ size = Vector2(15, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4dfk"]
 size = Vector2(37, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avpn4"]
+size = Vector2(25, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngn8n"]
 size = Vector2(16, 12)
@@ -100,6 +112,22 @@ visible = false
 [node name="BoyRoom" parent="Map" index="1" groups=["BoyRoom"]]
 visible = true
 
+[node name="Paper" type="Sprite2D" parent="Map/BoyRoom/Objects/TableL" index="1"]
+position = Vector2(3, -8)
+rotation = -0.0212241
+texture = SubResource("AtlasTexture_5cwhe")
+
+[node name="Actionable" parent="Map/BoyRoom/Objects/TableL/Paper" instance=ExtResource("4_gy5jl")]
+action_type = 3
+item_to_claim = ExtResource("8_2nnov")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "boy_item_paper"
+is_always_active = true
+boss_progress_to_active = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/TableL/Paper/Actionable"]
+shape = SubResource("CircleShape2D_og0sj")
+
 [node name="DoorTansitionPosition" type="Node2D" parent="Map/BoyRoom/Objects" index="12"]
 position = Vector2(16, 108)
 
@@ -113,6 +141,9 @@ transition_area = NodePath("../../../../../LivingRoomToBoyRoom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/Door/Actionable"]
 shape = SubResource("CircleShape2D_4osd1")
+
+[node name="StaticBody2D" parent="Map/BoyRoom" index="5"]
+visible = false
 
 [node name="Workshop" parent="Map" index="2" groups=["WorkShop"]]
 
@@ -309,6 +340,42 @@ boss_progress_to_active = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/failure_mask"]
 position = Vector2(2.5, 6)
 shape = SubResource("RectangleShape2D_bbyh4")
+
+[node name="boy_item_carving_knife" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(-24, 154)
+action_type = 3
+item_to_claim = ExtResource("13_0xtou")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "boy_item_carving_knife"
+boss_progress_to_active = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_carving_knife"]
+position = Vector2(10, 4)
+shape = SubResource("RectangleShape2D_avpn4")
+
+[node name="boy_item_nice_wood" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(39, 186)
+action_type = 3
+item_to_claim = ExtResource("14_dyrm1")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "boy_item_nice_wood"
+boss_progress_to_active = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_nice_wood"]
+position = Vector2(10, 4)
+shape = SubResource("RectangleShape2D_avpn4")
+
+[node name="boy_item_gear" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(75, 185)
+action_type = 3
+item_to_claim = ExtResource("15_r514v")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "boy_item_gear"
+boss_progress_to_active = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_gear"]
+position = Vector2(10, 4)
+shape = SubResource("RectangleShape2D_avpn4")
 
 [node name="tommy_craft" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(-23, 0)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=2 format=3 uid="uid://cmsjyxbcyt255"]
+
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="1_mx31r"]
+
+[resource]
+script = ExtResource("1_mx31r")
+name = "Unfinished Wooden Mechanism"
+description = "This is a half-finished wooden mechanism. The gears don't mesh properly and catch when turned."
+expression = "print(\"TestItemSelect\")"
+metadata/_custom_type_script = "uid://b43niu5gjbdar"

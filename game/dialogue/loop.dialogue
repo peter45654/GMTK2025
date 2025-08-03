@@ -60,6 +60,53 @@ You found a smooth mask.
 You found a wooden bird.
 => END
 
+~ boy_item_carving_knife
+You found a small carving knife. It looks like it was used often, the blade is dull.
+=> END
+~ boy_item_nice_wood
+You found a block of uncarved wood. It has a particularly beautiful grain.
+=> END
+~ boy_item_gear
+You found a half-finished wooden mechanism. The gears don't mesh properly and catch when turned.
+=> END
+~ boy_item_paper
+You found a large piece of paper, it's a detailed drawing of a puppet.
+=> END
+
+
+~ boy_item_carving_knife_ans
+Tomas:
+	"He never could get the hang of the whetstone I gave him."
+Tomas:
+	"Always said he had his own, better way."
+=> END
+~ boy_item_nice_wood_ans
+Tomas:
+	"It was a little treasure I had hidden away for years."
+Tomas:
+	"I can't believe he managed to find it."
+=> END
+~ boy_item_gear_ans
+Tomas:
+	"He always wanted to add mechanisms to his puppets."
+Tomas:
+	"Said that was the only way to make them 'come alive'..."
+Tomas:
+	"I told him he was being too impatient."
+=> END
+~ boy_item_paper_ans
+Tomas:
+	"...So you found it."
+Tomas:
+	"His handwriting... just as messy as I always told him it was..."
+Tomas:
+	"He was so proud of this plan. He called it 'our secret project'."
+Tomas:
+	"And now... all that's left of that big promise... is this piece of paper."
+do GameManager.tomas_done_begin_talking()
+=> END
+
+
 ~ find_key_teapot
 An old teapot.
 It feels light. You open the lid and look inside. It's empty.
@@ -157,6 +204,22 @@ Tomas:
 	"...They're everywhere..."
 Tomas:
 	"Just... forget it all..."
+
+do GameManager.tomas_done_talking()
+=> END
+
+~ tomas_progress_3_talking
+
+Tomas:
+	"He saw you... and wanted to build a secret of his own. A surprise for me."
+Tomas:
+	"But that promise was left unfinished."
+Tomas:
+	"I searched everywhere for the parts he'd hidden... and found nothing."
+Tomas:
+	"And in the end, I understood."
+Tomas:
+	"A puppet can be fixed. The little craftsman who dreamed it up... cannot."
 
 do GameManager.tomas_done_talking()
 => END

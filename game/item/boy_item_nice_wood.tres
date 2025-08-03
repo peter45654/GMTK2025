@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=2 format=3 uid="uid://cl8onvn3au6fm"]
+
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="1_7krf4"]
+
+[resource]
+script = ExtResource("1_7krf4")
+name = "Uncarved Wood"
+description = "This is a block of uncarved wood. It has a particularly beautiful grain."
+expression = "print(\"TestItemSelect\")"
+metadata/_custom_type_script = "uid://b43niu5gjbdar"
