@@ -288,6 +288,11 @@ animations = [{
 "name": &"idle_u",
 "speed": 6.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"sit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_worho")
