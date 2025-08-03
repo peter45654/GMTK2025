@@ -21,7 +21,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if actionables.size() > 0:
 			if actionables[0].action_type == Actionable.ActionType.DOOR:
 				if actionables[0].is_locked:
-					if !Inventory.is_have_item("Key"):
+					var unlock_item_name= actionables[0].unlocked_item_name
+					if !Inventory.is_have_item(unlock_item_name):
 						actionables[0].door_locked()
 						return
 				var transition_area = actionables[0].transition_area

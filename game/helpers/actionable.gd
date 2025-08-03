@@ -16,6 +16,7 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var clean_body: StaticBody2D
 @export var clean_show: Node2D
 @export var is_locked: bool = false
+@export var unlocked_item_name: String = ""
 
 var system_name: String = "[Actionable]"
 

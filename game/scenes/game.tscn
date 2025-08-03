@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=32 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
-[ext_resource type="Resource" path="res://game/item/Key.tres" id="7_l4dfk"]
+[ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="7_ngn8n"]
 [ext_resource type="Resource" uid="uid://b5j6tycvdiskw" path="res://game/item/boy_item_paper.tres" id="8_2nnov"]
 [ext_resource type="Resource" uid="uid://qoj56wnk6fcs" path="res://game/item/failure_wooden_horse.tres" id="8_4osd1"]
-[ext_resource type="Script" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
+[ext_resource type="Script" uid="uid://maxt4u4wso1q" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
 [ext_resource type="Resource" uid="uid://l8h4mds1qiuo" path="res://game/item/failure_mask.tres" id="9_ru4j2"]
 [ext_resource type="Resource" uid="uid://bwwegvqibmiqf" path="res://game/item/tommy_craft.tres" id="10_ru4j2"]
 [ext_resource type="Resource" uid="uid://cax0ro5a2plix" path="res://game/item/boy_item_carving_knife.tres" id="13_0xtou"]
@@ -20,11 +20,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xtou"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
 atlas = ExtResource("7_ngn8n")
 region = Rect2(50, 21, 13, 13)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gy5jl"]
 radius = 7.0
@@ -101,6 +103,27 @@ position = Vector2(104, 35)
 position = Vector2(-1, -1)
 zoom = Vector2(3.15, 3.15)
 
+[node name="Door2" type="Node2D" parent="Map/LivingRoom/Object" index="24"]
+position = Vector2(24, 90)
+
+[node name="Actionable" parent="Map/LivingRoom/Object/Door2" node_paths=PackedStringArray("transition_area") instance=ExtResource("4_gy5jl")]
+action_type = 4
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "living_room_to_boy_room_door_lock"
+is_always_active = true
+transition_area = NodePath("../../../../../LivingRoomToBoyRoom")
+is_locked = true
+unlocked_item_name = "Key"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Door2/Actionable"]
+shape = SubResource("CircleShape2D_4osd1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/LivingRoom/Object" index="25"]
+position = Vector2(24, 90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/StaticBody2D"]
+shape = SubResource("CircleShape2D_0xtou")
+
 [node name="StaticBody2D" parent="Map/LivingRoom" index="4"]
 visible = false
 
@@ -137,7 +160,7 @@ position = Vector2(16, 91)
 [node name="Actionable" parent="Map/BoyRoom/Objects/Door" node_paths=PackedStringArray("transition_area") instance=ExtResource("4_gy5jl")]
 action_type = 4
 is_always_active = true
-transition_area = NodePath("../../../../../LivingRoomToBoyRoom")
+transition_area = NodePath("../../../../../BoyRoomToLivingRoom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/Door/Actionable"]
 shape = SubResource("CircleShape2D_4osd1")
@@ -217,7 +240,7 @@ offset_right = 645.0
 offset_bottom = 318.0
 texture = SubResource("GradientTexture1D_og0sj")
 
-[node name="LivingRoomToBoyRoom" type="Area2D" parent="." node_paths=PackedStringArray("transition_postion_node", "object_container_node", "origin_position_node", "origin_object_container_node")]
+[node name="BoyRoomToLivingRoom" type="Area2D" parent="." node_paths=PackedStringArray("transition_postion_node", "object_container_node", "origin_position_node", "origin_object_container_node")]
 position = Vector2(1, -2)
 script = ExtResource("8_og0sj")
 transition_postion_node = NodePath("../Map/BoyRoom/Objects/DoorTansitionPosition")
@@ -227,8 +250,22 @@ ori_room_visable = Array[bool]([true, false, false])
 origin_position_node = NodePath("../Map/LivingRoom/Object/DoorTransitionBackPos")
 origin_object_container_node = NodePath("../Map/LivingRoom/Object")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoyRoomToLivingRoom"]
+position = Vector2(23, 113)
+shape = SubResource("RectangleShape2D_4osd1")
+
+[node name="LivingRoomToBoyRoom" type="Area2D" parent="." node_paths=PackedStringArray("transition_postion_node", "object_container_node", "origin_position_node", "origin_object_container_node")]
+position = Vector2(1, -2)
+script = ExtResource("8_og0sj")
+transition_postion_node = NodePath("../Map/BoyRoom/Objects/DoorTansitionPosition")
+object_container_node = NodePath("../Map/BoyRoom/Objects")
+room_visable = Array[bool]([false, true, false])
+ori_room_visable = Array[bool]([false, true, false])
+origin_position_node = NodePath("../Map/BoyRoom/Objects/DoorTansitionPosition")
+origin_object_container_node = NodePath("../Map/BoyRoom/Objects")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoomToBoyRoom"]
-position = Vector2(23, 109)
+position = Vector2(78, 120)
 shape = SubResource("RectangleShape2D_4osd1")
 
 [node name="LivingRoomToWorkShop" type="Area2D" parent="." node_paths=PackedStringArray("transition_postion_node", "object_container_node", "origin_position_node", "origin_object_container_node")]
