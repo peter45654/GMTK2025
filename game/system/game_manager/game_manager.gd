@@ -9,16 +9,18 @@ var system_name: String = "[GameManager]"
 var is_resetting: bool = false
 var reset_time: float = 0.0
 var tomas_progress: int = 0
+var tomas_is_talking_during_reset: bool = false
 
 func _process(_delta: float) -> void:
 	if !is_resetting:
 		return
 
-	if Time.get_ticks_msec() - reset_time > TRANSITION_DURATION_MS:
-		is_resetting = false
-		hide_black_block()
-		print(system_name, "Game reset completed.")
+	if tomas_is_talking_during_reset:
 		return
+
+
+	print(system_name, "Game reset completed.")
+	return
 
 func soft_reset_game() -> void:
 	# find all in Interactable in group
@@ -66,10 +68,13 @@ func hide_black_block() -> void:
 func tomas_recieve_item(item_name: String) -> void:
 	if item_name == "TestItem":
 		tomas_progress += 1
+		soft_reset_game()
 		print(system_name, "Tomas received item:", item_name, "Progress:", tomas_progress)
+		create_dialogue("tomas_progress_1_talking")
+		tomas_is_talking_during_reset = true
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
-		create_dialogue("tomas_revieve_none")
+		create_dialogue("tomas_receive_none")
 
 
 func create_dialogue(title: String) -> void:
@@ -80,3 +85,9 @@ func create_dialogue(title: String) -> void:
 	var dialogue_source: DialogueResource = DialogueSource
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_source, title)
+
+func tomas_done_talking() -> void:
+	# OS.delay_msec(1000)
+	tomas_is_talking_during_reset = false
+	is_resetting = false
+	hide_black_block()

@@ -24,11 +24,21 @@ if GameManager.tomas_progress==1:
 	
 => END
 
-~ tomas_revieve_none
+~ tomas_receive_none
 
 Tomas:
-	Go away, than. I an drinking.	
+	Go away than. I an drinking.	
 
+=> END!
+
+~ tomas_progress_1_talking
+
+Tomas:
+	...
+	......
+	I...lost him...	
+
+do GameManager.tomas_done_talking()
 => END
 
 ~ clean_bottle
