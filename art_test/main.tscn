@@ -1,10 +1,11 @@
-[gd_scene load_steps=110 format=4 uid="uid://cvmby2hcmq7n1"]
+[gd_scene load_steps=111 format=4 uid="uid://cvmby2hcmq7n1"]
 
 [ext_resource type="TileSet" uid="uid://jb43wcryt2c3" path="res://art_test/wall_and_floor_tileset.tres" id="1_okjid"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="2_ketuw"]
 [ext_resource type="Texture2D" uid="uid://btikepo25tucr" path="res://art_test/TopDownHouse_DoorsAndWindows.png" id="3_wc8bx"]
 [ext_resource type="Texture2D" uid="uid://cb3u03laofc1p" path="res://art_test/interior_pack/26_Condominium_Black_Shadow_Singles_16x16/Condominium_Black_Shadow_Singles_86.png" id="3_yp3kl"]
 [ext_resource type="Texture2D" uid="uid://nuedijj5c6ng" path="res://art_test/interior_pack/21_Clothing_Store_Black_Shadow_Singles_16x16/Clothing_Store_Black_Shadow_Singles_199.png" id="4_5x5te"]
+[ext_resource type="Texture2D" uid="uid://b2iuhw6gsku8k" path="res://art_test/TopDownHouse_FurnitureState1.png" id="4_er7i0"]
 [ext_resource type="Texture2D" uid="uid://cl5yfhri34spg" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_437.png" id="4_nd7ee"]
 [ext_resource type="Texture2D" uid="uid://7ug41f3btld4" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_391.png" id="5_3l832"]
 [ext_resource type="Texture2D" uid="uid://dvvmclku1tpwb" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_392.png" id="6_o61ct"]
@@ -89,79 +90,78 @@ region = Rect2(16, 19, 16, 11)
 atlas = ExtResource("3_wc8bx")
 region = Rect2(195, 50, 27, 30)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nu17q"]
-load_path = "res://.godot/imported/TopDownHouse_FurnitureState1.png-748723a91a9cc7d9eb3e5c418f0ae63f.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7j4o"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(112, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er7i0"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(131, 49, 25, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jfn1"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(128, 32, 31, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4cld"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(128, 4, 16, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo6cb"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(1, 32, 46, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rngb"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(97, 65, 46, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5s4g8"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(6, 4, 20, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5awb"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(159, 32, 49, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oiwee"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(2, 116, 27, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4kga"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(88, 161, 50, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tvv8m"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(176, 117, 23, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kh580"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(67, 112, 24, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i024g"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(96, 112, 17, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3n7g"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(176, 269, 14, 17)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nu17q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_te68m"]
 atlas = SubResource("CompressedTexture2D_nu17q")
 region = Rect2(31, 2, 15, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tgj8"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(83, 43, 26, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqqll"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(147, 112, 25, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhhqr"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(49, 116, 15, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdnaa"]
@@ -193,13 +193,14 @@ atlas = ExtResource("46_l3ff3")
 region = Rect2(210, 886, 13, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5ouo"]
-atlas = SubResource("CompressedTexture2D_nu17q")
+atlas = ExtResource("4_er7i0")
 region = Rect2(112, 32, 16, 32)
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
 
 [node name="LivingRoom" type="Node2D" parent="."]
+visible = false
 modulate = Color(0.743482, 0.743482, 0.743482, 1)
 
 [node name="Layer0" type="TileMapLayer" parent="LivingRoom"]
@@ -222,19 +223,16 @@ texture = SubResource("AtlasTexture_ql1yo")
 [node name="Window" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(18, -16)
 rotation = 0.0122729
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_0axao")
 
 [node name="Carpet2" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(165.5, 41)
 rotation = 0.136903
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_v7j4o")
 
 [node name="Carpet4" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(151, 89)
 rotation = 3.13474
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_er7i0")
 
 [node name="Carpet3" type="Sprite2D" parent="LivingRoom"]
@@ -254,7 +252,6 @@ texture = SubResource("AtlasTexture_t4cld")
 [node name="Table" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(97.3894, 80)
 rotation = -0.0265047
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_mo6cb")
 
 [node name="Table2" type="Sprite2D" parent="LivingRoom"]
@@ -277,7 +274,6 @@ texture = SubResource("AtlasTexture_oiwee")
 [node name="Sofa" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(17.5, 2)
 rotation = 0.0448972
-scale = Vector2(1, 1)
 skew = -0.0349066
 texture = SubResource("AtlasTexture_j4kga")
 
@@ -315,7 +311,6 @@ texture = SubResource("AtlasTexture_t3n7g")
 [node name="SmallTable" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(11.5, 43)
 rotation = 0.0122729
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_8tgj8")
 
 [node name="Fireplace" type="Sprite2D" parent="LivingRoom"]
@@ -329,19 +324,16 @@ texture = SubResource("AtlasTexture_hhhqr")
 [node name="DirtyDish" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(89.0004, 71)
 rotation = 0.0060949
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_rdnaa")
 
 [node name="PenBucket" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(65.5, -12)
 rotation = 0.0060949
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_ybao6")
 
 [node name="Cloth" type="Sprite2D" parent="LivingRoom"]
 position = Vector2(124.046, 61)
 rotation = 0.0060949
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_3pmx0")
 
 [node name="OpenedBook" type="Sprite2D" parent="LivingRoom"]
@@ -360,6 +352,7 @@ rotation = -0.0238644
 texture = SubResource("AtlasTexture_5cwhe")
 
 [node name="BoyRoom" type="Node2D" parent="."]
+visible = false
 modulate = Color(0.785641, 0.785641, 0.785641, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="BoyRoom"]
@@ -613,7 +606,6 @@ texture = ExtResource("54_g2syf")
 [node name="CondominiumBlackShadowSingles82" type="Sprite2D" parent="Workshop/Other"]
 position = Vector2(-88, 79)
 rotation = 0.0039912
-scale = Vector2(1, 1)
 texture = ExtResource("73_lw8xc")
 
 [node name="BathroomBlackShadowSingles1" type="Sprite2D" parent="Workshop/Other"]
@@ -647,7 +639,6 @@ texture = ExtResource("49_jynxd")
 [node name="Carpet4" type="Sprite2D" parent="Workshop"]
 position = Vector2(185, 7)
 rotation = 0.0362799
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_d5ouo")
 
 [node name="LivingRoomBlackShadowSingles102" type="Sprite2D" parent="Workshop"]
@@ -659,7 +650,6 @@ texture = ExtResource("50_etdym")
 [node name="LivingRoomBlackShadowSingles103" type="Sprite2D" parent="Workshop"]
 position = Vector2(303, -40)
 rotation = -0.0241805
-scale = Vector2(1, 1)
 texture = ExtResource("51_jbtra")
 
 [node name="LivingRoomBlackShadowSingles104" type="Sprite2D" parent="Workshop"]
@@ -677,14 +667,12 @@ texture = ExtResource("54_g2syf")
 [node name="HalloweenShadowSingles63" type="Sprite2D" parent="Workshop"]
 position = Vector2(202, -38)
 rotation = -0.0246582
-scale = Vector2(1, 1)
 skew = 0.0471238
 texture = ExtResource("55_1ayqv")
 
 [node name="HalloweenShadowSingles65" type="Sprite2D" parent="Workshop"]
 position = Vector2(331, -56)
 rotation = 0.0185695
-scale = Vector2(1, 1)
 texture = ExtResource("56_nl3bk")
 
 [node name="HalloweenShadowSingles78" type="Sprite2D" parent="Workshop"]
@@ -710,7 +698,6 @@ texture = ExtResource("59_nmgt2")
 [node name="LivingRoomBlackShadowSingles97" type="Sprite2D" parent="Workshop"]
 position = Vector2(252, 17)
 rotation = 0.183854
-scale = Vector2(1, 1)
 texture = ExtResource("52_4rqc5")
 
 [node name="HalloweenShadowSingles120" type="Sprite2D" parent="Workshop"]
@@ -729,7 +716,6 @@ texture = ExtResource("66_grnwl")
 [node name="BasementShadowSingles82" type="Sprite2D" parent="Workshop"]
 position = Vector2(298, 15)
 rotation = 0.083702
-scale = Vector2(1, 1)
 skew = 0.0942477
 texture = ExtResource("67_cfta2")
 
@@ -773,7 +759,6 @@ texture = ExtResource("59_nmgt2")
 [node name="ClothingStoreBlackShadowSingles9" type="Sprite2D" parent="Workshop"]
 position = Vector2(280, 11)
 rotation = 1.53042
-scale = Vector2(1, 1)
 texture = ExtResource("47_qlrae")
 
 [node name="LivingRoomBlackShadowSingles24" type="Sprite2D" parent="Workshop"]
