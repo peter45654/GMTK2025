@@ -384,49 +384,49 @@ _data = {
 &"walk_up": SubResource("Animation_gqwf4")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sgewc"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0h3w0"]
 animation = &"idle_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ptki"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v14ot"]
 animation = &"idle_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrogp"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ytd6y"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3inqy"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kycti"]
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8jsaa"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_sgewc")
+blend_point_0/node = SubResource("AnimationNodeAnimation_0h3w0")
 blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_5ptki")
+blend_point_1/node = SubResource("AnimationNodeAnimation_v14ot")
 blend_point_1/pos = Vector2(0, -1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_nrogp")
+blend_point_2/node = SubResource("AnimationNodeAnimation_ytd6y")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_3inqy")
+blend_point_3/node = SubResource("AnimationNodeAnimation_kycti")
 blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_74vvk"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fjnuc"]
 animation = &"walk_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hq8ax"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xfxb5"]
 animation = &"walk_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bivxa"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hmi8b"]
 animation = &"walk_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pbh15"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n382t"]
 animation = &"walk_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_4buhd"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_74vvk")
+blend_point_0/node = SubResource("AnimationNodeAnimation_fjnuc")
 blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_hq8ax")
+blend_point_1/node = SubResource("AnimationNodeAnimation_xfxb5")
 blend_point_1/pos = Vector2(0, -1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_bivxa")
+blend_point_2/node = SubResource("AnimationNodeAnimation_hmi8b")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_pbh15")
+blend_point_3/node = SubResource("AnimationNodeAnimation_n382t")
 blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 

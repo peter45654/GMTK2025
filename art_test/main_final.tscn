@@ -1,0 +1,366 @@
+[gd_scene load_steps=42 format=4 uid="uid://bo62s1u14d61y"]
+
+[ext_resource type="TileSet" uid="uid://jb43wcryt2c3" path="res://art_test/wall_and_floor_tileset.tres" id="1_qserm"]
+[ext_resource type="Texture2D" uid="uid://b2iuhw6gsku8k" path="res://art_test/TopDownHouse_FurnitureState1.png" id="2_xw2wj"]
+[ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="3_lyeqr"]
+[ext_resource type="Texture2D" uid="uid://btikepo25tucr" path="res://art_test/TopDownHouse_DoorsAndWindows.png" id="4_5xg1a"]
+[ext_resource type="PackedScene" uid="uid://l3ktb314t0ym" path="res://game/characters/coco/tomas.tscn" id="5_fel0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7j4o"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(112, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er7i0"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(131, 49, 25, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jfn1"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(128, 32, 31, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5awb"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(159, 32, 49, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql1yo"]
+atlas = ExtResource("3_lyeqr")
+region = Rect2(16, 19, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0axao"]
+atlas = ExtResource("4_5xg1a")
+region = Rect2(195, 50, 27, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4cld"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(128, 4, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo6cb"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(1, 32, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdnaa"]
+atlas = ExtResource("3_lyeqr")
+region = Rect2(17, 70, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
+atlas = ExtResource("3_lyeqr")
+region = Rect2(50, 21, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rngb"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(97, 65, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s4g8"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(6, 4, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiobi"]
+atlas = ExtResource("3_lyeqr")
+region = Rect2(3, 54, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybao6"]
+atlas = ExtResource("3_lyeqr")
+region = Rect2(53, 2, 7, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiwee"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(2, 116, 27, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4kga"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(88, 161, 50, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvv8m"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(176, 117, 23, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh580"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(67, 112, 24, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i024g"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(96, 112, 17, 46)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nu17q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te68m"]
+atlas = SubResource("CompressedTexture2D_nu17q")
+region = Rect2(31, 2, 15, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3n7g"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(176, 269, 14, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tgj8"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(83, 43, 26, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqqll"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(147, 112, 25, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhhqr"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(49, 116, 15, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pmx0"]
+atlas = ExtResource("3_lyeqr")
+region = Rect2(4, 1, 8, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtu43"]
+atlas = ExtResource("3_lyeqr")
+region = Rect2(113, 16, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0pjo"]
+atlas = ExtResource("2_xw2wj")
+region = Rect2(143.768, 64.0261, 18.4985, 47.8784)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er7i0"]
+size = Vector2(20, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5tyx"]
+size = Vector2(62, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0pjo"]
+size = Vector2(108, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhnu3"]
+size = Vector2(108, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oxbm"]
+size = Vector2(29, 46.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttgd6"]
+size = Vector2(29, 72)
+
+[sub_resource type="Gradient" id="Gradient_o0pjo"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xhnu3"]
+gradient = SubResource("Gradient_o0pjo")
+fill_from = Vector2(0.566239, 0.50641)
+fill_to = Vector2(0, 0.025641)
+
+[node name="Map" type="Node2D"]
+texture_filter = 1
+
+[node name="LivingRoom" type="Node2D" parent="."]
+modulate = Color(0.394987, 0.394987, 0.394987, 1)
+
+[node name="Layer0" type="TileMapLayer" parent="LivingRoom"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAFAAEAAAACAAYAAAAEAAEAAAADAAYAAAADAAEAAAACAAYAAAACAAEAAAADAAYAAAABAAEAAAACAAYAAAAAAAEAAAADAAYAAAD//wEAAAACAAYAAAD+/wEAAAADAAYAAAD+////AAAFAAIAAAD/////AAAFAAIAAAAAAP//AAAFAAIAAAABAP//AAAFAAIAAAACAP//AAAFAAIAAAADAP//AAAFAAIAAAAEAP//AAAFAAIAAAAFAAAAAAACAAYAAAAGAAAAAAADAAYAAAAHAAAAAAACAAYAAAAIAAEAAAADAAYAAAAHAAEAAAACAAYAAAAGAAEAAAADAAYAAAAGAAIAAAADAAYAAAAFAAIAAAACAAYAAAAEAAIAAAADAAYAAAADAAIAAAACAAYAAAAAAAAAAAADAAYAAAABAAAAAAACAAYAAAACAAAAAAADAAYAAAADAAAAAAACAAYAAAAEAAAAAAADAAYAAAD//wAAAAACAAYAAAD+/wAAAAADAAYAAAAKAP3/AAADAAAAAAAKAP7/AAAFAAIAAAAKAP//AAAFAAIAAAAKAAAAAAAEAAYAAAAKAAEAAAAEAAYAAAAKAAIAAAAEAAYAAAAKAAMAAAAEAAYAAAAKAAQAAAAEAAYAAAAKAAUAAAAEAAYAAAD+//3/AAADAAAAAAD+//7/AAAFAAIAAAD+/wIAAAADAAYAAAD+/wMAAAADAAYAAAD+/wQAAAADAAYAAAD+/wUAAAADAAYAAAD///3/AAACAAAAAAD///7/AAAFAAIAAAD//wIAAAACAAYAAAD//wMAAAACAAYAAAD//wQAAAACAAYAAAD//wUAAAACAAYAAAAAAP3/AAADAAAAAAAAAP7/AAAFAAIAAAAAAAIAAAADAAYAAAAAAAMAAAADAAYAAAAAAAQAAAADAAYAAAAAAAUAAAADAAYAAAABAP3/AAACAAAAAAABAP7/AAAFAAIAAAABAAIAAAACAAYAAAABAAMAAAACAAYAAAABAAQAAAACAAYAAAABAAUAAAACAAYAAAACAP3/AAADAAAAAAACAP7/AAAFAAIAAAACAAIAAAADAAYAAAACAAMAAAADAAYAAAACAAQAAAADAAYAAAACAAUAAAADAAYAAAADAP3/AAACAAAAAAADAP7/AAAFAAIAAAADAAMAAAACAAYAAAADAAQAAAACAAYAAAADAAUAAAACAAYAAAAEAP3/AAADAAAAAAAEAP7/AAAFAAIAAAAEAAMAAAADAAYAAAAEAAQAAAADAAYAAAAEAAUAAAADAAYAAAAFAP3/AAACAAAAAAAFAP7/AAAFAAIAAAAFAP//AAAFAAIAAAAFAAMAAAACAAYAAAAFAAQAAAACAAYAAAAFAAUAAAACAAYAAAAGAP3/AAADAAAAAAAGAP7/AAAFAAIAAAAGAP//AAAFAAIAAAAGAAMAAAADAAYAAAAGAAQAAAADAAYAAAAGAAUAAAADAAYAAAAHAP3/AAACAAAAAAAHAP7/AAAFAAIAAAAHAP//AAAFAAIAAAAHAAIAAAACAAYAAAAHAAMAAAACAAYAAAAHAAQAAAACAAYAAAAHAAUAAAACAAYAAAAIAP3/AAADAAAAAAAIAP7/AAAFAAIAAAAIAP//AAAFAAIAAAAIAAAAAAADAAYAAAAIAAIAAAADAAYAAAAIAAMAAAADAAYAAAAIAAQAAAADAAYAAAAIAAUAAAADAAYAAAAJAP3/AAACAAAAAAAJAP7/AAAFAAIAAAAJAP//AAAFAAIAAAAJAAAAAAACAAYAAAAJAAEAAAACAAYAAAAJAAIAAAACAAYAAAAJAAMAAAACAAYAAAAJAAQAAAACAAYAAAAJAAUAAAACAAYAAAALAAQAAAARAAQAAAALAAMAAAARAAQAAAALAAAAAAARAAEAAAALAP//AAARAAEAAAALAP7/AAARAAEAAAALAP3/AAARAAAAAAD9/wYAAAAAAAgAAAD9//3/AAAAAAAAAAD9//7/AAAAAAUAAAD9////AAAAAAUAAAD9/wAAAAAAAAUAAAD9/wEAAAAAAAUAAAD9/wIAAAAAAAUAAAD9/wMAAAAAAAUAAAD9/wQAAAAAAAUAAAD9/wUAAAAAAAUAAAD+/wYAAAAEAAgAAAD//wYAAAAEAAgAAAAAAAYAAAAEAAgAAAACAAYAAAAEAAgAAAADAAYAAAAEAAgAAAAEAAYAAAAEAAgAAAAFAAYAAAAEAAgAAAAGAAYAAAAEAAgAAAAHAAYAAAAEAAgAAAALAAUAAAARAAQAAAALAAEAAAARAAEAAAALAAYAAAARAAgAAAAIAAYAAAAEAAgAAAAKAAYAAAAJAAgAAAA=")
+tile_set = ExtResource("1_qserm")
+metadata/_edit_lock_ = true
+
+[node name="Layer1" type="TileMapLayer" parent="LivingRoom"]
+texture_filter = 1
+use_parent_material = true
+tile_set = ExtResource("1_qserm")
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="Node2D" parent="LivingRoom"]
+
+[node name="Carpet2" type="Sprite2D" parent="LivingRoom/Floor"]
+position = Vector2(165.5, 41)
+rotation = 0.136903
+texture = SubResource("AtlasTexture_v7j4o")
+
+[node name="Carpet4" type="Sprite2D" parent="LivingRoom/Floor"]
+position = Vector2(151, 89)
+rotation = 3.13474
+texture = SubResource("AtlasTexture_er7i0")
+
+[node name="Carpet3" type="Sprite2D" parent="LivingRoom/Floor"]
+position = Vector2(25.5, 87)
+rotation = 0.0187283
+texture = SubResource("AtlasTexture_4jfn1")
+
+[node name="Carpet" type="Sprite2D" parent="LivingRoom/Floor"]
+position = Vector2(9.5, 44)
+rotation = 0.0937343
+texture = SubResource("AtlasTexture_q5awb")
+
+[node name="Object" type="Node2D" parent="LivingRoom"]
+y_sort_enabled = true
+
+[node name="Paint" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(61, -25)
+rotation = -0.0238644
+texture = SubResource("AtlasTexture_ql1yo")
+
+[node name="Window" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(18, -16)
+rotation = 0.0122729
+texture = SubResource("AtlasTexture_0axao")
+
+[node name="Chair" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(88.7793, 58.1814)
+rotation = -0.0925186
+texture = SubResource("AtlasTexture_t4cld")
+
+[node name="Chair2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(108.779, 66.1814)
+texture = SubResource("AtlasTexture_t4cld")
+
+[node name="Table" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(97.3894, 80)
+rotation = -0.0265047
+texture = SubResource("AtlasTexture_mo6cb")
+
+[node name="DirtyDish" type="Sprite2D" parent="LivingRoom/Object/Table"]
+position = Vector2(-8.14754, -9.21917)
+rotation = 0.0325996
+texture = SubResource("AtlasTexture_rdnaa")
+
+[node name="Paper" type="Sprite2D" parent="LivingRoom/Object/Table"]
+position = Vector2(16.8698, -9.55629)
+rotation = 0.0026403
+texture = SubResource("AtlasTexture_5cwhe")
+
+[node name="Closet2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(125.5, -9)
+texture = SubResource("AtlasTexture_0rngb")
+
+[node name="Table3" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(60.5, 0)
+texture = SubResource("AtlasTexture_5s4g8")
+
+[node name="OpenedBook" type="Sprite2D" parent="LivingRoom/Object/Table3"]
+position = Vector2(-5, -7)
+rotation = -0.0473025
+texture = SubResource("AtlasTexture_aiobi")
+
+[node name="PenBucket" type="Sprite2D" parent="LivingRoom/Object/Table3"]
+position = Vector2(5, -11)
+rotation = 0.0060949
+texture = SubResource("AtlasTexture_ybao6")
+
+[node name="Closet" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(-19.5, 1)
+texture = SubResource("AtlasTexture_oiwee")
+
+[node name="Sofa" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(17.5, 2)
+rotation = 0.0448972
+skew = -0.0349066
+texture = SubResource("AtlasTexture_j4kga")
+
+[node name="Sofa2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(-16.5, 37)
+rotation = -0.064319
+texture = SubResource("AtlasTexture_tvv8m")
+
+[node name="Clock" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(161.5, -5)
+rotation = 0.0660755
+skew = -0.0349066
+texture = SubResource("AtlasTexture_kh580")
+
+[node name="Lamp" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(46.5, -5)
+texture = SubResource("AtlasTexture_i024g")
+
+[node name="Box4" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(-23.5, 65)
+texture = SubResource("AtlasTexture_te68m")
+
+[node name="Box3" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(-24, 67)
+texture = SubResource("AtlasTexture_t3n7g")
+
+[node name="SmallTable" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(11.5, 43)
+rotation = 0.0122729
+texture = SubResource("AtlasTexture_8tgj8")
+
+[node name="Fireplace" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(84.5, -10)
+texture = SubResource("AtlasTexture_cqqll")
+
+[node name="ClothShelf" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(132, 92)
+texture = SubResource("AtlasTexture_hhhqr")
+offset = Vector2(0.0460052, -18)
+
+[node name="Cloth" type="Sprite2D" parent="LivingRoom/Object/ClothShelf"]
+position = Vector2(-8, -31)
+rotation = 0.0060949
+texture = SubResource("AtlasTexture_3pmx0")
+
+[node name="Flower" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(-24.5, 52)
+rotation = -0.0238644
+texture = SubResource("AtlasTexture_jtu43")
+
+[node name="BoxesOn" type="Node2D" parent="LivingRoom/Object"]
+position = Vector2(-13, 81)
+
+[node name="Box" type="Sprite2D" parent="LivingRoom/Object/BoxesOn"]
+position = Vector2(3.5, -4)
+texture = SubResource("AtlasTexture_t3n7g")
+
+[node name="Box3" type="Sprite2D" parent="LivingRoom/Object/BoxesOn"]
+position = Vector2(75, 4)
+texture = SubResource("AtlasTexture_t3n7g")
+
+[node name="Box2" type="Sprite2D" parent="LivingRoom/Object/BoxesOn"]
+position = Vector2(-5.5, 5)
+texture = SubResource("AtlasTexture_t3n7g")
+
+[node name="Interacts" type="Node2D" parent="LivingRoom/Object"]
+
+[node name="Closet3" type="Sprite2D" parent="LivingRoom/Object/Interacts"]
+position = Vector2(161, 75)
+rotation = 0.405687
+skew = -0.10472
+texture = SubResource("AtlasTexture_o0pjo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LivingRoom"]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(-40, 31)
+shape = SubResource("RectangleShape2D_er7i0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(-18, 107.75)
+shape = SubResource("RectangleShape2D_d5tyx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(89, 108)
+shape = SubResource("RectangleShape2D_o0pjo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(215, 108)
+shape = SubResource("RectangleShape2D_xhnu3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(188, 74.125)
+shape = SubResource("RectangleShape2D_0oxbm")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(188, -1)
+shape = SubResource("RectangleShape2D_ttgd6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(174, 19, 174, -29, -29, -29, -29, 53, -29, 61, -29, 80, -16, 80, -16, 61, -20, 61, -20, 53, -1, 53, 23, 53, 23, 40, -1, 40, -1, 19, -1, 13, 34, 13, 34, 19)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(-29, 80, -13, 80, -13, 72, -4, 72, -4, 100, -29, 100)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(54, 96, 54, 84, 74, 84, 74, 77, 123, 77, 123, 87, 139, 87, 139, 96)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(79, 56, 96, 56, 104, 59, 117, 59, 117, 63, 103, 63, 79, 63)
+
+[node name="PointLight2D" type="PointLight2D" parent="LivingRoom"]
+visible = false
+position = Vector2(109.5, 40)
+scale = Vector2(4.42188, 2.25)
+texture = SubResource("GradientTexture2D_xhnu3")
+metadata/_edit_lock_ = true
+
+[node name="Tomas" parent="." instance=ExtResource("5_fel0o")]
+position = Vector2(25, 17)
