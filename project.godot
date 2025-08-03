@@ -42,6 +42,10 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 Interactable=""
 Player=""
 BlackBlock=""
+LivingRoom=""
+BoyRoom=""
+WorkShop=""
+OriginObjectContainer=""
 
 [internationalization]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=15 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -7,11 +7,14 @@
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
 [ext_resource type="Texture2D" uid="uid://fdwvpb1hi3pn" path="res://art_test/interior_pack/bottle.png" id="6_gy5jl"]
 [ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
+[ext_resource type="Script" uid="uid://maxt4u4wso1q" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gy5jl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
 
 [sub_resource type="Gradient" id="Gradient_l4dfk"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -19,9 +22,15 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_og0sj"]
 gradient = SubResource("Gradient_l4dfk")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4osd1"]
+
 [node name="Game" type="Node"]
 
 [node name="Map" parent="." instance=ExtResource("1_7aouk")]
+
+[node name="LivingRoom" parent="Map" index="0" groups=["LivingRoom"]]
+
+[node name="Object" parent="Map/LivingRoom" index="3" groups=["OriginObjectContainer"]]
 
 [node name="Coco" parent="Map/LivingRoom/Object" index="19" groups=["Player"] instance=ExtResource("2_vv3et")]
 position = Vector2(46, 36)
@@ -40,6 +49,13 @@ is_always_active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Tomas/Actionable"]
 shape = SubResource("CircleShape2D_og0sj")
+
+[node name="DoorTransitionBackPos" type="Node2D" parent="Map/LivingRoom/Object" index="22"]
+position = Vector2(25, 87)
+rotation = -1.57079
+
+[node name="TransionPosWorkShopToLive" type="Node2D" parent="Map/LivingRoom/Object" index="23"]
+position = Vector2(169, 43)
 
 [node name="PointLight2D" parent="Map/LivingRoom" index="5"]
 visible = false
@@ -73,6 +89,28 @@ dialogue_start = "claim_key_from_bottle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Interactable/Bottle5/Actionable"]
 shape = SubResource("CircleShape2D_gy5jl")
 
+[node name="BoyRoom" parent="Map" index="1" groups=["BoyRoom"]]
+visible = true
+
+[node name="DoorTansitionPosition" type="Node2D" parent="Map/BoyRoom/Objects" index="12"]
+position = Vector2(16, 108)
+
+[node name="Door" type="Node2D" parent="Map/BoyRoom/Objects" index="13"]
+position = Vector2(16, 91)
+
+[node name="Actionable" parent="Map/BoyRoom/Objects/Door" node_paths=PackedStringArray("transition_area") instance=ExtResource("4_gy5jl")]
+action_type = 4
+is_always_active = true
+transition_area = NodePath("../../../../../LivingRoomToBoyRoom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/Door/Actionable"]
+shape = SubResource("CircleShape2D_4osd1")
+
+[node name="Workshop" parent="Map" index="2" groups=["WorkShop"]]
+
+[node name="TransionPos" type="Node2D" parent="Map/Workshop/Objects" index="17"]
+position = Vector2(185, 5)
+
 [node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="6"]
 polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
 
@@ -83,5 +121,47 @@ offset_top = -229.0
 offset_right = 645.0
 offset_bottom = 318.0
 texture = SubResource("GradientTexture1D_og0sj")
+
+[node name="LivingRoomToBoyRoom" type="Area2D" parent="." node_paths=PackedStringArray("transition_postion_node", "object_container_node", "origin_position_node", "origin_object_container_node")]
+position = Vector2(1, -2)
+script = ExtResource("8_og0sj")
+transition_postion_node = NodePath("../Map/BoyRoom/Objects/DoorTansitionPosition")
+object_container_node = NodePath("../Map/BoyRoom/Objects")
+room_visable = Array[bool]([false, true, false])
+ori_room_visable = Array[bool]([true, false, false])
+origin_position_node = NodePath("../Map/LivingRoom/Object/DoorTransitionBackPos")
+origin_object_container_node = NodePath("../Map/LivingRoom/Object")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoomToBoyRoom"]
+position = Vector2(23, 109)
+shape = SubResource("RectangleShape2D_4osd1")
+
+[node name="LivingRoomToWorkShop" type="Area2D" parent="." node_paths=PackedStringArray("transition_postion_node", "object_container_node", "origin_position_node", "origin_object_container_node")]
+position = Vector2(184, 39)
+script = ExtResource("8_og0sj")
+transition_postion_node = NodePath("../Map/Workshop/Objects/TransionPos")
+object_container_node = NodePath("../Map/Workshop/Objects")
+room_visable = Array[bool]([false, false, true])
+ori_room_visable = Array[bool]([true, false, false])
+origin_position_node = NodePath("../Map/LivingRoom/Object/DoorTransitionBackPos")
+origin_object_container_node = NodePath("../Map/LivingRoom/Object")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoomToWorkShop"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_4osd1")
+
+[node name="WorkShopToLivingRoom" type="Area2D" parent="." node_paths=PackedStringArray("transition_postion_node", "object_container_node", "origin_position_node", "origin_object_container_node")]
+position = Vector2(211, 21)
+script = ExtResource("8_og0sj")
+transition_postion_node = NodePath("../Map/LivingRoom/Object/TransionPosWorkShopToLive")
+object_container_node = NodePath("../Map/LivingRoom/Object")
+room_visable = Array[bool]([true, false, false])
+ori_room_visable = Array[bool]([true, false, false])
+origin_position_node = NodePath("../Map/LivingRoom/Object/DoorTransitionBackPos")
+origin_object_container_node = NodePath("../Map/LivingRoom/Object")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkShopToLivingRoom"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_4osd1")
 
 [editable path="Map"]

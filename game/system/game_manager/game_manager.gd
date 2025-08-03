@@ -1,15 +1,16 @@
 extends Node
 
-const INITIAL_POSITION: Vector2 = Vector2(46,36)
+const INITIAL_POSITION: Vector2 = Vector2(46, 36)
 const TRANSITION_DURATION_MS: float = 2000
 const Balloon = preload("res://game/dialogue/balloon.tscn")
-const DialogueSource:DialogueResource = preload("res://game/dialogue/loop.dialogue")
+const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialogue")
 
 var system_name: String = "[GameManager]"
 var is_need_wait_for_talking: bool = false
 var start_show_black_block_time: float = 0.0
 var tomas_progress: int = 0
 var tomas_is_talking_during_reset: bool = false
+
 
 func _process(_delta: float) -> void:
 	if !is_need_wait_for_talking:
@@ -26,6 +27,7 @@ func _process(_delta: float) -> void:
 	print(system_name, "Game transition completed.")
 	return
 
+
 func soft_reset_game() -> void:
 	# find all in Interactable in group
 	var interactables = get_tree().get_nodes_in_group("Interactable")
@@ -37,11 +39,22 @@ func soft_reset_game() -> void:
 	if player:
 		if player.has_method("reset"):
 			player.reset()
+
+	set_living_room_visable(true)
+	set_boyroom_visable(false)
+	set_workshop_visable(false)
+
+	var ori_obj_container_node = get_tree().get_nodes_in_group("OriginObjectContainer")[0]
+	var player_parent = player.get_parent()
+	player_parent.remove_child(player)
+	ori_obj_container_node.call_deferred("add_child", player)
+
 	print(system_name, "Soft reset game completed.")
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed():
-		if event.keycode  == KEY_R:
+		if event.keycode == KEY_R:
 			print(system_name, "R key pressed. Resetting game.")
 			soft_reset_game()
 		if event.keycode == KEY_F5:
@@ -49,10 +62,12 @@ func _input(event: InputEvent) -> void:
 			soft_reset_game()
 			reset_progress()
 
+
 func reset_progress() -> void:
 	Inventory.clear_inventory()
 	tomas_progress = 0
 	print(system_name, "Progress reset.")
+
 
 func show_black_block() -> void:
 	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
@@ -62,11 +77,13 @@ func show_black_block() -> void:
 	is_need_wait_for_talking = true
 	print(system_name, "Black block visibility shown.")
 
+
 func hide_black_block() -> void:
 	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
 	if black_block:
 		black_block.hide()
 	print(system_name, "Black block visibility hidden.")
+
 
 func tomas_recieve_item(item_name: String) -> void:
 	if item_name == "TestItem":
@@ -88,10 +105,37 @@ func create_dialogue(title: String) -> void:
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_source, title)
 
+
 func tomas_done_talking() -> void:
 	is_need_wait_for_talking = false
 	hide_black_block()
 
+
 func tomas_done_begin_talking() -> void:
 	show_black_block()
 	soft_reset_game()
+
+
+func set_living_room_visable(is_visible: bool) -> void:
+	var transition_area = get_tree().get_nodes_in_group("LivingRoom")[0]
+	if transition_area:
+		transition_area.visible = is_visible
+		print(system_name, "Living room visibility set to:", is_visible)
+	else:
+		print(system_name, "Transition area not found, cannot set living room visibility.")
+
+
+func set_boyroom_visable(is_visible: bool) -> void:
+	var transition_area = get_tree().get_nodes_in_group("BoyRoom")[0]
+	if transition_area:
+		transition_area.visible = is_visible
+		print(system_name, "Boy room visibility set to:", is_visible)
+
+
+func set_workshop_visable(is_visible: bool) -> void:
+	var transition_area = get_tree().get_nodes_in_group("WorkShop")[0]
+	if transition_area:
+		transition_area.visible = is_visible
+		print(system_name, "Workshop visibility set to:", is_visible)
+	else:
+		print(system_name, "Transition area not found, cannot set workshop visibility.")

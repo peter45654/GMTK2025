@@ -441,7 +441,7 @@ radius = 8.0
 
 [node name="Coco" type="CharacterBody2D"]
 texture_filter = 1
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_rc0d5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

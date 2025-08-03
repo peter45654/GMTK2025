@@ -46,6 +46,8 @@ Tomas:
 	...
 	......
 	I...lost him...	
+	.........
+	............
 
 do GameManager.tomas_done_talking()
 => END
@@ -53,6 +55,8 @@ do GameManager.tomas_done_talking()
 ~ clean_bottle
 
 you clean up the bottle.
+
+
 
 => END
 

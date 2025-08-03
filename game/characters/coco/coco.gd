@@ -19,9 +19,15 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
-			actionables[0].action()
-			input_vector = Vector2.ZERO
-			return
+			if actionables[0].action_type == Actionable.ActionType.DOOR:
+				var transition_area = actionables[0].transition_area
+				if transition_area:
+					transition_area.transition_to_origin_room(self)
+					return
+			else:
+				actionables[0].action()
+				input_vector = Vector2.ZERO
+				return
 
 	var x_axis: float = Input.get_axis("ui_left", "ui_right")
 	var y_axis: float = Input.get_axis("ui_up", "ui_down")

@@ -1,6 +1,7 @@
+class_name Actionable
 extends Area2D
 
-enum ActionType { DIALOGUE, CLEANABLE, CLAIMABLE, MIXED }
+enum ActionType { DIALOGUE, CLEANABLE, CLAIMABLE, MIXED,DOOR }
 
 const Balloon = preload("res://game/dialogue/balloon.tscn")
 
@@ -10,6 +11,7 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var dialogue_start: String = "start"
 @export var active: bool = true
 @export var is_always_active: bool = false
+@export var transition_area: TransitionArea = null
 var system_name: String = "[Actionable]"
 
 @onready var root = $".."
@@ -37,7 +39,6 @@ func action() -> void:
 		if Inventory.is_have_item(item_to_claim.name):
 			print(system_name, "Item already claimed:", item_to_claim.name)
 			return
-
 		Inventory.add_item(item_to_claim)
 		hide_root()
 	elif action_type == ActionType.CLEANABLE:
