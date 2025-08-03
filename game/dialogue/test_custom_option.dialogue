@@ -1,0 +1,7 @@
+~ start
+do hello()
+do pirate()
+set pirate_name = "delilah"
+#do debug(pirate_name)
+#do debug(Invnetory.system_name)
+=> END

@@ -1,17 +1,21 @@
 ~ start
 
-Nathan: Hi Coco.
-do Global.print_something("Call Something Here")
+Nathan: Hi [do! Global.print_something("inline mutation test")] Coco.
+
+Nathan: What would you like to give me?
+- Nothing right now
+	Nathan: Alright, maybe next time.
+- Look around for items => look_for_items
+
 if State.apple_status == "has":
 	Coco: I have an apple.
-	- Give to Nathan
+	- Give apple to Nathan
 		set State.apple_status = "gave"
 		Coco: Here you go.
-		Nathan: Thanks.
+		Nathan: Thanks for the apple!
 	- Keep it
 		Coco: But it's mine.
 		Nathan: Fair enough.
-		do print("Call Something Here")
 elif State.apple_status == "gave":
 	Nathan: Thanks again for the apple.
 else:
@@ -19,6 +23,13 @@ else:
 
 => END
 
+~ look_for_items
+
+Coco: Let me look around...
+# 這裡可以觸發撿拾物品的邏輯
+do Inventory.add_test_item()
+Coco: I found something!
+=> start
 
 ~ pick_apple
 
@@ -26,4 +37,13 @@ Coco: It's an apple tree.
 Coco: I'll just take one.
 set State.apple_status = "has"
 
+~ show_inventory_option
+
+if Inventory.is_have_item("TestItem") == true
+	- TestItem
+		do Inventory.on_boss_select("TestItem")
+
+
+#do Inventory.item_to_options()
 => END
+
