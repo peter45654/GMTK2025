@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_3ague")
 name = "Key"
-description = "A normal key, maybe it can open some door lead to mysterios room"
+description = "A normal key, maybe it can open some door lead to mysterious room"
 expression = "print(\"TestItemSelect\")"
 metadata/_custom_type_script = "uid://b43niu5gjbdar"
