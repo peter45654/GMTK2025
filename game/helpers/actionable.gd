@@ -8,6 +8,7 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var item_to_claim: BaseItem = null
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
+@export var active: bool = true
 var system_name: String = "[Actionable]"
 
 @onready var root = $".."
@@ -18,6 +19,9 @@ func _ready() -> void:
 
 
 func action() -> void:
+	if !active:
+		print(system_name, "Actionable is not active, skipping action.")
+		return
 	if action_type == ActionType.DIALOGUE:
 		var balloon: Node = Balloon.instantiate()
 		get_tree().current_scene.add_child(balloon)
@@ -46,9 +50,11 @@ func action() -> void:
 		if dialogue_resource != null:
 			create_dialogue()
 		hide_root()
-
 	else:
 		print(system_name, "Unknown action type:", action_type)
+		return
+
+	active = false
 
 
 func create_dialogue() -> void:
@@ -62,6 +68,7 @@ func create_dialogue() -> void:
 
 func reset() -> void:
 	show_root()
+	active = true
 	print(system_name, "Actionable reset done.")
 
 

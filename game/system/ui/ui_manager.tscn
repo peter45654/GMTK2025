@@ -21,6 +21,7 @@ offset_left = 32.0
 offset_top = 19.0
 offset_right = 136.0
 offset_bottom = 58.0
+focus_mode = 0
 text = "Inventory"
 
 [node name="InventoryPanel" type="Panel" parent="CanvasLayer"]
