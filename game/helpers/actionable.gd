@@ -53,7 +53,11 @@ func action() -> void:
 		if item_to_claim != null:
 			if !Inventory.is_have_item(item_to_claim.name):
 				Inventory.add_item(item_to_claim)
-
+		if clean_body != null:
+			clean_body.get_child(0).disabled = true
+		if clean_show != null:
+			clean_show.show()
+			print(system_name, "Clean show node hidden.")
 		if dialogue_resource != null:
 			create_dialogue()
 		hide_root()

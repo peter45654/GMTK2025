@@ -128,11 +128,13 @@ shape = SubResource("CircleShape2D_gy5jl")
 [node name="TransionPos" type="Node2D" parent="Map/Workshop/Objects" index="17"]
 position = Vector2(185, 5)
 
-[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Mops" index="0" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Mops" index="0" node_paths=PackedStringArray("clean_body", "clean_show") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(21.9266, 0.983876)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = " clean_mop"
+clean_body = NodePath("../../MopBody")
+clean_show = NodePath("../../../MopsOn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Mops/Actionable"]
 position = Vector2(-12.9265, 2.01612)
@@ -151,11 +153,13 @@ position = Vector2(263, -9)
 position = Vector2(-5, 8)
 shape = SubResource("RectangleShape2D_og0sj")
 
-[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Cart" index="0" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Cart" index="0" node_paths=PackedStringArray("clean_body", "clean_show") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(21.9266, 0.983876)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = " clean_cart"
+clean_body = NodePath("../../CartBody")
+clean_show = NodePath("../../../CartOn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Cart/Actionable"]
 shape = SubResource("CircleShape2D_gy5jl")
@@ -237,7 +241,7 @@ position = Vector2(2.5, 6)
 shape = SubResource("RectangleShape2D_bbyh4")
 
 [node name="find_key_teapot" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
-position = Vector2(252, 24)
+position = Vector2(252, 26)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_key_teapot"
@@ -259,7 +263,7 @@ position = Vector2(1.5, 8)
 shape = SubResource("RectangleShape2D_2nnov")
 
 [node name="find_key_paint_bottle" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
-position = Vector2(389, -21)
+position = Vector2(313, 28)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_key_paint_bottle"
@@ -267,6 +271,17 @@ boss_progress_to_active = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_paint_bottle"]
 position = Vector2(1.5, 8)
+shape = SubResource("RectangleShape2D_2nnov")
+
+[node name="find_key_vessal" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(313, 28)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_key_vessal"
+boss_progress_to_active = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_vessal"]
+position = Vector2(-60, -46)
 shape = SubResource("RectangleShape2D_2nnov")
 
 [node name="failure_wooden_horse" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
