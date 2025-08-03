@@ -75,7 +75,10 @@ vertical_alignment = 1
 [node name="item_description" type="Label" parent="CanvasLayer/ItemAttributePanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
-text = "Content"
+text = "Content
+ContentContentContentContentContentContentContentContentContentContentContentContentContent"
+autowrap_mode = 3
+clip_text = true
 
 [connection signal="pressed" from="CanvasLayer/UserInterface/func toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/InventoryPanel/ScrollContainer/GridContainer/Button" to="." method="_on_item_button_mouse_entered"]
