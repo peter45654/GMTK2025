@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://r7ehq5csoyt4"]
+
+[ext_resource type="Texture2D" uid="uid://babi67fs8bq21" path="res://art_test/character/HollowPuppet.png" id="1_qcndy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04r40"]
+atlas = ExtResource("1_qcndy")
+region = Rect2(288, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wib0"]
+atlas = ExtResource("1_qcndy")
+region = Rect2(304, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl1dm"]
+atlas = ExtResource("1_qcndy")
+region = Rect2(320, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqrr6"]
+atlas = ExtResource("1_qcndy")
+region = Rect2(336, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y1ab"]
+atlas = ExtResource("1_qcndy")
+region = Rect2(352, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja7yp"]
+atlas = ExtResource("1_qcndy")
+region = Rect2(368, 32, 16, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04r40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wib0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl1dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqrr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y1ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja7yp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
