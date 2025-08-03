@@ -13,7 +13,7 @@ Nathan: For more information see the online documentation.
 
 if GameManager.tomas_progress==0:
 	Tomas:
-		"...Ah, it's you again, little one. Just... sitting here. Same as always."
+		"Ah, it's you again, little one. Just sitting here. Same as always."
 	- Do nothing
 		
 	- Give him an item
@@ -27,10 +27,31 @@ if GameManager.tomas_progress==1:
 ~ tomas_receive_none
 
 Tomas:
-	Go away than. I an drinking.	
+	"Hm. Go on, then. Go about your business."
 
 => END!
-
+~ overdue_order_ans
+Tomas:
+	"Hm? Little one, what... what have you brought over?"
+Tomas:
+	"...Ah. This order form."
+Tomas:
+	"Heh... this one. It's for an old client. From a long time ago. Brings back memories."
+Tomas:
+	"Thank you for finding it, little one. But... it's not needed anymore."
+- Leave
+- Push the order a little closer.
+Tomas:
+	"...You're a persistent one, aren't you?"
+Tomas:
+	"I'm... just a bit tired today, little one. I don't much feel like talking about old jobs."
+Tomas:
+	"It's better to just let things be."
+Tomas:	
+	"A new day... that's what's needed now. A fresh start."
+do GameManager.tomas_done_begin_talking()
+	
+=> END
 ~ tomas_progress_1_talking_begin
 
 Tomas:

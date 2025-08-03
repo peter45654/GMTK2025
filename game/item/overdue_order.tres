@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=2 format=3 uid="uid://cpqhw4v6ofoku"]
+
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="1_7yo16"]
+
+[resource]
+script = ExtResource("1_7yo16")
+name = "Overdue Order"
+description = "This is an overdued order for a custom wooden chair."
+expression = "print(\"TestItemSelect\")"
+metadata/_custom_type_script = "uid://b43niu5gjbdar"

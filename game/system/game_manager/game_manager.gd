@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 		print(system_name, "Transition in progress, showing black block.")
 		return
 
-	create_dialogue("tomas_progress_1_talking")
+	create_dialogue("tomas_progress_%d_talking" % tomas_progress)
 	is_need_wait_for_talking = false
 
 	print(system_name, "Game transition completed.")
@@ -90,7 +90,9 @@ func tomas_recieve_item(item_name: String) -> void:
 		tomas_progress += 1
 		print(system_name, "Tomas received item:", item_name, "Progress:", tomas_progress)
 		create_dialogue("tomas_progress_1_talking_begin")
-
+	elif item_name == "Overdue Order":
+		tomas_progress = 1
+		create_dialogue("overdue_order_ans")
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
 		create_dialogue("tomas_receive_none")
