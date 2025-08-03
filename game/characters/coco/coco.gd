@@ -20,6 +20,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			if actionables[0].action_type == Actionable.ActionType.DOOR:
+				if actionables[0].is_locked:
+					if !Inventory.is_have_item("Key"):
+						actionables[0].door_locked()
+						return
 				var transition_area = actionables[0].transition_area
 				if transition_area:
 					transition_area.transition_to_origin_room(self)

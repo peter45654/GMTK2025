@@ -15,6 +15,8 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var boss_progress_to_active: int = 0
 @export var clean_body: StaticBody2D
 @export var clean_show: Node2D
+@export var is_locked: bool = false
+
 var system_name: String = "[Actionable]"
 
 @onready var root = $".."
@@ -143,3 +145,9 @@ func turn_on_collision() -> void:
 	if collision_shape:
 		collision_shape.set_deferred("disabled", false)
 		print(system_name, "Collision shape turned on.")
+
+func door_locked() -> void:
+	if !is_locked:
+		print(system_name, "Door is not locked.")
+		return
+	create_dialogue()
