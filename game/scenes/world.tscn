@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://byqyiy823ab7s" path="res://game/world/apple_tree.tscn" id="5_h6ns3"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="6_h5iv0"]
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/nathan/nathan.tscn" id="6_ilwpu"]
-[ext_resource type="Resource" uid="uid://b426p4338gqma" path="res://game/dialogue/main.dialogue" id="7_y08k3"]
-[ext_resource type="Resource" uid="uid://bft4urxe83gkd" path="res://game/dialogue/test_custom_option.dialogue" id="8_nepmf"]
+[ext_resource type="Resource" uid="uid://b426p4338gqma" path="res://game/dialogue/main.dialogue" id="7_nepmf"]
+[ext_resource type="Resource" uid="uid://bft4urxe83gkd" path="res://game/dialogue/test_custom_option.dialogue" id="8_ifrqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4af00"]
 texture = ExtResource("1_gv7bj")
@@ -62,7 +62,7 @@ position = Vector2(320, 152)
 position = Vector2(360, 120)
 
 [node name="Actionable" parent="Nathan" instance=ExtResource("6_h5iv0")]
-dialogue_resource = ExtResource("7_y08k3")
+dialogue_resource = ExtResource("7_nepmf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nathan/Actionable"]
 shape = SubResource("CircleShape2D_w48o2")
@@ -73,7 +73,7 @@ position = Vector2(321, 100)
 rotation = 3.11864
 
 [node name="Actionable" parent="Nathan2" instance=ExtResource("6_h5iv0")]
-dialogue_resource = ExtResource("8_nepmf")
+dialogue_resource = ExtResource("8_ifrqp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nathan2/Actionable"]
 shape = SubResource("CircleShape2D_w48o2")
@@ -83,7 +83,7 @@ position = Vector2(298, 119)
 rotation = 3.11864
 
 [node name="Actionable" parent="Nathan3" instance=ExtResource("6_h5iv0")]
-dialogue_resource = ExtResource("7_y08k3")
+dialogue_resource = ExtResource("7_nepmf")
 dialogue_start = "show_inventory_option"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nathan3/Actionable"]
@@ -94,7 +94,7 @@ position = Vector2(184, 88)
 
 [node name="Actionable" parent="AppleTree" instance=ExtResource("6_h5iv0")]
 position = Vector2(-1, 0)
-dialogue_resource = ExtResource("7_y08k3")
+dialogue_resource = ExtResource("7_nepmf")
 dialogue_start = "pick_apple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AppleTree/Actionable"]
