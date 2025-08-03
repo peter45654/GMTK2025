@@ -11,6 +11,7 @@ var system_name: String = "[UIManager]"
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var item_name: Label = $CanvasLayer/ItemAttributePanel/VBoxContainer/item_name
 @onready var item_description: Label = $CanvasLayer/ItemAttributePanel/VBoxContainer/item_description
+# TODO Toast
 
 
 func _ready():

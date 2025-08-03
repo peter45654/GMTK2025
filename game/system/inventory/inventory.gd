@@ -67,3 +67,7 @@ func remove_item(item: BaseItem) -> void:
 	if item in items:
 		items.erase(item)
 		print(system_name, "Removed item: " + item.name)
+
+func clear_inventory() -> void:
+	items.clear()
+	print(system_name, "Inventory cleared.")

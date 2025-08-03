@@ -22,6 +22,7 @@ Global="*res://global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Inventory="*res://game/system/inventory/inventory.tscn"
 UiManager="*res://game/system/ui/ui_manager.tscn"
+GameManager="*res://game/system/game_manager/game_manager.tscn"
 
 [dialogue_manager]
 
@@ -35,6 +36,10 @@ window/size/viewport_height=560
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[global_group]
+
+Interactable=""
 
 [internationalization]
 
