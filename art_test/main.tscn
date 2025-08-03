@@ -82,14 +82,6 @@
 [ext_resource type="Texture2D" uid="uid://bb67gyp5t7v1t" path="res://art_test/interior_pack/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_24.png" id="78_d5ouo"]
 [ext_resource type="PackedScene" uid="uid://ctv63vfcry33" path="res://art_test/character/old_man.tscn" id="79_gu4mo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ql1yo"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(16, 19, 16, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0axao"]
-atlas = ExtResource("3_wc8bx")
-region = Rect2(195, 50, 27, 30)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7j4o"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(112, 32, 16, 32)
@@ -102,6 +94,18 @@ region = Rect2(131, 49, 25, 14)
 atlas = ExtResource("4_er7i0")
 region = Rect2(128, 32, 31, 17)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5awb"]
+atlas = ExtResource("4_er7i0")
+region = Rect2(159, 32, 49, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql1yo"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(16, 19, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0axao"]
+atlas = ExtResource("3_wc8bx")
+region = Rect2(195, 50, 27, 30)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4cld"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(128, 4, 16, 27)
@@ -109,6 +113,14 @@ region = Rect2(128, 4, 16, 27)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo6cb"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(1, 32, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdnaa"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(17, 70, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(50, 21, 13, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rngb"]
 atlas = ExtResource("4_er7i0")
@@ -118,9 +130,13 @@ region = Rect2(97, 65, 46, 46)
 atlas = ExtResource("4_er7i0")
 region = Rect2(6, 4, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5awb"]
-atlas = ExtResource("4_er7i0")
-region = Rect2(159, 32, 49, 33)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiobi"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(3, 54, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybao6"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(53, 2, 7, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oiwee"]
 atlas = ExtResource("4_er7i0")
@@ -164,29 +180,13 @@ region = Rect2(147, 112, 25, 44)
 atlas = ExtResource("4_er7i0")
 region = Rect2(49, 116, 15, 44)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rdnaa"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(17, 70, 14, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybao6"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(53, 2, 7, 15)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pmx0"]
 atlas = ExtResource("2_ketuw")
 region = Rect2(4, 1, 8, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aiobi"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(3, 54, 11, 10)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtu43"]
 atlas = ExtResource("2_ketuw")
 region = Rect2(113, 16, 12, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(50, 21, 13, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlrae"]
 atlas = ExtResource("46_l3ff3")
@@ -214,143 +214,158 @@ use_parent_material = true
 tile_set = ExtResource("1_okjid")
 metadata/_edit_lock_ = true
 
-[node name="Paint" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(61, -25)
-rotation = -0.0238644
-texture = SubResource("AtlasTexture_ql1yo")
+[node name="Floor" type="Node2D" parent="LivingRoom"]
 
-[node name="Window" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(18, -16)
-rotation = 0.0122729
-texture = SubResource("AtlasTexture_0axao")
-
-[node name="Carpet2" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet2" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(165.5, 41)
 rotation = 0.136903
+scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_v7j4o")
 
-[node name="Carpet4" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet4" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(151, 89)
 rotation = 3.13474
 texture = SubResource("AtlasTexture_er7i0")
 
-[node name="Carpet3" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet3" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(25.5, 87)
 rotation = 0.0187283
 texture = SubResource("AtlasTexture_4jfn1")
 
-[node name="Chair" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(88.7793, 58.1814)
-rotation = -0.0925186
-texture = SubResource("AtlasTexture_t4cld")
-
-[node name="Chair2" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(108.779, 66.1814)
-texture = SubResource("AtlasTexture_t4cld")
-
-[node name="Table" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(97.3894, 80)
-rotation = -0.0265047
-texture = SubResource("AtlasTexture_mo6cb")
-
-[node name="Table2" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(125.5, -9)
-texture = SubResource("AtlasTexture_0rngb")
-
-[node name="Table3" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(60.5, 0)
-texture = SubResource("AtlasTexture_5s4g8")
-
-[node name="Carpet" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(9.5, 44)
 rotation = 0.0937343
 texture = SubResource("AtlasTexture_q5awb")
 
-[node name="Closet" type="Sprite2D" parent="LivingRoom"]
+[node name="Object" type="Node2D" parent="LivingRoom"]
+y_sort_enabled = true
+
+[node name="Paint" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(61, -25)
+rotation = -0.0238644
+texture = SubResource("AtlasTexture_ql1yo")
+
+[node name="Window" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(18, -16)
+rotation = 0.0122729
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_0axao")
+
+[node name="Chair" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(88.7793, 58.1814)
+rotation = -0.0925186
+texture = SubResource("AtlasTexture_t4cld")
+
+[node name="Chair2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(108.779, 66.1814)
+texture = SubResource("AtlasTexture_t4cld")
+
+[node name="Table" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(97.3894, 80)
+rotation = -0.0265047
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_mo6cb")
+
+[node name="DirtyDish" type="Sprite2D" parent="LivingRoom/Object/Table"]
+position = Vector2(-8.14754, -9.21917)
+rotation = 0.0325996
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_rdnaa")
+
+[node name="Paper" type="Sprite2D" parent="LivingRoom/Object/Table"]
+position = Vector2(16.8698, -9.55629)
+rotation = 0.0026403
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_5cwhe")
+
+[node name="Table2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(125.5, -9)
+texture = SubResource("AtlasTexture_0rngb")
+
+[node name="Table3" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(60.5, 0)
+texture = SubResource("AtlasTexture_5s4g8")
+
+[node name="OpenedBook" type="Sprite2D" parent="LivingRoom/Object/Table3"]
+position = Vector2(-5, -7)
+rotation = -0.0473025
+texture = SubResource("AtlasTexture_aiobi")
+
+[node name="PenBucket" type="Sprite2D" parent="LivingRoom/Object/Table3"]
+position = Vector2(5, -11)
+rotation = 0.0060949
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_ybao6")
+
+[node name="Closet" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-19.5, 1)
 texture = SubResource("AtlasTexture_oiwee")
 
-[node name="Sofa" type="Sprite2D" parent="LivingRoom"]
+[node name="Sofa" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(17.5, 2)
 rotation = 0.0448972
+scale = Vector2(1, 1)
 skew = -0.0349066
 texture = SubResource("AtlasTexture_j4kga")
 
-[node name="Sofa2" type="Sprite2D" parent="LivingRoom"]
+[node name="Sofa2" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-16.5, 37)
 rotation = -0.064319
 texture = SubResource("AtlasTexture_tvv8m")
 
-[node name="Clock" type="Sprite2D" parent="LivingRoom"]
+[node name="Clock" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(161.5, -5)
 rotation = 0.0660755
 skew = -0.0349066
 texture = SubResource("AtlasTexture_kh580")
 
-[node name="Lamp" type="Sprite2D" parent="LivingRoom"]
+[node name="Lamp" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(46.5, -5)
 texture = SubResource("AtlasTexture_i024g")
 
-[node name="Box" type="Sprite2D" parent="LivingRoom"]
+[node name="Box" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-9.5, 77)
 texture = SubResource("AtlasTexture_t3n7g")
 
-[node name="Box4" type="Sprite2D" parent="LivingRoom"]
+[node name="Box4" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-23.5, 65)
 texture = SubResource("AtlasTexture_te68m")
 
-[node name="Box2" type="Sprite2D" parent="LivingRoom"]
+[node name="Box2" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-18.5, 86)
 texture = SubResource("AtlasTexture_t3n7g")
 
-[node name="Box3" type="Sprite2D" parent="LivingRoom"]
+[node name="Box3" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(60.5, 87)
 texture = SubResource("AtlasTexture_t3n7g")
 
-[node name="SmallTable" type="Sprite2D" parent="LivingRoom"]
+[node name="SmallTable" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(11.5, 43)
 rotation = 0.0122729
+scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_8tgj8")
 
-[node name="Fireplace" type="Sprite2D" parent="LivingRoom"]
+[node name="Fireplace" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(84.5, -10)
 texture = SubResource("AtlasTexture_cqqll")
 
-[node name="ClothShelf" type="Sprite2D" parent="LivingRoom"]
+[node name="ClothShelf" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(132.046, 74)
 texture = SubResource("AtlasTexture_hhhqr")
 
-[node name="DirtyDish" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(89.0004, 71)
+[node name="Cloth" type="Sprite2D" parent="LivingRoom/Object/ClothShelf"]
+position = Vector2(-8.00001, -13)
 rotation = 0.0060949
-texture = SubResource("AtlasTexture_rdnaa")
-
-[node name="PenBucket" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(65.5, -12)
-rotation = 0.0060949
-texture = SubResource("AtlasTexture_ybao6")
-
-[node name="Cloth" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(124.046, 61)
-rotation = 0.0060949
+scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_3pmx0")
 
-[node name="OpenedBook" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(55.5, -7)
-rotation = -0.0473025
-texture = SubResource("AtlasTexture_aiobi")
-
-[node name="Flower" type="Sprite2D" parent="LivingRoom"]
+[node name="Flower" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-24.5, 52)
 rotation = -0.0238644
 texture = SubResource("AtlasTexture_jtu43")
 
-[node name="Paper" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(114, 70)
-rotation = -0.0238644
-texture = SubResource("AtlasTexture_5cwhe")
-
 [node name="BoyRoom" type="Node2D" parent="."]
+visible = false
 modulate = Color(0.785641, 0.785641, 0.785641, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="BoyRoom"]
@@ -563,6 +578,7 @@ position = Vector2(86, 93)
 texture = ExtResource("10_yaf5i")
 
 [node name="Workshop" type="Node2D" parent="."]
+visible = false
 modulate = Color(0.299547, 0.299547, 0.299547, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Workshop"]
