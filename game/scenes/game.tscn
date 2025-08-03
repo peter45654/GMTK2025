@@ -43,6 +43,8 @@ position = Vector2(25, 13)
 
 [node name="Actionable" parent="Map/LivingRoom/Object/Tomas" instance=ExtResource("4_gy5jl")]
 dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "tomas"
+is_always_active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Tomas/Actionable"]
 shape = SubResource("CircleShape2D_og0sj")

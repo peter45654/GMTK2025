@@ -9,6 +9,7 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
 @export var active: bool = true
+@export var is_always_active: bool = false
 var system_name: String = "[Actionable]"
 
 @onready var root = $".."
@@ -54,7 +55,8 @@ func action() -> void:
 		print(system_name, "Unknown action type:", action_type)
 		return
 
-	active = false
+	if !is_always_active:
+		active = false
 
 
 func create_dialogue() -> void:

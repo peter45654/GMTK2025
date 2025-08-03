@@ -3,7 +3,7 @@ extends Node
 @export var item_btn: PackedScene
 
 var system_name: String = "[UIManager]"
-
+var is_boss_open_inventory: bool = false
 @onready var user_interface: Control = $CanvasLayer/UserInterface
 @onready var inventory_ui: Control = $CanvasLayer/InventoryPanel
 @onready var item_container: Control = $CanvasLayer/InventoryPanel/ScrollContainer/GridContainer
@@ -11,7 +11,6 @@ var system_name: String = "[UIManager]"
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var item_name: Label = $CanvasLayer/ItemAttributePanel/VBoxContainer/item_name
 @onready var item_description: Label = $CanvasLayer/ItemAttributePanel/VBoxContainer/item_description
-# TODO Toast
 
 
 func _ready():
@@ -32,26 +31,18 @@ func _ready():
 	item_attribute_container.visible = false
 	print(system_name, " UI Manager is ready.")
 
+func open_inventory_ui(is_open_by_boss:bool) -> void:
+	_generate_item_buttons()
+	is_boss_open_inventory = is_open_by_boss
+	inventory_ui.visible = true
+	print(system_name, " Inventory UI is now open. is_boss_open_inventory:", is_boss_open_inventory)
+
+func close_inventory_ui() -> void:
+	inventory_ui.visible = false
+	print(system_name, " Inventory UI is now closed.")
 
 func toggle_inventory_ui() -> void:
-	var items: Array = Inventory.get_items()
-	# clear existing item buttons
-	var children: Array = item_container.get_children()
-	for child in children:
-		if child is Label:
-			child.queue_free()
-
-	for item in items:
-		print(system_name, "Item in inventory:", item.name, "Description:", item.description)
-		var item_btn_instance = item_btn.instantiate() as Label
-		item_container.add_child(item_btn_instance)
-		item_btn_instance.name = item.name + "_label"
-		item_btn_instance.text = item.name
-		item_btn_instance.connect(
-			"gui_input", _on_item_button_mouse_entered.bind(item_btn_instance, item)
-		)
-		item_btn_instance.connect("mouse_exited", _on_item_button_mouse_exited)
-
+	_generate_item_buttons()
 
 	if inventory_ui.visible:
 		inventory_ui.visible = false
@@ -61,11 +52,33 @@ func toggle_inventory_ui() -> void:
 		print(system_name, " Inventory UI is now visible.")
 
 
+func _generate_item_buttons() -> void:
+	var items: Array = Inventory.get_items()
+	# clear existing item buttons
+	var children: Array = item_container.get_children()
+	for child in children:
+		if child is Button:
+			child.queue_free()
+
+	for item in items:
+		print(system_name, "Item in inventory:", item.name, "Description:", item.description)
+		var item_btn_instance = item_btn.instantiate() as Button
+		item_container.add_child(item_btn_instance)
+		item_btn_instance.name = item.name + "_button"
+		item_btn_instance.text = item.name
+		item_btn_instance.connect(
+			"gui_input", _on_item_button_mouse_entered.bind(item_btn_instance, item)
+		)
+		item_btn_instance.connect("mouse_exited", _on_item_button_mouse_exited)
+		item_btn_instance.connect("pressed", _on_item_button_pressed.bind(item_btn_instance, item))
+
+# region signal handlers
+
 func _on_func_toggle_inventory_ui_btn_pressed() -> void:
 	toggle_inventory_ui()
 
 
-func _on_item_button_mouse_entered(_event: InputEvent, button: Label, base_item: BaseItem) -> void:
+func _on_item_button_mouse_entered(_event: InputEvent, button: Button, base_item: BaseItem) -> void:
 	item_attribute_container.visible = true
 	item_attribute_container.position = button.get_global_mouse_position()
 	item_name.text = base_item.name
@@ -73,3 +86,12 @@ func _on_item_button_mouse_entered(_event: InputEvent, button: Label, base_item:
 
 func _on_item_button_mouse_exited() -> void:
 	item_attribute_container.visible = false
+
+func _on_item_button_pressed(_button: Button, base_item: BaseItem) -> void:
+	if !is_boss_open_inventory:
+		print(system_name, "Item button pressed without boss context, ignoring.")
+		return
+	GameManager.tomas_recieve_item(base_item.name)
+	print(system_name, "Item button pressed:", base_item.name)
+	close_inventory_ui()
+# endregion signal handlers

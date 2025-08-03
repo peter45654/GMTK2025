@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://qj22tpmdsvft"]
 
-[node name="Label" type="Label"]
+[node name="Label" type="Button"]
 custom_minimum_size = Vector2(0, 55.07)
 offset_right = 77.0
 offset_bottom = 55.07
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 11.22
-mouse_filter = 0
+focus_mode = 0
 text = "TestItem
 "
-horizontal_alignment = 1
-vertical_alignment = 1

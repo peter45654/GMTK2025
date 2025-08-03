@@ -42,7 +42,10 @@ set State.apple_status = "has"
 if Inventory.is_have_item("TestItem") == true
 	- TestItem
 		do Inventory.on_boss_select("TestItem")
-
+	
+#if Inventory.is_have_item("TestItem") == true
+	 - TestItem2
+#		do Inventory.on_boss_select("TestItem")
 
 #do Inventory.item_to_options()
 => END

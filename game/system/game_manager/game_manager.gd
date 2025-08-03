@@ -5,6 +5,7 @@ const TRANSITION_DURATION_MS: float = 1000
 var system_name: String = "[GameManager]"
 var is_resetting: bool = false
 var reset_time: float = 0.0
+var tomas_progress: int = 0
 
 func _process(_delta: float) -> void:
 	if !is_resetting:
@@ -44,6 +45,7 @@ func _input(event: InputEvent) -> void:
 
 func reset_progress() -> void:
 	Inventory.clear_inventory()
+	tomas_progress = 0
 	print(system_name, "Progress reset.")
 
 func show_black_block() -> void:
@@ -57,3 +59,10 @@ func hide_black_block() -> void:
 	if black_block:
 		black_block.hide()
 	print(system_name, "Black block visibility hidden.")
+
+func tomas_recieve_item(item_name: String) -> void:
+	if item_name == "TestItem":
+		tomas_progress += 1
+		print(system_name, "Tomas received item:", item_name, "Progress:", tomas_progress)
+	else:
+		print(system_name, "Tomas does not recognize item:", item_name)

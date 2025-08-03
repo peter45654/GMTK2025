@@ -9,6 +9,21 @@ Nathan: Here are some choices.
 - End the conversation => END
 Nathan: For more information see the online documentation.
 
+~ tomas
+
+if GameManager.tomas_progress==0:
+	Tomas:
+		I am Tomas. what do you want?
+	- Do nothing
+		
+	- Give him an item
+		do UiManager.open_inventory_ui(true)
+		
+if GameManager.tomas_progress==1:
+	阿八八八
+	
+=> END
+
 ~ clean_bottle
 
 you clean up the bottle.
