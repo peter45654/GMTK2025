@@ -8,4 +8,16 @@ Nathan: Here are some choices.
 - Start again => start
 - End the conversation => END
 Nathan: For more information see the online documentation.
+
+~ clean_bottle
+
+you clean up the bottle.
+
+=> END
+
+~ claim_key_from_bottle
+
+you found there is key in the broken bottle.
+you pick it up.
+
 => END
