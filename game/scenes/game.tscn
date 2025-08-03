@@ -13,17 +13,14 @@ radius = 8.0
 
 [node name="Map" parent="." instance=ExtResource("1_7aouk")]
 
-[node name="Coco" parent="." instance=ExtResource("2_vv3et")]
+[node name="Coco" parent="Map/Workshop/Objects" index="18" instance=ExtResource("2_vv3et")]
+position = Vector2(218, -8)
 
-[node name="Camera2D" type="Camera2D" parent="Coco"]
+[node name="Camera2D" type="Camera2D" parent="Map/Workshop/Objects/Coco"]
 position = Vector2(-1, -1)
 zoom = Vector2(3.15, 3.15)
 
-[node name="Tomas" parent="." instance=ExtResource("3_wowgv")]
-position = Vector2(97, 32)
+[node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="5"]
+polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
 
-[node name="Actionable" parent="Tomas" instance=ExtResource("4_ykdcs")]
-dialogue_resource = ExtResource("5_ykdcs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tomas/Actionable"]
-shape = SubResource("CircleShape2D_gy5jl")
+[editable path="Map"]
