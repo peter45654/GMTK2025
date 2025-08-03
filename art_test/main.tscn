@@ -763,6 +763,31 @@ texture = ExtResource("59_nmgt2")
 position = Vector2(250, -23)
 texture = ExtResource("59_nmgt2")
 
+[node name="Bottles" type="Node2D" parent="Workshop/FloorWall"]
+position = Vector2(13, 0)
+metadata/_edit_group_ = true
+
+[node name="HalloweenShadowSingles82" type="Sprite2D" parent="Workshop/FloorWall/Bottles"]
+position = Vector2(293, -4)
+texture = ExtResource("59_nmgt2")
+
+[node name="Bottle" type="Sprite2D" parent="Workshop/FloorWall/Bottles"]
+position = Vector2(292, -10)
+rotation = -1.48813
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("81_o0pjo")
+
+[node name="Bottle2" type="Sprite2D" parent="Workshop/FloorWall/Bottles"]
+position = Vector2(286, -6)
+rotation = 1.57021
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("82_d5tyx")
+
+[node name="Bottle3" type="Sprite2D" parent="Workshop/FloorWall/Bottles"]
+position = Vector2(290, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("82_d5tyx")
+
 [node name="Other" type="Node2D" parent="Workshop"]
 position = Vector2(305, 10)
 
@@ -920,6 +945,16 @@ texture = ExtResource("74_lw8xc")
 position = Vector2(0, -6)
 texture = ExtResource("75_d5ouo")
 
+[node name="CartOn" type="Sprite2D" parent="Workshop/Objects"]
+visible = false
+position = Vector2(275, -29)
+texture = ExtResource("73_lw8xc")
+
+[node name="MopsOn" type="Sprite2D" parent="Workshop/Objects"]
+visible = false
+position = Vector2(225, 16)
+texture = ExtResource("52_1wdtr")
+
 [node name="GreyTable" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(194, -13)
 texture = ExtResource("76_gu4mo")
@@ -939,40 +974,6 @@ position = Vector2(259, -9)
 rotation = -0.0446752
 skew = -0.0523599
 texture = ExtResource("73_lw8xc")
-
-[node name="CartOn" type="Sprite2D" parent="Workshop/Objects/Interacts"]
-visible = false
-position = Vector2(275, -29)
-texture = ExtResource("73_lw8xc")
-
-[node name="Bottles" type="Node2D" parent="Workshop/Objects/Interacts"]
-metadata/_edit_group_ = true
-
-[node name="HalloweenShadowSingles82" type="Sprite2D" parent="Workshop/Objects/Interacts/Bottles"]
-position = Vector2(293, -4)
-texture = ExtResource("59_nmgt2")
-
-[node name="Bottle" type="Sprite2D" parent="Workshop/Objects/Interacts/Bottles"]
-position = Vector2(292, -10)
-rotation = -1.48813
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("81_o0pjo")
-
-[node name="Bottle2" type="Sprite2D" parent="Workshop/Objects/Interacts/Bottles"]
-position = Vector2(286, -6)
-rotation = 1.57021
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("82_d5tyx")
-
-[node name="Bottle3" type="Sprite2D" parent="Workshop/Objects/Interacts/Bottles"]
-position = Vector2(290, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("82_d5tyx")
-
-[node name="MopsOn" type="Sprite2D" parent="Workshop/Objects/Interacts"]
-visible = false
-position = Vector2(225, 16)
-texture = ExtResource("52_1wdtr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Workshop"]
 visible = false

@@ -13,7 +13,7 @@ Nathan: For more information see the online documentation.
 
 if GameManager.tomas_progress==0:
 	Tomas:
-		I am Tomas. what do you want?
+		"...Ah, it's you again, little one. Just... sitting here. Same as always."
 	- Do nothing
 		
 	- Give him an item
@@ -54,10 +54,24 @@ do GameManager.tomas_done_talking()
 
 ~ clean_bottle
 
-you clean up the bottle.
+You clean up the bottle.
+=> END 
+~ clean_cart
+
+You push the cart back to the corner.
+=> END
+~ clean_mop
+
+You pick the tools up and put them back.
+
+=> END
+~ overdue_order
+This is an order for a custom wooden chair.
+The delivery date was months ago. It was never fulfilled.
+=> END
 
 
-
+~ tempalte
 => END
 
 ~ claim_key_from_bottle

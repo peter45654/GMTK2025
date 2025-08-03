@@ -12,6 +12,8 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var active: bool = true
 @export var is_always_active: bool = false
 @export var transition_area: TransitionArea = null
+@export var clean_body: StaticBody2D
+@export var clean_show: Node2D
 var system_name: String = "[Actionable]"
 
 @onready var root = $".."
@@ -55,6 +57,11 @@ func action() -> void:
 	else:
 		print(system_name, "Unknown action type:", action_type)
 		return
+	if clean_body != null:
+		clean_body.get_child(0).disabled = true
+	if clean_show != null:
+		clean_show.show()
+		print(system_name, "Clean show node hidden.")
 
 	if !is_always_active:
 		active = false
@@ -73,6 +80,12 @@ func reset() -> void:
 	show_root()
 	active = true
 	print(system_name, "Actionable reset done.")
+	if clean_body != null:
+		clean_body.get_child(0).disabled = false
+		print(system_name, "Clean body reset done.")
+	if clean_show != null:
+		clean_show.hide()
+		print(system_name, "Clean show node reset done.")
 
 
 func hide_root() -> void:

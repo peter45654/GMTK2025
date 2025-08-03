@@ -5,16 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
-[ext_resource type="Texture2D" uid="uid://fdwvpb1hi3pn" path="res://art_test/interior_pack/bottle.png" id="6_gy5jl"]
-[ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
-[ext_resource type="Script" uid="uid://maxt4u4wso1q" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
+[ext_resource type="Script" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gy5jl"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gy5jl"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru4j2"]
+size = Vector2(11, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og0sj"]
+size = Vector2(33.9199, 35.6936)
 
 [sub_resource type="Gradient" id="Gradient_l4dfk"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -32,14 +37,15 @@ gradient = SubResource("Gradient_l4dfk")
 
 [node name="Object" parent="Map/LivingRoom" index="3" groups=["OriginObjectContainer"]]
 
-[node name="Coco" parent="Map/LivingRoom/Object" index="19" groups=["Player"] instance=ExtResource("2_vv3et")]
-position = Vector2(46, 36)
+[node name="Actionable" parent="Map/LivingRoom/Object/Table/Paper" index="0" instance=ExtResource("4_gy5jl")]
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "overdue_order"
+is_always_active = true
 
-[node name="Camera2D" type="Camera2D" parent="Map/LivingRoom/Object/Coco"]
-position = Vector2(-1, -1)
-zoom = Vector2(3.15, 3.15)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Table/Paper/Actionable"]
+shape = SubResource("CircleShape2D_og0sj")
 
-[node name="Tomas" parent="Map/LivingRoom/Object" index="20" instance=ExtResource("3_ykdcs")]
+[node name="Tomas" parent="Map/LivingRoom/Object" index="19" instance=ExtResource("3_ykdcs")]
 position = Vector2(25, 13)
 
 [node name="Actionable" parent="Map/LivingRoom/Object/Tomas" instance=ExtResource("4_gy5jl")]
@@ -50,44 +56,20 @@ is_always_active = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Tomas/Actionable"]
 shape = SubResource("CircleShape2D_og0sj")
 
-[node name="DoorTransitionBackPos" type="Node2D" parent="Map/LivingRoom/Object" index="22"]
+[node name="DoorTransitionBackPos" type="Node2D" parent="Map/LivingRoom/Object" index="21"]
 position = Vector2(25, 87)
 rotation = -1.57079
 
-[node name="TransionPosWorkShopToLive" type="Node2D" parent="Map/LivingRoom/Object" index="23"]
+[node name="TransionPosWorkShopToLive" type="Node2D" parent="Map/LivingRoom/Object" index="22"]
 position = Vector2(169, 43)
+
+[node name="StaticBody2D" parent="Map/LivingRoom" index="4"]
+visible = false
 
 [node name="PointLight2D" parent="Map/LivingRoom" index="5"]
 visible = false
 
 [node name="Interactable" type="Node2D" parent="Map/LivingRoom" index="6"]
-
-[node name="Bottle4" type="Sprite2D" parent="Map/LivingRoom/Interactable"]
-position = Vector2(91, 30)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_gy5jl")
-
-[node name="Actionable" parent="Map/LivingRoom/Interactable/Bottle4" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
-action_type = 3
-dialogue_resource = ExtResource("5_l4dfk")
-dialogue_start = " clean_bottle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Interactable/Bottle4/Actionable"]
-shape = SubResource("CircleShape2D_gy5jl")
-
-[node name="Bottle5" type="Sprite2D" parent="Map/LivingRoom/Interactable"]
-position = Vector2(106, 30)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_gy5jl")
-
-[node name="Actionable" parent="Map/LivingRoom/Interactable/Bottle5" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
-action_type = 3
-item_to_claim = ExtResource("7_l4dfk")
-dialogue_resource = ExtResource("5_l4dfk")
-dialogue_start = "claim_key_from_bottle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Interactable/Bottle5/Actionable"]
-shape = SubResource("CircleShape2D_gy5jl")
 
 [node name="BoyRoom" parent="Map" index="1" groups=["BoyRoom"]]
 visible = true
@@ -108,11 +90,74 @@ shape = SubResource("CircleShape2D_4osd1")
 
 [node name="Workshop" parent="Map" index="2" groups=["WorkShop"]]
 
+[node name="Actionable" parent="Map/Workshop/FloorWall/Bottles" index="4" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(21.9266, 0.983876)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = " clean_bottle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/FloorWall/Bottles/Actionable"]
+position = Vector2(272.073, -4.98388)
+shape = SubResource("CircleShape2D_gy5jl")
+
 [node name="TransionPos" type="Node2D" parent="Map/Workshop/Objects" index="17"]
 position = Vector2(185, 5)
 
+[node name="Coco" parent="Map/Workshop/Objects" index="18" groups=["Player"] instance=ExtResource("2_vv3et")]
+position = Vector2(307, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Map/Workshop/Objects/Coco"]
+position = Vector2(-1, -1)
+zoom = Vector2(3.15, 3.15)
+
+[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Mops" index="0" node_paths=PackedStringArray("clean_body", "clean_show") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(21.9266, 0.983876)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = " clean_mop"
+clean_body = NodePath("../../MopBody")
+clean_show = NodePath("../../../MopsOn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Mops/Actionable"]
+position = Vector2(-12.9265, 2.01612)
+shape = SubResource("CircleShape2D_gy5jl")
+
+[node name="MopBody" type="StaticBody2D" parent="Map/Workshop/Objects/Interacts" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/MopBody"]
+position = Vector2(210.5, -6)
+shape = SubResource("RectangleShape2D_ru4j2")
+
+[node name="CartBody" type="StaticBody2D" parent="Map/Workshop/Objects/Interacts" index="2"]
+position = Vector2(263, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/CartBody"]
+position = Vector2(-5, 8)
+shape = SubResource("RectangleShape2D_og0sj")
+
+[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Cart" index="0" node_paths=PackedStringArray("clean_body", "clean_show") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(21.9266, 0.983876)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = " clean_cart"
+clean_body = NodePath("../../CartBody")
+clean_show = NodePath("../../../CartOn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Cart/Actionable"]
+shape = SubResource("CircleShape2D_gy5jl")
+
 [node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="6"]
 polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
+
+[node name="Map_Workshop_Objects_Interacts_Bottles#Actionable" parent="." groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(-10, -136)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = " clean_bottle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_Workshop_Objects_Interacts_Bottles#Actionable"]
+position = Vector2(292, -5)
+shape = SubResource("CircleShape2D_gy5jl")
 
 [node name="BlackBlock" type="TextureRect" parent="." groups=["BlackBlock"]]
 visible = false
