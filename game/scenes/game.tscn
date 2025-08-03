@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=12 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -12,6 +12,12 @@
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gy5jl"]
+
+[sub_resource type="Gradient" id="Gradient_l4dfk"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_og0sj"]
+gradient = SubResource("Gradient_l4dfk")
 
 [node name="Game" type="Node"]
 
@@ -67,5 +73,13 @@ shape = SubResource("CircleShape2D_gy5jl")
 
 [node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="6"]
 polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
+
+[node name="BlackBlock" type="TextureRect" parent="." groups=["BlackBlock"]]
+visible = false
+offset_left = -137.0
+offset_top = -84.0
+offset_right = 241.0
+offset_bottom = 137.0
+texture = SubResource("GradientTexture1D_og0sj")
 
 [editable path="Map"]
