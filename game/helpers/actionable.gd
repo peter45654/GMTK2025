@@ -1,7 +1,7 @@
 class_name Actionable
 extends Area2D
 
-enum ActionType { DIALOGUE, CLEANABLE, CLAIMABLE, MIXED, DOOR }
+enum ActionType { DIALOGUE, CLEANABLE, CLAIMABLE, MIXED, DOOR, CHECKITEM }
 
 const Balloon = preload("res://game/dialogue/balloon.tscn")
 
@@ -9,6 +9,7 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var item_to_claim: BaseItem = null
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
+@export var dialogue_option: String = "start"
 @export var active: bool = true
 @export var is_always_active: bool = false
 @export var transition_area: TransitionArea = null
@@ -17,6 +18,7 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var clean_show: Node2D
 @export var is_locked: bool = false
 @export var unlocked_item_name: String = ""
+@export var items_to_check: Array[BaseItem] = []
 
 var system_name: String = "[Actionable]"
 
@@ -64,6 +66,22 @@ func action() -> void:
 		if dialogue_resource != null:
 			create_dialogue()
 		hide_root()
+	elif action_type == ActionType.CHECKITEM:
+		if items_to_check.size() <= 0:
+			create_dialogue()
+			return
+		var is_failed = false
+		for item in items_to_check:
+			if !Inventory.is_have_item(item.name):
+				print(system_name, "Required item not found:", item.name)
+				is_failed = true
+				break
+		if is_failed:
+			create_dialogue()
+		else:
+			create_option_dialogue()
+		return
+
 	else:
 		print(system_name, "Unknown action type:", action_type)
 		if clean_body != null:
@@ -84,6 +102,15 @@ func create_dialogue() -> void:
 		print(system_name, "Dialogue resource is null, cannot start dialogue.")
 		return
 	balloon.start(dialogue_resource, dialogue_start)
+
+
+func create_option_dialogue() -> void:
+	var balloon: Node = Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	if dialogue_resource == null:
+		print(system_name, "Dialogue resource is null, cannot start dialogue.")
+		return
+	balloon.start(dialogue_resource, dialogue_option)
 
 
 func reset() -> void:
@@ -135,17 +162,20 @@ func show_root() -> void:
 	turn_on_collision()
 	print(system_name, "Root node shown.")
 
+
 func turn_off_collision() -> void:
 	var collision_shape := get_node("CollisionShape2D") as CollisionShape2D
 	if collision_shape:
 		collision_shape.set_deferred("disabled", true)
 		print(system_name, "Collision shape turned off.")
 
+
 func turn_on_collision() -> void:
 	var collision_shape := get_node("CollisionShape2D") as CollisionShape2D
 	if collision_shape:
 		collision_shape.set_deferred("disabled", false)
 		print(system_name, "Collision shape turned on.")
+
 
 func door_locked() -> void:
 	if !is_locked:

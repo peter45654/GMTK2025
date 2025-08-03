@@ -272,3 +272,17 @@ you pick it up.
 ~ living_room_to_boy_room_door_lock
 
 - the door is locked.
+
+=> END
+
+~ check_item_pass
+
+you gather all items!
+
+=> END
+
+~ check_item_failed
+
+you fail gather all items.
+
+=> END

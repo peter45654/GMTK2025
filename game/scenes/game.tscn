@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=35 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="6_r514v"]
+[ext_resource type="Resource" uid="uid://bebnt1pqnxfd" path="res://game/item/testItem.tres" id="7_j0spt"]
 [ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="7_ngn8n"]
 [ext_resource type="Resource" uid="uid://b5j6tycvdiskw" path="res://game/item/boy_item_paper.tres" id="8_2nnov"]
@@ -20,11 +22,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
+atlas = ExtResource("7_ngn8n")
+region = Rect2(50, 21, 13, 13)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xtou"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xtou"]
 atlas = ExtResource("7_ngn8n")
 region = Rect2(50, 21, 13, 13)
 
@@ -76,6 +82,24 @@ dialogue_start = "overdue_order"
 is_always_active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Table/Paper/Actionable"]
+shape = SubResource("CircleShape2D_og0sj")
+
+[node name="Paper2" type="Sprite2D" parent="Map/LivingRoom/Object/Table" index="2"]
+position = Vector2(-35.5286, -32.9531)
+rotation = 0.0026403
+texture = SubResource("AtlasTexture_5cwhe")
+
+[node name="Actionable" parent="Map/LivingRoom/Object/Table/Paper2" instance=ExtResource("4_gy5jl")]
+action_type = 5
+item_to_claim = ExtResource("3_l4dfk")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "check_item_failed"
+dialogue_option = "check_item_pass"
+is_always_active = true
+items_to_check = Array[ExtResource("6_r514v")]([ExtResource("7_l4dfk"), ExtResource("7_j0spt")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Table/Paper2/Actionable"]
+position = Vector2(5.72205e-06, 4.02331e-06)
 shape = SubResource("CircleShape2D_og0sj")
 
 [node name="Tomas" parent="Map/LivingRoom/Object" index="19" instance=ExtResource("3_ykdcs")]
@@ -138,7 +162,7 @@ visible = true
 [node name="Paper" type="Sprite2D" parent="Map/BoyRoom/Objects/TableL" index="1"]
 position = Vector2(3, -8)
 rotation = -0.0212241
-texture = SubResource("AtlasTexture_5cwhe")
+texture = SubResource("AtlasTexture_0xtou")
 
 [node name="Actionable" parent="Map/BoyRoom/Objects/TableL/Paper" instance=ExtResource("4_gy5jl")]
 action_type = 3
