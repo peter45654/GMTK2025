@@ -1,4 +1,5 @@
 extends Node
 
-func print_something(str:String):
-	print(str)
+
+func print_something(message: String):
+	print(message)
