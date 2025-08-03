@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=2 format=3 uid="uid://qoj56wnk6fcs"]
+
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="1_sophq"]
+
+[resource]
+script = ExtResource("1_sophq")
+name = "Wooden Horse"
+description = "A wooden horse. It's really well-made, but one of its legs is snapped off."
+expression = "print(\"TestItemSelect\")"
+metadata/_custom_type_script = "uid://b43niu5gjbdar"

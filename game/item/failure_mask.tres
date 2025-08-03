@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=2 format=3 uid="uid://l8h4mds1qiuo"]
+
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="1_hi2r7"]
+
+[resource]
+script = ExtResource("1_hi2r7")
+name = "Smooth Mask"
+description = "A smooth wooden mask, but there's no face on it."
+expression = "print(\"TestItemSelect\")"
+metadata/_custom_type_script = "uid://b43niu5gjbdar"

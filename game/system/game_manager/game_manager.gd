@@ -8,7 +8,7 @@ const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialo
 var system_name: String = "[GameManager]"
 var is_need_wait_for_talking: bool = false
 var start_show_black_block_time: float = 0.0
-var tomas_progress: int = 0
+var tomas_progress: int = 2
 var tomas_is_talking_during_reset: bool = false
 
 
@@ -93,6 +93,13 @@ func tomas_recieve_item(item_name: String) -> void:
 	elif item_name == "Overdue Order":
 		tomas_progress = 1
 		create_dialogue("overdue_order_ans")
+	elif item_name == "Wooden Horse":
+		create_dialogue("failure_wooden_horse_ans")
+	elif item_name == "Wooden Bird":
+		tomas_progress = 2
+		create_dialogue("tommy_craft_ans")
+	elif item_name == "Smooth Mask":
+		create_dialogue("failure_mask_ans")
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
 		create_dialogue("tomas_receive_none")

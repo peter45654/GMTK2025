@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=23 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
-[ext_resource type="Script" uid="uid://maxt4u4wso1q" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
+[ext_resource type="Resource" uid="uid://qoj56wnk6fcs" path="res://game/item/failure_wooden_horse.tres" id="8_4osd1"]
+[ext_resource type="Script" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
+[ext_resource type="Resource" uid="uid://l8h4mds1qiuo" path="res://game/item/failure_mask.tres" id="9_ru4j2"]
+[ext_resource type="Resource" uid="uid://bwwegvqibmiqf" path="res://game/item/tommy_craft.tres" id="10_ru4j2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
@@ -29,6 +32,18 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_l4dfk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4osd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbyh4"]
+size = Vector2(11, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nnov"]
+size = Vector2(15, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4dfk"]
+size = Vector2(37, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngn8n"]
+size = Vector2(16, 12)
 
 [node name="Game" type="Node"]
 
@@ -207,5 +222,87 @@ origin_object_container_node = NodePath("../Map/LivingRoom/Object")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorkShopToLivingRoom"]
 position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_4osd1")
+
+[node name="actions" type="Node2D" parent="."]
+
+[node name="find_key_pen_holder" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(58, -6)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_key_pen_holder"
+boss_progress_to_active = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_pen_holder"]
+position = Vector2(2.5, 6)
+shape = SubResource("RectangleShape2D_bbyh4")
+
+[node name="find_key_teapot" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(252, 24)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_key_teapot"
+boss_progress_to_active = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_teapot"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_2nnov")
+
+[node name="find_key_paint_can" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(389, -21)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_key_paint_can"
+boss_progress_to_active = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_paint_can"]
+position = Vector2(1.5, 8)
+shape = SubResource("RectangleShape2D_2nnov")
+
+[node name="find_key_paint_bottle" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(389, -21)
+action_type = 3
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_key_paint_bottle"
+boss_progress_to_active = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_paint_bottle"]
+position = Vector2(1.5, 8)
+shape = SubResource("RectangleShape2D_2nnov")
+
+[node name="failure_wooden_horse" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(124, 1)
+action_type = 3
+item_to_claim = ExtResource("8_4osd1")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "failure_wooden_horse"
+boss_progress_to_active = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/failure_wooden_horse"]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_l4dfk")
+
+[node name="failure_mask" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(60, 80)
+action_type = 3
+item_to_claim = ExtResource("9_ru4j2")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "failure_mask"
+boss_progress_to_active = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/failure_mask"]
+position = Vector2(2.5, 6)
+shape = SubResource("RectangleShape2D_bbyh4")
+
+[node name="tommy_craft" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(-23, 0)
+action_type = 3
+item_to_claim = ExtResource("10_ru4j2")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "tommy_craft"
+boss_progress_to_active = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/tommy_craft"]
+position = Vector2(5, 6)
+shape = SubResource("RectangleShape2D_ngn8n")
 
 [editable path="Map"]

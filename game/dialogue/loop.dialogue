@@ -11,16 +11,13 @@ Nathan: For more information see the online documentation.
 
 ~ tomas
 
-if GameManager.tomas_progress==0:
-	Tomas:
-		"Ah, it's you again, little one. Just sitting here. Same as always."
-	- Do nothing
+Tomas:
+	"Ah, it's you again, little one. Just sitting here. Same as always."
+- Do nothing
+	
+- Give him an item
+	do UiManager.open_inventory_ui(true)
 		
-	- Give him an item
-		do UiManager.open_inventory_ui(true)
-		
-if GameManager.tomas_progress==1:
-	阿八八八
 	
 => END
 
@@ -52,23 +49,121 @@ Tomas:
 do GameManager.tomas_done_begin_talking()
 	
 => END
-~ tomas_progress_1_talking_begin
 
+~ failure_wooden_horse
+You found a wooden horse.
+=> END
+~ failure_mask
+You found a smooth mask.
+=> END
+~ tommy_craft
+You found a wooden bird.
+=> END
+
+~ find_key_teapot
+An old teapot.
+It feels light. You open the lid and look inside. It's empty.
+=> END
+~ find_key_paint_can
+Some large paint cans in the corner of the workshop.
+Inside, there's only a layer of dried, hardened white paint at the bottom, like a rock.
+Nothing underneath.
+=> END
+~ find_key_paint_bottle
+There's a row of small watercolor paint bottles.
+You pick them up one by one, hold them up to the light, and give them a shake.
+You don't find anything unusual inside.
+=> END
+~ find_key_pen_holder
+The pen holder on the closet. It's full of all sorts of pens.
+You pour all the pens out and search the bottom, but there's nothing inside.
+=> END
+~ find_key_vessal
+On the dusty shelf, there's a lumpy clay vase. It's not smooth and perfect like the other one.
+You reach your hand in. Your fingertips touch the cold, lumpy bottom.
+Just as you're about to pull your hand out, your fingernail scrapes against something small and hard.
+It's a small, cold, brass-colored key.
+=> END
+
+
+
+~ failure_wooden_horse_ans
 Tomas:
-	how...
-	how can this be...	
+	"Its legs weren't steady, just like me now. I don't want to see it."
+=> END
+~ failure_mask_ans
+Tomas:
+	"I've forgotten... how to give them a face."
+Tomas:
+	"I've forgotten what joy or sadness even looks like."
+=> END
+~ tommy_craft_ans
+Tomas:
+	"This name... carved on the bottom..."
+Tomas:
+	"...this isn't mine."
+Tomas:
+	"..."
+Tomas:
+	"It shouldn't be here."
+Tomas:
+	"I don't... I thought..."
+Tomas:
+	"Put it down."
+Tomas:
+	"I don't want to see it."
+Tomas:
+	"Just... make it stop."
+do GameManager.tomas_done_begin_talking()
+=> END
 
+
+~ tomas_progress_1_talking_begin
+Tomas:
+	"That order form, reminding me... "
+Tomas:
+	"that all I make now are failures."
+Tomas:
+	"Failures... one after another..."
+Tomas:
+	"Just left them lying around... in the corner of the living room..."
+Tomas:
+	"...They're everywhere..."
+Tomas:
+	"Just... forget it all..."
 do GameManager.tomas_done_begin_talking()
 => END
 
 ~ tomas_progress_1_talking
 
 Tomas:
-	...
-	......
-	I...lost him...	
-	.........
-	............
+	"That order form, reminding me... "
+Tomas:
+	"that all I make now are failures."
+Tomas:
+	"Failures... one after another..."
+Tomas:
+	"Just left them lying around... on the workshop shelf... in the corner of the living room..."
+Tomas:
+	"...They're everywhere..."
+Tomas:
+	"Just... forget it all..."
+
+do GameManager.tomas_done_talking()
+=> END
+
+~ tomas_progress_2_talking
+
+Tomas:
+	"I thought I had locked all of his things away in that room."
+Tomas:
+	"I even threw the key away...dropped it into some forgotten vessel, so it would be lost forever."
+Tomas:
+	"I told myself that would be the end of it."
+Tomas:
+	"But a memory like that..."
+Tomas:
+	"It always finds its way back."
 
 do GameManager.tomas_done_talking()
 => END
