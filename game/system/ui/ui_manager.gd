@@ -49,6 +49,7 @@ func toggle_inventory_ui() -> void:
 
 	if inventory_ui.visible:
 		inventory_ui.visible = false
+		is_boss_open_inventory = false
 		print(system_name, " Inventory UI is now hidden.")
 	else:
 		inventory_ui.visible = true

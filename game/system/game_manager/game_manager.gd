@@ -1,25 +1,29 @@
 extends Node
 
 const INITIAL_POSITION: Vector2 = Vector2(46,36)
-const TRANSITION_DURATION_MS: float = 1000
+const TRANSITION_DURATION_MS: float = 2000
 const Balloon = preload("res://game/dialogue/balloon.tscn")
 const DialogueSource:DialogueResource = preload("res://game/dialogue/loop.dialogue")
 
 var system_name: String = "[GameManager]"
-var is_resetting: bool = false
-var reset_time: float = 0.0
+var is_need_wait_for_talking: bool = false
+var start_show_black_block_time: float = 0.0
 var tomas_progress: int = 0
 var tomas_is_talking_during_reset: bool = false
 
 func _process(_delta: float) -> void:
-	if !is_resetting:
+	if !is_need_wait_for_talking:
 		return
 
-	if tomas_is_talking_during_reset:
+	var current_time: float = Time.get_ticks_msec()
+	if current_time - start_show_black_block_time < TRANSITION_DURATION_MS:
+		print(system_name, "Transition in progress, showing black block.")
 		return
 
+	create_dialogue("tomas_progress_1_talking")
+	is_need_wait_for_talking = false
 
-	print(system_name, "Game reset completed.")
+	print(system_name, "Game transition completed.")
 	return
 
 func soft_reset_game() -> void:
@@ -33,9 +37,6 @@ func soft_reset_game() -> void:
 	if player:
 		if player.has_method("reset"):
 			player.reset()
-	show_black_block()
-	reset_time = Time.get_ticks_msec()
-	is_resetting = true
 	print(system_name, "Soft reset game completed.")
 
 func _input(event: InputEvent) -> void:
@@ -57,6 +58,8 @@ func show_black_block() -> void:
 	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
 	if black_block:
 		black_block.show()
+	start_show_black_block_time = Time.get_ticks_msec()
+	is_need_wait_for_talking = true
 	print(system_name, "Black block visibility shown.")
 
 func hide_black_block() -> void:
@@ -68,10 +71,9 @@ func hide_black_block() -> void:
 func tomas_recieve_item(item_name: String) -> void:
 	if item_name == "TestItem":
 		tomas_progress += 1
-		soft_reset_game()
 		print(system_name, "Tomas received item:", item_name, "Progress:", tomas_progress)
-		create_dialogue("tomas_progress_1_talking")
-		tomas_is_talking_during_reset = true
+		create_dialogue("tomas_progress_1_talking_begin")
+
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
 		create_dialogue("tomas_receive_none")
@@ -87,7 +89,9 @@ func create_dialogue(title: String) -> void:
 	balloon.start(dialogue_source, title)
 
 func tomas_done_talking() -> void:
-	# OS.delay_msec(1000)
-	tomas_is_talking_during_reset = false
-	is_resetting = false
+	is_need_wait_for_talking = false
 	hide_black_block()
+
+func tomas_done_begin_talking() -> void:
+	show_black_block()
+	soft_reset_game()
