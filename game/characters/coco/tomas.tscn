@@ -1,12 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://dovx8ojro1870"]
+[gd_scene load_steps=15 format=3 uid="uid://l3ktb314t0ym"]
 
-[ext_resource type="Texture2D" uid="uid://pvwclvrd4b5s" path="res://game/characters/coco/coco.png" id="1_poon3"]
-[ext_resource type="Script" uid="uid://bld2hl8tqs4ne" path="res://game/characters/coco/coco.gd" id="1_rc0d5"]
-[ext_resource type="SpriteFrames" uid="uid://r7ehq5csoyt4" path="res://art_test/character/hollow_puppet_sprite_frame.tres" id="3_fm7ty"]
+[ext_resource type="Texture2D" uid="uid://pvwclvrd4b5s" path="res://game/characters/coco/coco.png" id="2_v14ot"]
+[ext_resource type="SpriteFrames" uid="uid://11ehbyd08j2j" path="res://art_test/character/tomas_sprite_frame.tres" id="3_0h3w0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ux02"]
-radius = 4.0
-height = 10.0
+radius = 5.0
+height = 16.0
 
 [sub_resource type="Animation" id="Animation_v3qo1"]
 length = 0.001
@@ -384,75 +383,23 @@ _data = {
 &"walk_up": SubResource("Animation_gqwf4")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sgewc"]
-animation = &"idle_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ptki"]
-animation = &"idle_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrogp"]
-animation = &"idle_left"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3inqy"]
-animation = &"idle_right"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8jsaa"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_sgewc")
-blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_5ptki")
-blend_point_1/pos = Vector2(0, -1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_nrogp")
-blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_3inqy")
-blend_point_3/pos = Vector2(1, 0)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_74vvk"]
-animation = &"walk_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hq8ax"]
-animation = &"walk_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bivxa"]
-animation = &"walk_left"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pbh15"]
-animation = &"walk_right"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_4buhd"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_74vvk")
-blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_hq8ax")
-blend_point_1/pos = Vector2(0, -1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_bivxa")
-blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_pbh15")
-blend_point_3/pos = Vector2(1, 0)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0wh44"]
-states/idle/node = SubResource("AnimationNodeBlendSpace2D_8jsaa")
-states/idle/position = Vector2(388, 151)
-states/walk/node = SubResource("AnimationNodeBlendSpace2D_4buhd")
-states/walk/position = Vector2(579, 148)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_drwg8"]
 radius = 8.0
 
-[node name="Coco" type="CharacterBody2D"]
+[node name="Tomas" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
-script = ExtResource("1_rc0d5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
 position = Vector2(0, -10)
-texture = ExtResource("1_poon3")
+texture = ExtResource("2_v14ot")
 hframes = 20
 frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2ux02")
@@ -461,12 +408,7 @@ shape = SubResource("CapsuleShape2D_2ux02")
 libraries = {
 &"": SubResource("AnimationLibrary_5wv3u")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_0wh44")
-anim_player = NodePath("../AnimationPlayer")
-parameters/idle/blend_position = Vector2(-0.274455, -0.180258)
-parameters/walk/blend_position = Vector2(0.0229179, 0.729614)
+autoplay = "idle_down"
 
 [node name="Direction" type="Marker2D" parent="."]
 position = Vector2(0, -3)
@@ -482,6 +424,6 @@ shape = SubResource("CircleShape2D_drwg8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
-sprite_frames = ExtResource("3_fm7ty")
+sprite_frames = ExtResource("3_0h3w0")
 animation = &"idle_d"
 autoplay = "idle_d"

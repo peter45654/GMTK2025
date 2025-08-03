@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=4 uid="uid://cvmby2hcmq7n1"]
+[gd_scene load_steps=125 format=4 uid="uid://cvmby2hcmq7n1"]
 
 [ext_resource type="TileSet" uid="uid://jb43wcryt2c3" path="res://art_test/wall_and_floor_tileset.tres" id="1_okjid"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="2_ketuw"]
@@ -82,14 +82,6 @@
 [ext_resource type="Texture2D" uid="uid://bb67gyp5t7v1t" path="res://art_test/interior_pack/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_24.png" id="78_d5ouo"]
 [ext_resource type="PackedScene" uid="uid://ctv63vfcry33" path="res://art_test/character/old_man.tscn" id="79_gu4mo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ql1yo"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(16, 19, 16, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0axao"]
-atlas = ExtResource("3_wc8bx")
-region = Rect2(195, 50, 27, 30)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7j4o"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(112, 32, 16, 32)
@@ -102,6 +94,18 @@ region = Rect2(131, 49, 25, 14)
 atlas = ExtResource("4_er7i0")
 region = Rect2(128, 32, 31, 17)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5awb"]
+atlas = ExtResource("4_er7i0")
+region = Rect2(159, 32, 49, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql1yo"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(16, 19, 16, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0axao"]
+atlas = ExtResource("3_wc8bx")
+region = Rect2(195, 50, 27, 30)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4cld"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(128, 4, 16, 27)
@@ -109,6 +113,14 @@ region = Rect2(128, 4, 16, 27)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo6cb"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(1, 32, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdnaa"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(17, 70, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(50, 21, 13, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rngb"]
 atlas = ExtResource("4_er7i0")
@@ -118,9 +130,13 @@ region = Rect2(97, 65, 46, 46)
 atlas = ExtResource("4_er7i0")
 region = Rect2(6, 4, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5awb"]
-atlas = ExtResource("4_er7i0")
-region = Rect2(159, 32, 49, 33)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiobi"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(3, 54, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybao6"]
+atlas = ExtResource("2_ketuw")
+region = Rect2(53, 2, 7, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oiwee"]
 atlas = ExtResource("4_er7i0")
@@ -164,37 +180,63 @@ region = Rect2(147, 112, 25, 44)
 atlas = ExtResource("4_er7i0")
 region = Rect2(49, 116, 15, 44)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rdnaa"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(17, 70, 14, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybao6"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(53, 2, 7, 15)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pmx0"]
 atlas = ExtResource("2_ketuw")
 region = Rect2(4, 1, 8, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aiobi"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(3, 54, 11, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtu43"]
 atlas = ExtResource("2_ketuw")
 region = Rect2(113, 16, 12, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
-atlas = ExtResource("2_ketuw")
-region = Rect2(50, 21, 13, 13)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er7i0"]
+size = Vector2(20, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5tyx"]
+size = Vector2(62, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0pjo"]
+size = Vector2(108, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhnu3"]
+size = Vector2(108, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oxbm"]
+size = Vector2(29, 52.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttgd6"]
+size = Vector2(29, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlrae"]
 atlas = ExtResource("46_l3ff3")
 region = Rect2(210, 886, 13, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6u3i"]
+size = Vector2(25, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ussnc"]
+size = Vector2(89, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o262"]
+size = Vector2(89, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umeha"]
+size = Vector2(81.5, 55)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5ouo"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(112, 32, 16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f0ik"]
+size = Vector2(22, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkrgm"]
+size = Vector2(197.5, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ykq"]
+size = Vector2(36, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qce5x"]
+size = Vector2(37, 9)
 
 [node name="Map" type="Node2D"]
 texture_filter = 1
@@ -214,144 +256,199 @@ use_parent_material = true
 tile_set = ExtResource("1_okjid")
 metadata/_edit_lock_ = true
 
-[node name="Paint" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(61, -25)
-rotation = -0.0238644
-texture = SubResource("AtlasTexture_ql1yo")
+[node name="Floor" type="Node2D" parent="LivingRoom"]
 
-[node name="Window" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(18, -16)
-rotation = 0.0122729
-texture = SubResource("AtlasTexture_0axao")
-
-[node name="Carpet2" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet2" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(165.5, 41)
 rotation = 0.136903
+scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_v7j4o")
 
-[node name="Carpet4" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet4" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(151, 89)
 rotation = 3.13474
 texture = SubResource("AtlasTexture_er7i0")
 
-[node name="Carpet3" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet3" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(25.5, 87)
 rotation = 0.0187283
 texture = SubResource("AtlasTexture_4jfn1")
 
-[node name="Chair" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(88.7793, 58.1814)
-rotation = -0.0925186
-texture = SubResource("AtlasTexture_t4cld")
-
-[node name="Chair2" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(108.779, 66.1814)
-texture = SubResource("AtlasTexture_t4cld")
-
-[node name="Table" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(97.3894, 80)
-rotation = -0.0265047
-texture = SubResource("AtlasTexture_mo6cb")
-
-[node name="Table2" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(125.5, -9)
-texture = SubResource("AtlasTexture_0rngb")
-
-[node name="Table3" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(60.5, 0)
-texture = SubResource("AtlasTexture_5s4g8")
-
-[node name="Carpet" type="Sprite2D" parent="LivingRoom"]
+[node name="Carpet" type="Sprite2D" parent="LivingRoom/Floor"]
 position = Vector2(9.5, 44)
 rotation = 0.0937343
 texture = SubResource("AtlasTexture_q5awb")
 
-[node name="Closet" type="Sprite2D" parent="LivingRoom"]
+[node name="Object" type="Node2D" parent="LivingRoom"]
+y_sort_enabled = true
+
+[node name="Paint" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(61, -25)
+rotation = -0.0238644
+texture = SubResource("AtlasTexture_ql1yo")
+
+[node name="Window" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(18, -16)
+rotation = 0.0122729
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_0axao")
+
+[node name="Chair" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(88.7793, 58.1814)
+rotation = -0.0925186
+texture = SubResource("AtlasTexture_t4cld")
+
+[node name="Chair2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(108.779, 66.1814)
+texture = SubResource("AtlasTexture_t4cld")
+
+[node name="Table" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(97.3894, 80)
+rotation = -0.0265047
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_mo6cb")
+
+[node name="DirtyDish" type="Sprite2D" parent="LivingRoom/Object/Table"]
+position = Vector2(-8.14754, -9.21917)
+rotation = 0.0325996
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_rdnaa")
+
+[node name="Paper" type="Sprite2D" parent="LivingRoom/Object/Table"]
+position = Vector2(16.8698, -9.55629)
+rotation = 0.0026403
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_5cwhe")
+
+[node name="Table2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(125.5, -9)
+texture = SubResource("AtlasTexture_0rngb")
+
+[node name="Table3" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(60.5, 0)
+texture = SubResource("AtlasTexture_5s4g8")
+
+[node name="OpenedBook" type="Sprite2D" parent="LivingRoom/Object/Table3"]
+position = Vector2(-5, -7)
+rotation = -0.0473025
+texture = SubResource("AtlasTexture_aiobi")
+
+[node name="PenBucket" type="Sprite2D" parent="LivingRoom/Object/Table3"]
+position = Vector2(5, -11)
+rotation = 0.0060949
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_ybao6")
+
+[node name="Closet" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-19.5, 1)
 texture = SubResource("AtlasTexture_oiwee")
 
-[node name="Sofa" type="Sprite2D" parent="LivingRoom"]
+[node name="Sofa" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(17.5, 2)
 rotation = 0.0448972
+scale = Vector2(1, 1)
 skew = -0.0349066
 texture = SubResource("AtlasTexture_j4kga")
 
-[node name="Sofa2" type="Sprite2D" parent="LivingRoom"]
+[node name="Sofa2" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-16.5, 37)
 rotation = -0.064319
 texture = SubResource("AtlasTexture_tvv8m")
 
-[node name="Clock" type="Sprite2D" parent="LivingRoom"]
+[node name="Clock" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(161.5, -5)
 rotation = 0.0660755
 skew = -0.0349066
 texture = SubResource("AtlasTexture_kh580")
 
-[node name="Lamp" type="Sprite2D" parent="LivingRoom"]
+[node name="Lamp" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(46.5, -5)
 texture = SubResource("AtlasTexture_i024g")
 
-[node name="Box" type="Sprite2D" parent="LivingRoom"]
+[node name="Box" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-9.5, 77)
 texture = SubResource("AtlasTexture_t3n7g")
 
-[node name="Box4" type="Sprite2D" parent="LivingRoom"]
+[node name="Box4" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-23.5, 65)
 texture = SubResource("AtlasTexture_te68m")
 
-[node name="Box2" type="Sprite2D" parent="LivingRoom"]
+[node name="Box2" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-18.5, 86)
 texture = SubResource("AtlasTexture_t3n7g")
 
-[node name="Box3" type="Sprite2D" parent="LivingRoom"]
+[node name="Box3" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(60.5, 87)
 texture = SubResource("AtlasTexture_t3n7g")
 
-[node name="SmallTable" type="Sprite2D" parent="LivingRoom"]
+[node name="SmallTable" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(11.5, 43)
 rotation = 0.0122729
+scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_8tgj8")
 
-[node name="Fireplace" type="Sprite2D" parent="LivingRoom"]
+[node name="Fireplace" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(84.5, -10)
 texture = SubResource("AtlasTexture_cqqll")
 
-[node name="ClothShelf" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(132.046, 74)
+[node name="ClothShelf" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(132, 92)
 texture = SubResource("AtlasTexture_hhhqr")
+offset = Vector2(0.0460052, -18)
 
-[node name="DirtyDish" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(89.0004, 71)
+[node name="Cloth" type="Sprite2D" parent="LivingRoom/Object/ClothShelf"]
+position = Vector2(-8, -31)
 rotation = 0.0060949
-texture = SubResource("AtlasTexture_rdnaa")
-
-[node name="PenBucket" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(65.5, -12)
-rotation = 0.0060949
-texture = SubResource("AtlasTexture_ybao6")
-
-[node name="Cloth" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(124.046, 61)
-rotation = 0.0060949
+scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_3pmx0")
 
-[node name="OpenedBook" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(55.5, -7)
-rotation = -0.0473025
-texture = SubResource("AtlasTexture_aiobi")
-
-[node name="Flower" type="Sprite2D" parent="LivingRoom"]
+[node name="Flower" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(-24.5, 52)
 rotation = -0.0238644
 texture = SubResource("AtlasTexture_jtu43")
 
-[node name="Paper" type="Sprite2D" parent="LivingRoom"]
-position = Vector2(114, 70)
-rotation = -0.0238644
-texture = SubResource("AtlasTexture_5cwhe")
+[node name="StaticBody2D" type="StaticBody2D" parent="LivingRoom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(-40, 31)
+shape = SubResource("RectangleShape2D_er7i0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(-18, 107.75)
+shape = SubResource("RectangleShape2D_d5tyx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(89, 108)
+shape = SubResource("RectangleShape2D_o0pjo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(215, 108)
+shape = SubResource("RectangleShape2D_xhnu3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(188, 71)
+shape = SubResource("RectangleShape2D_0oxbm")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(188, -4)
+shape = SubResource("RectangleShape2D_ttgd6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(174, 19, 174, -29, -29, -29, -29, 53, -29, 61, -20, 61, -20, 53, -1, 53, 23, 53, 23, 40, -1, 40, -1, 19, -1, 13, 34, 13, 34, 19)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(-29, 80, -13, 80, -13, 72, -4, 72, -4, 100, -29, 100)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(54, 96, 54, 84, 74, 84, 74, 75, 123, 75, 123, 87, 139, 87, 139, 96)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
+polygon = PackedVector2Array(79, 56, 96, 56, 104, 59, 117, 59, 117, 63, 103, 63, 79, 63)
 
 [node name="BoyRoom" type="Node2D" parent="."]
+visible = false
 modulate = Color(0.785641, 0.785641, 0.785641, 1)
+position = Vector2(0, 62)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="BoyRoom"]
 tile_map_data = PackedByteArray("AAD+/wYAAAAFAAUAAAD+/wcAAAAFAAYAAAD+/wgAAAAFAAYAAAD+/wkAAAAFAAYAAAD//wYAAAAHAAUAAAD//wcAAAAGAAYAAAD//wgAAAAGAAYAAAD//wkAAAAGAAYAAAAAAAYAAAAHAAUAAAAAAAcAAAAGAAYAAAAAAAgAAAAGAAYAAAAAAAkAAAAGAAYAAAABAAYAAAAHAAUAAAABAAcAAAAGAAYAAAABAAgAAAAGAAYAAAABAAkAAAAGAAYAAAACAAkAAAAGAAYAAAADAAkAAAAGAAYAAAAEAAkAAAAGAAYAAAAFAAkAAAAGAAYAAAD+/woAAAAFAAcAAAD//woAAAAGAAcAAAAAAAoAAAAGAAcAAAABAAoAAAAGAAcAAAACAAoAAAAGAAcAAAADAAoAAAAGAAcAAAAEAAoAAAAGAAcAAAAFAAoAAAAGAAcAAAD+/wsAAAAPAAgAAAD//wsAAAAPAAgAAAAAAAsAAAAPAAgAAAABAAsAAAAPAAgAAAACAAsAAAAPAAgAAAADAAsAAAAPAAgAAAAEAAsAAAAPAAgAAAAFAAsAAAAPAAgAAAD9/wsAAAAAAAgAAAD9/wYAAAAAAAcAAAD9/wcAAAAAAAcAAAD9/wgAAAAAAAcAAAD9/wkAAAAAAAcAAAD9/woAAAAAAAcAAAD9/wUAAAAAAAEAAAD+/wUAAAAJAAQAAAD//wUAAAALAAQAAAAAAAUAAAAKAAMAAAABAAUAAAALAAQAAAD+/wQAAAAJAAEAAAD//wQAAAAKAAEAAAAAAAQAAAAKAAEAAAABAAQAAAAKAAEAAAD+/wMAAAAKAAAAAAD//wMAAAAKAAAAAAAAAAMAAAAKAAAAAAABAAMAAAAKAAAAAAD9/wMAAAAAAAAAAAD9/wQAAAAAAAEAAAACAAgAAAAGAAYAAAADAAgAAAAGAAYAAAAEAAgAAAAGAAYAAAAFAAgAAAAGAAYAAAACAAYAAAAKAAMAAAACAAcAAAAKAAQAAAADAAcAAAAKAAQAAAAEAAcAAAAKAAQAAAAFAAcAAAAMAAQAAAAGAAgAAAARAAEAAAAGAAkAAAARAAEAAAAGAAoAAAARAAEAAAAGAAcAAAARAAEAAAAGAAsAAAARAAgAAAADAAYAAAAKAAMAAAAEAAYAAAAKAAMAAAAFAAYAAAAMAAMAAAADAAUAAAAKAAAAAAAEAAUAAAAKAAAAAAAFAAUAAAAKAAAAAAACAAUAAAANAAAAAAAGAAYAAAARAAEAAAAGAAUAAAARAAAAAAA=")
@@ -363,103 +460,95 @@ tile_map_data = PackedByteArray("AAACAAcAAAAMAAAAAAABAAQAAAAAAAEAAAABAAUAAAAAAAE
 tile_set = ExtResource("1_okjid")
 metadata/_edit_lock_ = true
 
-[node name="CondominiumBlackShadowSingles86" type="Sprite2D" parent="BoyRoom"]
+[node name="FloorWall" type="Node2D" parent="BoyRoom"]
+
+[node name="CondominiumBlackShadowSingles86" type="Sprite2D" parent="BoyRoom/FloorWall"]
 position = Vector2(16, 84)
 texture = ExtResource("3_yp3kl")
 
-[node name="ClothingStoreBlackShadowSingles199" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(87, 150)
-texture = ExtResource("4_5x5te")
-
-[node name="Bed" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(72, 160)
-texture = ExtResource("4_nd7ee")
-
-[node name="ClothCloset" type="Node2D" parent="BoyRoom"]
-visible = false
-position = Vector2(30, -59)
-
-[node name="BedroomBlackShadowSingles392" type="Sprite2D" parent="BoyRoom/ClothCloset"]
-position = Vector2(89, 147)
-texture = ExtResource("6_o61ct")
-
-[node name="BedroomBlackShadowSingles394" type="Sprite2D" parent="BoyRoom/ClothCloset"]
-position = Vector2(105, 147)
-texture = ExtResource("7_ds634")
-
-[node name="BedroomBlackShadowSingles391" type="Sprite2D" parent="BoyRoom/ClothCloset"]
-position = Vector2(73, 147)
-texture = ExtResource("5_3l832")
-
-[node name="BedroomBlackShadowSingles255" type="Sprite2D" parent="BoyRoom"]
+[node name="BedroomBlackShadowSingles255" type="Sprite2D" parent="BoyRoom/FloorWall"]
 position = Vector2(-11, 126)
 texture = ExtResource("13_4uhwy")
 
-[node name="BedroomBlackShadowSingles325" type="Sprite2D" parent="BoyRoom"]
+[node name="Objects" type="Node2D" parent="BoyRoom"]
+y_sort_enabled = true
+
+[node name="ClothingStoreBlackShadowSingles199" type="Sprite2D" parent="BoyRoom/Objects"]
+position = Vector2(87, 150)
+texture = ExtResource("4_5x5te")
+
+[node name="Bed" type="Sprite2D" parent="BoyRoom/Objects"]
+position = Vector2(72, 160)
+texture = ExtResource("4_nd7ee")
+
+[node name="BedroomBlackShadowSingles325" type="Sprite2D" parent="BoyRoom/Objects"]
 position = Vector2(-21, 115)
 texture = ExtResource("12_i4uqr")
 
-[node name="BedroomBlackShadowSingles326" type="Sprite2D" parent="BoyRoom"]
+[node name="BedroomBlackShadowSingles326" type="Sprite2D" parent="BoyRoom/Objects"]
 position = Vector2(-2, 129)
 texture = ExtResource("14_5x5te")
 
-[node name="BedroomBlackShadowSingles279" type="Sprite2D" parent="BoyRoom"]
+[node name="BedroomBlackShadowSingles279" type="Sprite2D" parent="BoyRoom/Objects"]
 position = Vector2(-14, 92)
 texture = ExtResource("16_4qavo")
 
-[node name="LivingRoomBlackShadowSingles88" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(18, 157)
+[node name="LivingRoomBlackShadowSingles88" type="Sprite2D" parent="BoyRoom/Objects"]
+position = Vector2(18, 172)
 texture = ExtResource("18_42ums")
+offset = Vector2(0, -15)
 
-[node name="LivingRoomBlackShadowSingles57" type="Sprite2D" parent="BoyRoom"]
+[node name="Closet" type="Sprite2D" parent="BoyRoom/Objects"]
 position = Vector2(49, 129)
 texture = ExtResource("21_74jnv")
 
-[node name="LivingRoomBlackShadowSingles28" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(39, 122)
+[node name="LivingRoomBlackShadowSingles28" type="Sprite2D" parent="BoyRoom/Objects/Closet"]
+position = Vector2(-10, -7)
 texture = ExtResource("22_3yjoc")
 
-[node name="ClassroomAndLibrarySingles33" type="Sprite2D" parent="BoyRoom"]
+[node name="BedroomBlackShadowSingles315" type="Sprite2D" parent="BoyRoom/Objects/Closet"]
+position = Vector2(9, -10)
+texture = ExtResource("15_klua5")
+
+[node name="ClassroomAndLibrarySingles33" type="Sprite2D" parent="BoyRoom/Objects"]
 position = Vector2(48, 112)
 texture = ExtResource("24_wvupp")
 
-[node name="ClassroomAndLibrarySingles57" type="Sprite2D" parent="BoyRoom"]
+[node name="HighCloset" type="Sprite2D" parent="BoyRoom/Objects"]
 position = Vector2(81, 123)
 texture = ExtResource("26_h1m2u")
 
-[node name="ClothingStoreBlackShadowSingles259" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(0, 160)
-texture = ExtResource("29_klua5")
-
-[node name="ClothingStoreBlackShadowSingles151" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(51, 171)
-texture = ExtResource("30_4qavo")
-
-[node name="ClothingStoreBlackShadowSingles233" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(79, 102)
+[node name="ClothingStoreBlackShadowSingles233" type="Sprite2D" parent="BoyRoom/Objects/HighCloset"]
+position = Vector2(-2, -21)
 texture = ExtResource("31_2xqkr")
 
-[node name="ClothingStoreBlackShadowSingles258" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(-18, 163)
-texture = ExtResource("32_42ums")
+[node name="TableR" type="Sprite2D" parent="BoyRoom/Objects"]
+position = Vector2(0, 171)
+texture = ExtResource("29_klua5")
+offset = Vector2(0, -11)
 
-[node name="ClothingStoreBlackShadowSingles6" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(2, 144)
+[node name="ClothingStoreBlackShadowSingles6" type="Sprite2D" parent="BoyRoom/Objects/TableR"]
+position = Vector2(2, -26)
 texture = ExtResource("35_2xqkr")
 region_enabled = true
 region_rect = Rect2(0, 10, 16, 14)
 
-[node name="MuseumBlackShadowSingles387" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(-1, 159)
+[node name="MuseumBlackShadowSingles387" type="Sprite2D" parent="BoyRoom/Objects/TableR"]
+position = Vector2(-1, -11)
 texture = ExtResource("38_74jnv")
 
-[node name="MuseumBlackShadowSingles254" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(-25, 159)
-texture = ExtResource("36_nfojn")
+[node name="ClothingStoreBlackShadowSingles151" type="Sprite2D" parent="BoyRoom/Objects"]
+position = Vector2(51, 171)
+texture = ExtResource("30_4qavo")
 
-[node name="BedroomBlackShadowSingles315" type="Sprite2D" parent="BoyRoom"]
-position = Vector2(58, 119)
-texture = ExtResource("15_klua5")
+[node name="TableL" type="Sprite2D" parent="BoyRoom/Objects"]
+position = Vector2(-18, 171)
+texture = ExtResource("32_42ums")
+offset = Vector2(0, -8)
+
+[node name="MuseumBlackShadowSingles254" type="Sprite2D" parent="BoyRoom/Objects/TableL"]
+position = Vector2(-7, -12)
+texture = ExtResource("36_nfojn")
 
 [node name="Other" type="Node2D" parent="BoyRoom"]
 visible = false
@@ -562,20 +651,87 @@ texture = ExtResource("17_2xqkr")
 position = Vector2(86, 93)
 texture = ExtResource("10_yaf5i")
 
+[node name="ClothCloset" type="Node2D" parent="BoyRoom/Other"]
+visible = false
+position = Vector2(30, -59)
+
+[node name="BedroomBlackShadowSingles392" type="Sprite2D" parent="BoyRoom/Other/ClothCloset"]
+position = Vector2(89, 147)
+texture = ExtResource("6_o61ct")
+
+[node name="BedroomBlackShadowSingles394" type="Sprite2D" parent="BoyRoom/Other/ClothCloset"]
+position = Vector2(105, 147)
+texture = ExtResource("7_ds634")
+
+[node name="BedroomBlackShadowSingles391" type="Sprite2D" parent="BoyRoom/Other/ClothCloset"]
+position = Vector2(73, 147)
+texture = ExtResource("5_3l832")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BoyRoom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoyRoom/StaticBody2D"]
+position = Vector2(-41.5, 114)
+shape = SubResource("RectangleShape2D_g6u3i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BoyRoom/StaticBody2D"]
+position = Vector2(-9.5, 79)
+shape = SubResource("RectangleShape2D_ussnc")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="BoyRoom/StaticBody2D"]
+position = Vector2(-43, 87)
+shape = SubResource("RectangleShape2D_ussnc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BoyRoom/StaticBody2D"]
+position = Vector2(71, 107)
+shape = SubResource("RectangleShape2D_7o262")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="BoyRoom/StaticBody2D"]
+position = Vector2(77, 119)
+shape = SubResource("RectangleShape2D_7o262")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BoyRoom/StaticBody2D"]
+position = Vector2(119.75, 155)
+shape = SubResource("RectangleShape2D_umeha")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoyRoom/StaticBody2D"]
+position = Vector2(33, 1)
+polygon = PackedVector2Array(-9, 174, -9, 166, -25, 166, -25, 149, -41, 149, -41, 162, -66, 162, -66, 182, 46, 182, 56, 182, 56, 158, 24, 158, 24, 167, 13, 167, 13, 174)
+
 [node name="Workshop" type="Node2D" parent="."]
 modulate = Color(0.299547, 0.299547, 0.299547, 1)
+position = Vector2(47, 15)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Workshop"]
 tile_map_data = PackedByteArray("AAAPAP7/AAAOAAUAAAAPAP//AAAOAAYAAAAPAAAAAAAOAAYAAAAPAAEAAAAOAAcAAAAPAAIAAAAQAAgAAAAKAP7/AAAAAAUAAAAKAP//AAAAAAUAAAAKAAEAAAAAAAUAAAAKAP3/AAAAAAEAAAALAP7/AAANAAUAAAALAP//AAANAAMAAAALAAEAAAANAAcAAAAMAP7/AAAOAAUAAAAMAP//AAAOAAMAAAAMAAAAAAAOAAMAAAAMAAEAAAAOAAcAAAAMAAIAAAAQAAgAAAANAP7/AAAOAAUAAAANAP//AAAOAAYAAAANAAAAAAAOAAYAAAANAAEAAAAOAAcAAAANAAIAAAAQAAgAAAAOAP7/AAAOAAUAAAAOAP//AAAOAAYAAAAOAAAAAAAOAAYAAAAOAAEAAAAOAAcAAAAOAAIAAAAQAAgAAAALAP3/AAAOAAEAAAAMAP3/AAAOAAEAAAANAP3/AAAOAAEAAAAOAP3/AAAOAAEAAAALAPz/AAAOAAEAAAAMAPz/AAAOAAEAAAANAPz/AAAOAAEAAAAOAPz/AAAOAAEAAAALAPv/AAAGAAAAAAAMAPv/AAAGAAAAAAANAPv/AAAGAAAAAAAOAPv/AAAGAAAAAAAPAPv/AAAOAAAAAAAPAPz/AAAOAAEAAAAKAPv/AAAAAAAAAAAKAPz/AAAAAAEAAAAQAP7/AAAOAAUAAAARAP7/AAAOAAUAAAASAP7/AAAOAAUAAAATAP7/AAAOAAUAAAAUAP7/AAAOAAUAAAAQAP//AAAOAAYAAAAQAAAAAAAOAAYAAAAQAAEAAAAOAAcAAAARAP//AAAOAAYAAAARAAAAAAAOAAYAAAARAAEAAAAOAAcAAAASAP//AAAOAAYAAAASAAAAAAAOAAYAAAASAAEAAAAOAAcAAAATAP//AAAOAAYAAAATAAAAAAAOAAYAAAATAAEAAAAOAAcAAAAUAP//AAAOAAYAAAAUAAAAAAAOAAYAAAAUAAEAAAAOAAcAAAAVAAEAAAAQAAcAAAAVAP7/AAAQAAUAAAAVAP//AAAQAAYAAAAVAAAAAAAQAAYAAAAQAPz/AAAOAAEAAAAQAP3/AAAOAAEAAAARAPz/AAAOAAEAAAARAP3/AAAOAAEAAAASAPz/AAAOAAEAAAASAP3/AAAOAAEAAAATAPz/AAAOAAEAAAATAP3/AAAOAAEAAAAUAPz/AAAOAAEAAAAUAP3/AAAOAAEAAAAVAPz/AAAOAAEAAAAVAP3/AAAOAAEAAAAQAPv/AAAOAAAAAAARAPv/AAAOAAAAAAASAPv/AAAOAAAAAAATAPv/AAAOAAAAAAAUAPv/AAAOAAAAAAAVAPv/AAAQAAAAAAAWAPv/AAARAAAAAAAWAPz/AAARAAEAAAAWAP3/AAARAAEAAAAWAP7/AAARAAEAAAAWAP//AAARAAEAAAAWAAAAAAARAAEAAAAWAAEAAAARAAEAAAAWAAIAAAARAAgAAAAQAAIAAAAQAAgAAAARAAIAAAAQAAgAAAASAAIAAAAQAAgAAAATAAIAAAAQAAgAAAAUAAIAAAAQAAgAAAAVAAIAAAAQAAgAAAALAAIAAAAQAAgAAAAPAP3/AAAOAAEAAAALAAAAAAANAAYAAAAKAAIAAAAAAAgAAAA=")
 tile_set = ExtResource("1_okjid")
+metadata/_edit_lock_ = true
 
-[node name="HalloweenShadowSingles80" type="Sprite2D" parent="Workshop"]
+[node name="FloorWall" type="Node2D" parent="Workshop"]
+
+[node name="HalloweenShadowSingles80" type="Sprite2D" parent="Workshop/FloorWall"]
 position = Vector2(284, 25)
 texture = ExtResource("48_g2syf")
 
-[node name="HalloweenShadowSingles79" type="Sprite2D" parent="Workshop"]
+[node name="HalloweenShadowSingles79" type="Sprite2D" parent="Workshop/FloorWall"]
 position = Vector2(256, 22)
 texture = ExtResource("57_4nuuc")
+
+[node name="Carpet4" type="Sprite2D" parent="Workshop/FloorWall"]
+position = Vector2(185, 7)
+rotation = 0.0362799
+texture = SubResource("AtlasTexture_d5ouo")
+
+[node name="HalloweenShadowSingles76" type="Sprite2D" parent="Workshop/FloorWall"]
+position = Vector2(260, 15)
+texture = ExtResource("59_nmgt2")
+
+[node name="HalloweenShadowSingles82" type="Sprite2D" parent="Workshop/FloorWall"]
+position = Vector2(281, -24)
+texture = ExtResource("59_nmgt2")
+
+[node name="HalloweenShadowSingles83" type="Sprite2D" parent="Workshop/FloorWall"]
+position = Vector2(250, -23)
+texture = ExtResource("59_nmgt2")
 
 [node name="Other" type="Node2D" parent="Workshop"]
 visible = false
@@ -610,158 +766,184 @@ texture = ExtResource("73_lw8xc")
 position = Vector2(-176, 59)
 texture = ExtResource("77_0axao")
 
-[node name="WorkshopTable" type="Node2D" parent="Workshop"]
-position = Vector2(305, 10)
+[node name="Objects" type="Node2D" parent="Workshop"]
+y_sort_enabled = true
+
+[node name="WorkshopTable" type="Node2D" parent="Workshop/Objects"]
+position = Vector2(276, 26)
 metadata/_edit_group_ = true
 
-[node name="HalloweenShadowSingles95" type="Sprite2D" parent="Workshop/WorkshopTable"]
-position = Vector2(-66, 14)
+[node name="HalloweenShadowSingles95" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(-37, -2.58383)
 texture = ExtResource("61_4nuuc")
 
-[node name="HalloweenShadowSingles96" type="Sprite2D" parent="Workshop/WorkshopTable"]
-position = Vector2(-42, 14)
+[node name="HalloweenShadowSingles96" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(-13, -2.58383)
 texture = ExtResource("62_40fv7")
 
-[node name="HalloweenShadowSingles98" type="Sprite2D" parent="Workshop/WorkshopTable"]
-position = Vector2(-26, 14)
+[node name="HalloweenShadowSingles98" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(3, -2.58383)
 texture = ExtResource("62_40fv7")
 
-[node name="HalloweenShadowSingles97" type="Sprite2D" parent="Workshop/WorkshopTable"]
-position = Vector2(-2, 14)
+[node name="HalloweenShadowSingles97" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(27, -2.58383)
 texture = ExtResource("63_nmgt2")
 
-[node name="LivingRoomBlackShadowSingles101" type="Sprite2D" parent="Workshop"]
+[node name="HalloweenShadowSingles78" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(17, -3.58383)
+texture = ExtResource("58_40fv7")
+
+[node name="HalloweenShadowSingles77" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(1, -14.5838)
+texture = ExtResource("59_nmgt2")
+
+[node name="BasementShadowSingles82" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(22, -11.5838)
+rotation = 0.083702
+skew = 0.0942477
+texture = ExtResource("67_cfta2")
+
+[node name="HospitalBlackShadowSingles207" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(-9, -4.58383)
+texture = ExtResource("70_kubes")
+
+[node name="ClothingStoreBlackShadowSingles9" type="Sprite2D" parent="Workshop/Objects/WorkshopTable"]
+position = Vector2(4, -15.5838)
+rotation = 1.53042
+scale = Vector2(1, 1)
+texture = ExtResource("47_qlrae")
+
+[node name="LivingRoomBlackShadowSingles101" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(233, -24)
 texture = ExtResource("49_jynxd")
 
-[node name="Carpet4" type="Sprite2D" parent="Workshop"]
-position = Vector2(185, 7)
-rotation = 0.0362799
-texture = SubResource("AtlasTexture_d5ouo")
-
-[node name="LivingRoomBlackShadowSingles102" type="Sprite2D" parent="Workshop"]
+[node name="BookTable" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(325, -26)
 rotation = 0.0398429
 skew = -0.0349066
 texture = ExtResource("50_etdym")
 
-[node name="LivingRoomBlackShadowSingles103" type="Sprite2D" parent="Workshop"]
+[node name="HalloweenShadowSingles120" type="Sprite2D" parent="Workshop/Objects/BookTable"]
+position = Vector2(-2.00616, -0.920101)
+rotation = 0.0208174
+scale = Vector2(0.999274, 1.00194)
+skew = 0.0348046
+texture = ExtResource("64_40fv7")
+
+[node name="LivingRoomBlackShadowSingles103" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(303, -40)
 rotation = -0.0241805
+scale = Vector2(1, 1)
 texture = ExtResource("51_jbtra")
 
-[node name="LivingRoomBlackShadowSingles104" type="Sprite2D" parent="Workshop"]
+[node name="LivingRoomBlackShadowSingles104" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(225, 16)
 texture = ExtResource("52_1wdtr")
 
-[node name="LivingRoomBlackShadowSingles117" type="Sprite2D" parent="Workshop"]
+[node name="LivingRoomBlackShadowSingles117" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(329, 22)
 texture = ExtResource("53_r8odr")
 
-[node name="LivingRoomBlackShadowSingles120" type="Sprite2D" parent="Workshop"]
+[node name="LivingRoomBlackShadowSingles120" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(314, 23)
 texture = ExtResource("54_g2syf")
 
-[node name="HalloweenShadowSingles63" type="Sprite2D" parent="Workshop"]
+[node name="HalloweenShadowSingles63" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(202, -38)
 rotation = -0.0246582
+scale = Vector2(1, 1)
 skew = 0.0471238
 texture = ExtResource("55_1ayqv")
 
-[node name="HalloweenShadowSingles65" type="Sprite2D" parent="Workshop"]
+[node name="HalloweenShadowSingles65" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(331, -56)
 rotation = 0.0185695
+scale = Vector2(1, 1)
 texture = ExtResource("56_nl3bk")
 
-[node name="HalloweenShadowSingles78" type="Sprite2D" parent="Workshop"]
-position = Vector2(293, 23)
-texture = ExtResource("58_40fv7")
-
-[node name="HalloweenShadowSingles76" type="Sprite2D" parent="Workshop"]
-position = Vector2(260, 15)
-texture = ExtResource("59_nmgt2")
-
-[node name="HalloweenShadowSingles82" type="Sprite2D" parent="Workshop"]
-position = Vector2(281, -24)
-texture = ExtResource("59_nmgt2")
-
-[node name="HalloweenShadowSingles83" type="Sprite2D" parent="Workshop"]
-position = Vector2(250, -23)
-texture = ExtResource("59_nmgt2")
-
-[node name="HalloweenShadowSingles77" type="Sprite2D" parent="Workshop"]
-position = Vector2(277, 12)
-texture = ExtResource("59_nmgt2")
-
-[node name="LivingRoomBlackShadowSingles97" type="Sprite2D" parent="Workshop"]
+[node name="LivingRoomBlackShadowSingles97" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(252, 17)
 rotation = 0.183854
 texture = ExtResource("52_4rqc5")
 
-[node name="HalloweenShadowSingles120" type="Sprite2D" parent="Workshop"]
-position = Vector2(323, -27)
-rotation = 0.0606325
-texture = ExtResource("64_40fv7")
-
-[node name="KitchenShadowSingles127" type="Sprite2D" parent="Workshop"]
+[node name="KitchenShadowSingles127" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(234, -49)
 texture = ExtResource("65_c537b")
 
-[node name="KitchenShadowSingles286" type="Sprite2D" parent="Workshop"]
+[node name="KitchenShadowSingles286" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(344, -1)
 texture = ExtResource("66_grnwl")
 
-[node name="BasementShadowSingles82" type="Sprite2D" parent="Workshop"]
-position = Vector2(298, 15)
-rotation = 0.083702
-skew = 0.0942477
-texture = ExtResource("67_cfta2")
-
-[node name="GroceryStoreBlackShadowSingles490" type="Sprite2D" parent="Workshop"]
+[node name="CornerCloset" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(341, -23)
 rotation = 0.0412505
 texture = ExtResource("68_grnwl")
 
-[node name="JailBlackShadowSingles77" type="Sprite2D" parent="Workshop"]
+[node name="HospitalBlackShadowSingles428" type="Sprite2D" parent="Workshop/Objects/CornerCloset"]
+position = Vector2(0.00946045, -24.0208)
+rotation = -0.0412505
+texture = ExtResource("71_7w3xv")
+
+[node name="JailBlackShadowSingles77" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(343, 24)
 texture = ExtResource("69_6545r")
 
-[node name="HospitalBlackShadowSingles207" type="Sprite2D" parent="Workshop"]
-position = Vector2(267, 22)
-texture = ExtResource("70_kubes")
-
-[node name="HospitalBlackShadowSingles428" type="Sprite2D" parent="Workshop"]
-position = Vector2(342, -47)
-texture = ExtResource("71_7w3xv")
-
-[node name="JapaneseInteriorsBlackShadowSingles39" type="Sprite2D" parent="Workshop"]
-position = Vector2(200, 21)
+[node name="JapaneseInteriorsBlackShadowSingles39" type="Sprite2D" parent="Workshop/Objects"]
+position = Vector2(204, 21)
 texture = ExtResource("72_tfdht")
 
-[node name="ShootingRangeBlackShadowSingles8" type="Sprite2D" parent="Workshop"]
+[node name="Stood" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(251, -26)
 texture = ExtResource("74_lw8xc")
 
-[node name="JapaneseInteriorsBlackShadowSingles121" type="Sprite2D" parent="Workshop"]
-position = Vector2(251, -32)
+[node name="JapaneseInteriorsBlackShadowSingles121" type="Sprite2D" parent="Workshop/Objects/Stood"]
+position = Vector2(0, -6)
 texture = ExtResource("75_d5ouo")
 
-[node name="JapaneseInteriorsBlackShadowSingles22" type="Sprite2D" parent="Workshop"]
+[node name="GreyTable" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(194, -13)
 texture = ExtResource("76_gu4mo")
 
-[node name="HalloweenShadowSingles81" type="Sprite2D" parent="Workshop"]
-position = Vector2(198, -14)
+[node name="HalloweenShadowSingles81" type="Sprite2D" parent="Workshop/Objects/GreyTable"]
+position = Vector2(4, -1)
 texture = ExtResource("59_nmgt2")
 
-[node name="ClothingStoreBlackShadowSingles9" type="Sprite2D" parent="Workshop"]
-position = Vector2(280, 11)
-rotation = 1.53042
-texture = ExtResource("47_qlrae")
-
-[node name="LivingRoomBlackShadowSingles24" type="Sprite2D" parent="Workshop"]
+[node name="LivingRoomBlackShadowSingles24" type="Sprite2D" parent="Workshop/Objects"]
 position = Vector2(273, -35)
 texture = ExtResource("78_d5ouo")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Workshop"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Workshop/StaticBody2D"]
+position = Vector2(168, -37)
+shape = SubResource("RectangleShape2D_2f0ik")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Workshop/StaticBody2D"]
+position = Vector2(168, 52)
+shape = SubResource("RectangleShape2D_2f0ik")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Workshop/StaticBody2D"]
+position = Vector2(270.25, 64)
+shape = SubResource("RectangleShape2D_gkrgm")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Workshop/StaticBody2D"]
+position = Vector2(264, -65)
+shape = SubResource("RectangleShape2D_gkrgm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Workshop/StaticBody2D"]
+position = Vector2(367, -26.5)
+shape = SubResource("RectangleShape2D_g3ykq")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Workshop/StaticBody2D"]
+position = Vector2(362.5, -0.5)
+shape = SubResource("RectangleShape2D_qce5x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Workshop/StaticBody2D"]
+polygon = PackedVector2Array(191, 11, 218, 11, 218, 17, 354, 17, 354, 41, 191, 41)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Workshop/StaticBody2D"]
+polygon = PackedVector2Array(349, -19, 235, -19, 235, -11, 217, -11, 217, -21, 206, -21, 206, -5, 173, -5, 173, -47, 349, -47)
+
 [node name="OldMan" parent="." instance=ExtResource("79_gu4mo")]
+visible = false
 position = Vector2(25, 0)
