@@ -3,9 +3,10 @@ extends CharacterBody2D
 
 const SPEED = 50
 
-
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
+
+
 
 var input_vector: Vector2 = Vector2.ZERO
 
@@ -46,3 +47,10 @@ func _physics_process(_delta: float) -> void:
 		animation_tree.get("parameters/playback").travel("walk")
 	else:
 		animation_tree.get("parameters/playback").travel("idle")
+
+func reset():
+	# Reset the character to the initial position and state
+	position = GameManager.INITIAL_POSITION
+	velocity = Vector2.ZERO
+	animation_tree.get("parameters/playback").travel("idle")
+	print("[Coco] Character reset done.")

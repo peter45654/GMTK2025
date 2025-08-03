@@ -17,7 +17,7 @@ radius = 8.0
 
 [node name="Map" parent="." instance=ExtResource("1_7aouk")]
 
-[node name="Coco" parent="Map/LivingRoom/Object" index="19" instance=ExtResource("2_vv3et")]
+[node name="Coco" parent="Map/LivingRoom/Object" index="19" groups=["Player"] instance=ExtResource("2_vv3et")]
 position = Vector2(46, 36)
 
 [node name="Camera2D" type="Camera2D" parent="Map/LivingRoom/Object/Coco"]

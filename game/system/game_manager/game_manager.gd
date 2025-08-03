@@ -1,8 +1,8 @@
 extends Node
 
-var system_name: String = "[GameManager]"
+const INITIAL_POSITION: Vector2 = Vector2(46,36)
 
-# TODO const Vector2 play_initial_position = Vector2(0, 0)
+var system_name: String = "[GameManager]"
 
 func soft_reset_game() -> void:
 	# find all in Interactable in group
@@ -10,6 +10,11 @@ func soft_reset_game() -> void:
 	for interactable in interactables:
 		if interactable.has_method("reset"):
 			interactable.reset()
+
+	var player = get_tree().get_nodes_in_group("Player")[0]
+	if player:
+		if player.has_method("reset"):
+			player.reset()
 	print(system_name, "Soft reset game completed.")
 
 func _input(event: InputEvent) -> void:
