@@ -50,9 +50,10 @@ func show_black_block() -> void:
 	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
 	if black_block:
 		black_block.show()
+	print(system_name, "Black block visibility shown.")
 
 func hide_black_block() -> void:
 	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
 	if black_block:
 		black_block.hide()
-	print(system_name, "Black block visibility toggled.")
+	print(system_name, "Black block visibility hidden.")
