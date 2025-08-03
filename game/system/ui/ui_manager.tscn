@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx348aakmkv71"]
+
+[ext_resource type="Script" uid="uid://mbcujmepcgs0" path="res://game/system/ui/ui_manager.gd" id="1_1wf27"]
+[ext_resource type="PackedScene" uid="uid://qj22tpmdsvft" path="res://game/system/ui/ui_component/item_btn.tscn" id="2_q4w7d"]
+
+[node name="UIManager" type="Node"]
+script = ExtResource("1_1wf27")
+item_btn = ExtResource("2_q4w7d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UserInterface" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="func toggle_inventory_ui_btn" type="Button" parent="CanvasLayer/UserInterface"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 19.0
+offset_right = 136.0
+offset_bottom = 58.0
+text = "Inventory"
+
+[node name="InventoryPanel" type="Panel" parent="CanvasLayer"]
+offset_left = 188.0
+offset_top = 24.0
+offset_right = 564.0
+offset_bottom = 348.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/InventoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+columns = 2
+
+[node name="Button" parent="CanvasLayer/InventoryPanel/ScrollContainer/GridContainer" instance=ExtResource("2_q4w7d")]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="ItemAttributePanel" type="Panel" parent="CanvasLayer"]
+offset_left = 616.0
+offset_top = 81.0
+offset_right = 907.0
+offset_bottom = 306.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ItemAttributePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="item_name" type="Label" parent="CanvasLayer/ItemAttributePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "TiltlePlaceHolder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item_description" type="Label" parent="CanvasLayer/ItemAttributePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+text = "Content"
+
+[connection signal="pressed" from="CanvasLayer/UserInterface/func toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/InventoryPanel/ScrollContainer/GridContainer/Button" to="." method="_on_item_button_mouse_entered"]

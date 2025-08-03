@@ -21,6 +21,7 @@ State="*res://state.gd"
 Global="*res://global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Inventory="*res://game/system/inventory/inventory.tscn"
+UiManager="*res://game/system/ui/ui_manager.tscn"
 
 [dialogue_manager]
 
