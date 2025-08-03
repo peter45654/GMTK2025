@@ -2,6 +2,9 @@ extends Node
 
 const INITIAL_POSITION: Vector2 = Vector2(46,36)
 const TRANSITION_DURATION_MS: float = 1000
+const Balloon = preload("res://game/dialogue/balloon.tscn")
+const DialogueSource:DialogueResource = preload("res://game/dialogue/loop.dialogue")
+
 var system_name: String = "[GameManager]"
 var is_resetting: bool = false
 var reset_time: float = 0.0
@@ -66,3 +69,14 @@ func tomas_recieve_item(item_name: String) -> void:
 		print(system_name, "Tomas received item:", item_name, "Progress:", tomas_progress)
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
+		create_dialogue("tomas_revieve_none")
+
+
+func create_dialogue(title: String) -> void:
+	var balloon: Node = Balloon.instantiate()
+	if DialogueSource == null:
+		print(system_name, "Dialogue resource is null, cannot start dialogue.")
+		return
+	var dialogue_source: DialogueResource = DialogueSource
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(dialogue_source, title)

@@ -24,6 +24,13 @@ if GameManager.tomas_progress==1:
 	
 => END
 
+~ tomas_revieve_none
+
+Tomas:
+	Go away, than. I an drinking.	
+
+=> END
+
 ~ clean_bottle
 
 you clean up the bottle.
