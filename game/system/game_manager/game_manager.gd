@@ -1,6 +1,6 @@
 extends Node
 
-const INITIAL_POSITION: Vector2 = Vector2(46, 36)
+const INITIAL_POSITION: Vector2 = Vector2(325, -1.0)
 const TRANSITION_DURATION_MS: float = 2000
 const Balloon = preload("res://game/dialogue/balloon.tscn")
 const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialogue")
@@ -40,10 +40,11 @@ func soft_reset_game() -> void:
 		if player.has_method("reset"):
 			player.reset()
 
-	set_living_room_visable(true)
+	set_living_room_visable(false)
 	set_boyroom_visable(false)
-	set_workshop_visable(false)
+	set_workshop_visable(true)
 
+	Inventory.clear_inventory()
 	var ori_obj_container_node = get_tree().get_nodes_in_group("OriginObjectContainer")[0]
 	var player_parent = player.get_parent()
 	player_parent.remove_child(player)
@@ -91,20 +92,29 @@ func tomas_recieve_item(item_name: String) -> void:
 		print(system_name, "Tomas received item:", item_name, "Progress:", tomas_progress)
 		create_dialogue("tomas_progress_1_talking_begin")
 	elif item_name == "Overdue Order":
-		tomas_progress = 1
-		create_dialogue("overdue_order_ans")
+		if tomas_progress < 1:
+			tomas_progress = 1
+			create_dialogue("overdue_order_ans")	
+		else:
+			create_dialogue("tomas_receive_none")
 	elif item_name == "Wooden Horse":
 		create_dialogue("failure_wooden_horse_ans")
 	elif item_name == "Wooden Bird":
-		tomas_progress = 2
-		create_dialogue("tommy_craft_ans")
+		if tomas_progress < 2:
+			tomas_progress = 2
+			create_dialogue("tommy_craft_ans")
+		else:
+			create_dialogue("tomas_receive_none")
 	elif item_name == "Smooth Mask":
 		create_dialogue("failure_mask_ans")
 	elif item_name == "Key":
 		create_dialogue("key_ans")
 	elif item_name == "Puppet Blueprint":
-		tomas_progress = 3
-		create_dialogue("boy_item_paper_ans")
+		if tomas_progress < 3:
+			tomas_progress = 3
+			create_dialogue("boy_item_paper_ans")
+		else:
+			create_dialogue("tomas_receive_none")
 	elif item_name == "Carving Knife":
 		create_dialogue("boy_item_carving_knife_ans")
 	elif item_name == "Unfinished Wooden Mechanism":
