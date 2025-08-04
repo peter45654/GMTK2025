@@ -44,6 +44,7 @@ func soft_reset_game() -> void:
 	set_boyroom_visable(false)
 	set_workshop_visable(true)
 
+	Inventory.clear_inventory()
 	var ori_obj_container_node = get_tree().get_nodes_in_group("OriginObjectContainer")[0]
 	var player_parent = player.get_parent()
 	player_parent.remove_child(player)
