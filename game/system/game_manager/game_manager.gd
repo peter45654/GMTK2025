@@ -1,6 +1,6 @@
 extends Node
 
-const INITIAL_POSITION: Vector2 = Vector2(46, 36)
+const INITIAL_POSITION: Vector2 = Vector2(325, -1.0)
 const TRANSITION_DURATION_MS: float = 2000
 const Balloon = preload("res://game/dialogue/balloon.tscn")
 const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialogue")
@@ -40,9 +40,9 @@ func soft_reset_game() -> void:
 		if player.has_method("reset"):
 			player.reset()
 
-	set_living_room_visable(true)
+	set_living_room_visable(false)
 	set_boyroom_visable(false)
-	set_workshop_visable(false)
+	set_workshop_visable(true)
 
 	var ori_obj_container_node = get_tree().get_nodes_in_group("OriginObjectContainer")[0]
 	var player_parent = player.get_parent()
