@@ -115,6 +115,12 @@ position = Vector2(24, 90)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/StaticBody2D"]
 shape = SubResource("CircleShape2D_0xtou")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="Map/LivingRoom/Object" index="25"]
+position = Vector2(152, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/StaticBody2D2"]
+shape = SubResource("CircleShape2D_0xtou")
+
 [node name="StaticBody2D" parent="Map/LivingRoom" index="4"]
 visible = false
 
