@@ -92,20 +92,29 @@ func tomas_recieve_item(item_name: String) -> void:
 		print(system_name, "Tomas received item:", item_name, "Progress:", tomas_progress)
 		create_dialogue("tomas_progress_1_talking_begin")
 	elif item_name == "Overdue Order":
-		tomas_progress = 1
-		create_dialogue("overdue_order_ans")
+		if tomas_progress < 1:
+			tomas_progress = 1
+			create_dialogue("overdue_order_ans")	
+		else:
+			create_dialogue("tomas_receive_none")
 	elif item_name == "Wooden Horse":
 		create_dialogue("failure_wooden_horse_ans")
 	elif item_name == "Wooden Bird":
-		tomas_progress = 2
-		create_dialogue("tommy_craft_ans")
+		if tomas_progress < 2:
+			tomas_progress = 2
+			create_dialogue("tommy_craft_ans")
+		else:
+			create_dialogue("tomas_receive_none")
 	elif item_name == "Smooth Mask":
 		create_dialogue("failure_mask_ans")
 	elif item_name == "Key":
 		create_dialogue("key_ans")
 	elif item_name == "Puppet Blueprint":
-		tomas_progress = 3
-		create_dialogue("boy_item_paper_ans")
+		if tomas_progress < 3:
+			tomas_progress = 3
+			create_dialogue("boy_item_paper_ans")
+		else:
+			create_dialogue("tomas_receive_none")
 	elif item_name == "Carving Knife":
 		create_dialogue("boy_item_carving_knife_ans")
 	elif item_name == "Unfinished Wooden Mechanism":
