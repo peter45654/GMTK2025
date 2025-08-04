@@ -43,6 +43,19 @@ func _unhandled_input(_event: InputEvent) -> void:
 	else:
 		input_vector = Vector2.ZERO
 
+	if input_vector == Vector2.RIGHT:
+		animation_tree.set("parameters/idle/blend_position", Vector2.RIGHT)
+		animation_tree.set("parameters/walk/blend_position", Vector2.RIGHT)
+	elif input_vector == Vector2.LEFT:
+		animation_tree.set("parameters/idle/blend_position", Vector2.LEFT)
+		animation_tree.set("parameters/walk/blend_position", Vector2.LEFT)
+	elif input_vector == Vector2.UP:
+		animation_tree.set("parameters/idle/blend_position", Vector2.UP)
+		animation_tree.set("parameters/walk/blend_position", Vector2.UP)
+	elif input_vector == Vector2.DOWN:
+		animation_tree.set("parameters/idle/blend_position", Vector2.DOWN)
+		animation_tree.set("parameters/walk/blend_position", Vector2.DOWN)
+
 
 func _physics_process(_delta: float) -> void:
 	if input_vector.length() > 0:
