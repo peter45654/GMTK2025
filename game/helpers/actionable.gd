@@ -182,3 +182,23 @@ func door_locked() -> void:
 		print(system_name, "Door is not locked.")
 		return
 	create_dialogue()
+
+func get_root_name() -> String:
+	if root == null:
+		print(system_name, "Root node is null, cannot get name.")
+		return ""
+	return root.name
+
+func highlight() -> void:
+	if root == null:
+		print(system_name, "Root node is null, cannot highlight.")
+		return
+	root.modulate = Color(1, 1, 0, 1)  # Yellow color for highlight
+	print(system_name, "Root node highlighted.")
+
+func unhighlight() -> void:
+	if root == null:
+		print(system_name, "Root node is null, cannot unhighlight.")
+		return
+	root.modulate = Color(1, 1, 1, 1)  # Reset to white color
+	print(system_name, "Root node unhighlighted.")

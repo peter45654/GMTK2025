@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 50
 
+const system_name: String = "[Coco]"
+
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
@@ -13,6 +15,9 @@ var input_vector: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	animation_tree.active = true
+	actionable_finder.area_entered.connect(_on_actionable_finder_area_shape_entered)
+	actionable_finder.area_exited.connect(on_actionable_finder_area_shape_exited)
+
 
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -78,3 +83,25 @@ func reset():
 	velocity = Vector2.ZERO
 	animation_tree.get("parameters/playback").travel("idle")
 	print("[Coco] Character reset done.")
+
+func _on_actionable_finder_area_shape_entered(area: Area2D) -> void:
+	if area == null:
+		print(system_name, "Area is null, cannot process.")
+		return
+
+	if area is Actionable:
+		print(system_name, "Actionable area entered:", area.get_root_name())
+		area.highlight()
+
+	pass # Replace with function body.
+
+func on_actionable_finder_area_shape_exited(area: Area2D) -> void:
+	if area == null:
+		print(system_name, "Area is null, cannot process.")
+		return
+
+	if area is Actionable:
+		print(system_name, "Actionable area exited:", area.get_root_name())
+		area.unhighlight()
+
+	pass # Replace with function body.
