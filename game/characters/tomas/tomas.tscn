@@ -3,9 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://budna3cjatb0b" path="res://game/characters/nathan/nathan.png" id="1_5yyb1"]
 [ext_resource type="SpriteFrames" uid="uid://11ehbyd08j2j" path="res://art_test/character/tomas_sprite_frame.tres" id="2_ot6dh"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2fii"]
-radius = 5.0
-height = 14.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot6dh"]
+size = Vector2(19, 16)
 
 [node name="Tomas" type="StaticBody2D"]
 texture_filter = 1
@@ -18,8 +17,9 @@ position = Vector2(0, -8)
 texture = ExtResource("1_5yyb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_u2fii")
+shape = SubResource("RectangleShape2D_ot6dh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
