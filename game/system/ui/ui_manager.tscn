@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx348aakmkv71"]
+[gd_scene load_steps=10 format=3 uid="uid://cx348aakmkv71"]
 
 [ext_resource type="Script" uid="uid://mbcujmepcgs0" path="res://game/system/ui/ui_manager.gd" id="1_1wf27"]
 [ext_resource type="PackedScene" uid="uid://qj22tpmdsvft" path="res://game/system/ui/ui_component/item_btn.tscn" id="2_q4w7d"]
+[ext_resource type="Texture2D" uid="uid://dn1bfm8ft5dip" path="res://game/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0026.png" id="3_pow7e"]
+[ext_resource type="Texture2D" uid="uid://b3cxb5c1bdyxo" path="res://game/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0001.png" id="4_fvfrf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pow7e"]
+bg_color = Color(0.6, 0.6, 0.6, 0.388235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pow7e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pow7e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pow7e"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fvfrf"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="UIManager" type="Node"]
 script = ExtResource("1_1wf27")
@@ -15,28 +30,72 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UserInterface"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_fvfrf")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 9
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 9
+
 [node name="func toggle_inventory_ui_btn" type="Button" parent="CanvasLayer/UserInterface"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 19.0
+offset_top = 18.0
 offset_right = 136.0
 offset_bottom = 58.0
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_pow7e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pow7e")
 text = "Inventory"
 
 [node name="InventoryPanel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 188.0
-offset_top = 24.0
+offset_top = 13.0
 offset_right = 564.0
-offset_bottom = 348.0
+offset_bottom = 426.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/InventoryPanel"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/InventoryPanel"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_pow7e")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/InventoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pow7e")
 horizontal_scroll_mode = 0
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryPanel/ScrollContainer"]
@@ -56,11 +115,31 @@ offset_right = 907.0
 offset_bottom = 306.0
 mouse_filter = 2
 
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer/ItemAttributePanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pow7e")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ItemAttributePanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -69,6 +148,7 @@ mouse_filter = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "TiltlePlaceHolder"
+label_settings = SubResource("LabelSettings_pow7e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -77,6 +157,7 @@ custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 text = "Content
 ContentContentContentContentContentContentContentContentContentContentContentContentContent"
+label_settings = SubResource("LabelSettings_fvfrf")
 autowrap_mode = 3
 clip_text = true
 

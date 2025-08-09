@@ -1,11 +1,48 @@
-[gd_scene format=3 uid="uid://qj22tpmdsvft"]
+[gd_scene load_steps=4 format=3 uid="uid://qj22tpmdsvft"]
 
-[node name="Label" type="Button"]
+[ext_resource type="Texture2D" uid="uid://b3cxb5c1bdyxo" path="res://game/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0001.png" id="1_jltdh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jltdh"]
+bg_color = Color(0.6, 0.6, 0.6, 0.52549)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fp0r5"]
+
+[node name="Control" type="Control"]
 custom_minimum_size = Vector2(0, 55.07)
-offset_right = 77.0
-offset_bottom = 55.07
+layout_mode = 3
+anchors_preset = 0
+offset_right = 118.0
+offset_bottom = 56.0
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jltdh")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 9
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 9
+
+[node name="Label" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55.07)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 11.22
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_jltdh")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fp0r5")
 text = "TestItem
 "
