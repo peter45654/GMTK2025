@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=4 uid="uid://cvmby2hcmq7n1"]
+[gd_scene load_steps=140 format=4 uid="uid://cvmby2hcmq7n1"]
 
 [ext_resource type="TileSet" uid="uid://jb43wcryt2c3" path="res://art_test/wall_and_floor_tileset.tres" id="1_okjid"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="2_ketuw"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvmclku1tpwb" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_392.png" id="6_o61ct"]
 [ext_resource type="Texture2D" uid="uid://bwlm54qstnejs" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_394.png" id="7_ds634"]
 [ext_resource type="Texture2D" uid="uid://vhu2loyksqsx" path="res://art_test/lights/point_light_mask_2.png" id="7_ttgd6"]
+[ext_resource type="Texture2D" uid="uid://b1pkem12bq0vt" path="res://art_test/interior_pack/11_Halloween_Black_Shadow_Singles_16x16/Halloween_Shadow_Singles_77.png" id="8_g6u3i"]
 [ext_resource type="Texture2D" uid="uid://bei1oq6ijoadn" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_348.png" id="8_o61ct"]
 [ext_resource type="Texture2D" uid="uid://cy3e7w28qd6du" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_349.png" id="9_ds634"]
 [ext_resource type="Texture2D" uid="uid://bxesbux8bfp8g" path="res://art_test/interior_pack/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_335.png" id="10_yaf5i"]
@@ -115,6 +116,10 @@ region = Rect2(195, 50, 27, 30)
 atlas = ExtResource("4_er7i0")
 region = Rect2(128, 4, 16, 27)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttgd6"]
+atlas = ExtResource("4_er7i0")
+region = Rect2(160.002, 10.0055, 16.3222, 21.5453)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo6cb"]
 atlas = ExtResource("4_er7i0")
 region = Rect2(1, 32, 46, 30)
@@ -126,6 +131,10 @@ region = Rect2(17, 70, 14, 9)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cwhe"]
 atlas = ExtResource("2_ketuw")
 region = Rect2(50, 21, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6u3i"]
+atlas = ExtResource("4_er7i0")
+region = Rect2(2.99349, 167.1, 10.5148, 24.8532)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rngb"]
 atlas = ExtResource("4_er7i0")
@@ -204,7 +213,7 @@ size = Vector2(20, 136)
 size = Vector2(62, 20.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0pjo"]
-size = Vector2(108, 21)
+size = Vector2(108, 18.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhnu3"]
 size = Vector2(108, 21)
@@ -214,6 +223,18 @@ size = Vector2(29, 46.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttgd6"]
 size = Vector2(29, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlas5"]
+size = Vector2(13, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh0w8"]
+size = Vector2(12, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lysr7"]
+size = Vector2(27, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ortb"]
+size = Vector2(24, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlrae"]
 atlas = ExtResource("46_l3ff3")
@@ -294,6 +315,35 @@ position = Vector2(9.5, 44)
 rotation = 0.0937343
 texture = SubResource("AtlasTexture_q5awb")
 
+[node name="HalloweenShadowSingles77" type="Sprite2D" parent="LivingRoom/Floor"]
+position = Vector2(39, 55)
+texture = ExtResource("8_g6u3i")
+
+[node name="Bottles2" type="Node2D" parent="LivingRoom/Floor"]
+position = Vector2(-173, 84)
+metadata/_edit_group_ = true
+
+[node name="HalloweenShadowSingles82" type="Sprite2D" parent="LivingRoom/Floor/Bottles2"]
+position = Vector2(293, -4)
+texture = ExtResource("59_nmgt2")
+
+[node name="Bottle" type="Sprite2D" parent="LivingRoom/Floor/Bottles2"]
+position = Vector2(292, -10)
+rotation = -1.48813
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("81_o0pjo")
+
+[node name="Bottle2" type="Sprite2D" parent="LivingRoom/Floor/Bottles2"]
+position = Vector2(286, -6)
+rotation = 1.57021
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("82_d5tyx")
+
+[node name="Bottle3" type="Sprite2D" parent="LivingRoom/Floor/Bottles2"]
+position = Vector2(290, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("82_d5tyx")
+
 [node name="Object" type="Node2D" parent="LivingRoom"]
 y_sort_enabled = true
 
@@ -308,16 +358,26 @@ rotation = 0.0122729
 texture = SubResource("AtlasTexture_0axao")
 
 [node name="Chair" type="Sprite2D" parent="LivingRoom/Object"]
-position = Vector2(88.7793, 58.1814)
+position = Vector2(99.2793, 20.1814)
 rotation = -0.0925186
 texture = SubResource("AtlasTexture_t4cld")
 
 [node name="Chair2" type="Sprite2D" parent="LivingRoom/Object"]
-position = Vector2(108.779, 66.1814)
+position = Vector2(119.279, 28.1814)
 texture = SubResource("AtlasTexture_t4cld")
 
+[node name="Chair3" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(124, 58)
+rotation = -0.0256555
+texture = SubResource("AtlasTexture_ttgd6")
+
+[node name="Chair4" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(96, 56)
+rotation = -0.0256555
+texture = SubResource("AtlasTexture_ttgd6")
+
 [node name="Table" type="Sprite2D" parent="LivingRoom/Object"]
-position = Vector2(97.3894, 80)
+position = Vector2(107.889, 42)
 rotation = -0.0265047
 texture = SubResource("AtlasTexture_mo6cb")
 
@@ -327,9 +387,14 @@ rotation = 0.0325996
 texture = SubResource("AtlasTexture_rdnaa")
 
 [node name="Paper" type="Sprite2D" parent="LivingRoom/Object/Table"]
-position = Vector2(16.8698, -9.55629)
+position = Vector2(2.10986, 0.0559854)
 rotation = 0.0026403
 texture = SubResource("AtlasTexture_5cwhe")
+
+[node name="Table2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(36, 50)
+rotation = 1.3651
+texture = SubResource("AtlasTexture_g6u3i")
 
 [node name="Closet2" type="Sprite2D" parent="LivingRoom/Object"]
 position = Vector2(125.5, -9)
@@ -406,28 +471,41 @@ position = Vector2(-24.5, 52)
 rotation = -0.0238644
 texture = SubResource("AtlasTexture_jtu43")
 
+[node name="Box" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(-9, 85)
+texture = SubResource("AtlasTexture_t3n7g")
+offset = Vector2(-0.5, -8)
+
+[node name="Box5" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(101, 91)
+texture = SubResource("AtlasTexture_t3n7g")
+offset = Vector2(0, -6)
+
+[node name="Box6" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(79, 62)
+texture = SubResource("AtlasTexture_t3n7g")
+offset = Vector2(-1, -7)
+
+[node name="Box7" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(75, 75)
+texture = SubResource("AtlasTexture_t3n7g")
+offset = Vector2(-1, -7)
+
+[node name="Box2" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(-18.5, 86)
+texture = SubResource("AtlasTexture_t3n7g")
+
 [node name="BoxesOn" type="Node2D" parent="LivingRoom/Object"]
 position = Vector2(-13, 81)
 
-[node name="Box" type="Sprite2D" parent="LivingRoom/Object/BoxesOn"]
-position = Vector2(3.5, -4)
-texture = SubResource("AtlasTexture_t3n7g")
-
-[node name="Box3" type="Sprite2D" parent="LivingRoom/Object/BoxesOn"]
-position = Vector2(75, 4)
-texture = SubResource("AtlasTexture_t3n7g")
-
-[node name="Box2" type="Sprite2D" parent="LivingRoom/Object/BoxesOn"]
-position = Vector2(-5.5, 5)
-texture = SubResource("AtlasTexture_t3n7g")
-
-[node name="Interacts" type="Node2D" parent="LivingRoom/Object"]
-
-[node name="Closet3" type="Sprite2D" parent="LivingRoom/Object/Interacts"]
-position = Vector2(161, 75)
+[node name="Closet3" type="Sprite2D" parent="LivingRoom/Object"]
+position = Vector2(153.533, 92.7007)
 rotation = 0.405687
 skew = -0.10472
 texture = SubResource("AtlasTexture_o0pjo")
+offset = Vector2(1.8949, -19.3168)
+
+[node name="Interacts" type="Node2D" parent="LivingRoom/Object"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LivingRoom"]
 position = Vector2(0, -3)
@@ -441,7 +519,7 @@ position = Vector2(-18, 107.75)
 shape = SubResource("RectangleShape2D_d5tyx")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
-position = Vector2(89, 108)
+position = Vector2(89, 106.25)
 shape = SubResource("RectangleShape2D_o0pjo")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
@@ -457,21 +535,40 @@ position = Vector2(188, -1)
 shape = SubResource("RectangleShape2D_ttgd6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
-polygon = PackedVector2Array(174, 19, 174, -29, -29, -29, -29, 53, -29, 61, -29, 80, -16, 80, -16, 61, -20, 61, -20, 53, -1, 53, 23, 53, 23, 40, -1, 40, -1, 19, -1, 13, 34, 13, 34, 19)
+polygon = PackedVector2Array(174, 19, 174, -29, -29, -29, -29, 53, -29, 61, -29, 80, -16, 80, -16, 61, -20, 61, -20, 53, -1, 53, 23, 53, 23, 40, -6, 40, -6, 32, -27, 32, -27, 19, -7, 19, -7.06424, 13, -1, 13, 16, 13, 16, 19)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
 polygon = PackedVector2Array(-29, 80, -13, 80, -13, 72, -4, 72, -4, 100, -29, 100)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
-polygon = PackedVector2Array(54, 96, 54, 84, 74, 84, 74, 77, 123, 77, 123, 87, 139, 87, 139, 96)
+position = Vector2(10.5, -38)
+polygon = PackedVector2Array(63.5, 100, 63.5, 90, 74.5, 90, 74.5, 77, 123, 77, 123, 99, 120.5, 99, 120.5, 110, 106.5, 110, 106.5, 99, 92.5, 99, 92.5, 111, 79.5, 111, 79.5, 99, 73.5, 99, 73.5, 104, 69.5, 104, 69.5, 118, 57.5, 118, 57.5, 100)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="LivingRoom/StaticBody2D"]
-polygon = PackedVector2Array(79, 56, 96, 56, 104, 59, 117, 59, 117, 63, 103, 63, 79, 63)
+visible = false
+position = Vector2(10.5, -38)
+polygon = PackedVector2Array(80.5, 49, 116.5, 49, 116.5, 70, 80.5, 70)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(101.5, 90)
+shape = SubResource("RectangleShape2D_jlas5")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(132, 94)
+shape = SubResource("RectangleShape2D_eh0w8")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(160.5, 94)
+shape = SubResource("RectangleShape2D_lysr7")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="LivingRoom/StaticBody2D"]
+position = Vector2(34, 53)
+shape = SubResource("RectangleShape2D_5ortb")
 
 [node name="Lights" type="Node2D" parent="LivingRoom"]
 
 [node name="LampLight" type="PointLight2D" parent="LivingRoom/Lights"]
-position = Vector2(48, -20)
+position = Vector2(49, -18)
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("5_xhnu3")
 script = ExtResource("6_0oxbm")
