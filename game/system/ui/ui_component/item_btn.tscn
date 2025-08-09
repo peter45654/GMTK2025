@@ -44,5 +44,7 @@ size_flags_stretch_ratio = 11.22
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_jltdh")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fp0r5")
-text = "TestItem
+text = "TestItem TestItem TestItem
 "
+text_overrun_behavior = 2
+autowrap_mode = 2

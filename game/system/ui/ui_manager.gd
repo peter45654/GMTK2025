@@ -9,8 +9,8 @@ var is_boss_open_inventory: bool = false
 @onready var item_container: Control = $CanvasLayer/InventoryPanel/ScrollContainer/GridContainer
 @onready var item_attribute_container: Control = $CanvasLayer/ItemAttributePanel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var item_name: Label = $CanvasLayer/ItemAttributePanel/VBoxContainer/item_name
-@onready var item_description: Label = $CanvasLayer/ItemAttributePanel/VBoxContainer/item_description
+@onready var item_name: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_name
+@onready var item_description: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_description
 
 
 func _ready():
