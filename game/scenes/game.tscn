@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=39 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -6,16 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
-[ext_resource type="Resource" path="res://game/item/Key.tres" id="7_l4dfk"]
+[ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="7_ngn8n"]
+[ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="7_tgyvi"]
 [ext_resource type="Resource" uid="uid://b5j6tycvdiskw" path="res://game/item/boy_item_paper.tres" id="8_2nnov"]
 [ext_resource type="Resource" uid="uid://qoj56wnk6fcs" path="res://game/item/failure_wooden_horse.tres" id="8_4osd1"]
-[ext_resource type="Script" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
+[ext_resource type="Script" uid="uid://maxt4u4wso1q" path="res://game/helpers/transition_area.gd" id="8_og0sj"]
+[ext_resource type="Resource" uid="uid://cx30u45v78p8o" path="res://game/item/body.tres" id="8_vx5xr"]
 [ext_resource type="Resource" uid="uid://l8h4mds1qiuo" path="res://game/item/failure_mask.tres" id="9_ru4j2"]
+[ext_resource type="Resource" uid="uid://bphy1lg2aqmv" path="res://game/item/arm.tres" id="9_skanp"]
+[ext_resource type="Resource" uid="uid://bueld3mfatqtb" path="res://game/item/legs.tres" id="10_oicuu"]
 [ext_resource type="Resource" uid="uid://bwwegvqibmiqf" path="res://game/item/tommy_craft.tres" id="10_ru4j2"]
 [ext_resource type="Resource" uid="uid://cax0ro5a2plix" path="res://game/item/boy_item_carving_knife.tres" id="13_0xtou"]
 [ext_resource type="Resource" uid="uid://cl8onvn3au6fm" path="res://game/item/boy_item_nice_wood.tres" id="14_dyrm1"]
-[ext_resource type="Resource" uid="uid://cmsjyxbcyt255" path="res://game/item/boy_item_gear.tres" id="15_r514v"]
 [ext_resource type="PackedScene" uid="uid://br4n2v8i5w8ms" path="res://blackscreen.tscn" id="17_dyrm1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
@@ -29,6 +32,9 @@ size = Vector2(12.5, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyrm1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xtou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0spt"]
+size = Vector2(14, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xtou"]
 atlas = ExtResource("7_ngn8n")
@@ -144,6 +150,18 @@ metadata/_edit_lock_ = true
 
 [node name="BoyRoom" parent="Map" index="1" groups=["BoyRoom"]]
 visible = true
+
+[node name="Actionable" parent="Map/BoyRoom/Objects/TableR/ClothingStoreBlackShadowSingles6" index="0" instance=ExtResource("4_gy5jl")]
+action_type = 5
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "check_item_head_failed"
+dialogue_option = "check_item_head_success"
+is_always_active = true
+boss_progress_to_active = 3
+items_to_check = Array[ExtResource("7_tgyvi")]([ExtResource("8_vx5xr"), ExtResource("9_skanp"), ExtResource("10_oicuu")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/TableR/ClothingStoreBlackShadowSingles6/Actionable"]
+shape = SubResource("RectangleShape2D_j0spt")
 
 [node name="Paper" type="Sprite2D" parent="Map/BoyRoom/Objects/TableL" index="1"]
 position = Vector2(3, -8)
@@ -411,18 +429,6 @@ dialogue_start = "boy_item_nice_wood"
 boss_progress_to_active = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_nice_wood"]
-position = Vector2(10, 4)
-shape = SubResource("RectangleShape2D_avpn4")
-
-[node name="boy_item_gear" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
-position = Vector2(75, 185)
-action_type = 3
-item_to_claim = ExtResource("15_r514v")
-dialogue_resource = ExtResource("5_l4dfk")
-dialogue_start = "boy_item_gear"
-boss_progress_to_active = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_gear"]
 position = Vector2(10, 4)
 shape = SubResource("RectangleShape2D_avpn4")
 

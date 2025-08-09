@@ -286,3 +286,19 @@ you gather all items!
 you fail gather all items.
 
 => END
+
+~ check_item_head_failed
+
+你沒有收齊三個部件
+=> END
+
+~ check_item_head_success
+
+收齊三個部件
+do Inventory.remove_item_by_name("Puppet Body")
+do Inventory.remove_item_by_name("Puppet Arms")
+do Inventory.remove_item_by_name("Puppet Legs")
+do Inventory.get_puppet_item()
+
+
+=> END

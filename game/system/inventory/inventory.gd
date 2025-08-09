@@ -1,5 +1,6 @@
 extends Node
 
+@export var puppet_item: BaseItem
 @export var items: Array[BaseItem] = []
 
 var system_name: String = "[Inventory]"
@@ -67,6 +68,22 @@ func remove_item(item: BaseItem) -> void:
 	if item in items:
 		items.erase(item)
 		print(system_name, "Removed item: " + item.name)
+
+
+func remove_item_by_name(item_name: String) -> void:
+	for item in items:
+		if item.name == item_name:
+			items.erase(item)
+			print(system_name, "Removed item: " + item.name)
+			return
+	print(system_name, "Item not found: " + item_name)
+
+
+func get_puppet_item() -> BaseItem:
+	if puppet_item:
+		add_item(puppet_item)
+		return puppet_item
+	return null
 
 func clear_inventory() -> void:
 	items.clear()
