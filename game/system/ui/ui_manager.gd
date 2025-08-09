@@ -61,13 +61,13 @@ func _generate_item_buttons() -> void:
 	# clear existing item buttons
 	var children: Array = item_container.get_children()
 	for child in children:
-		if child is Button:
-			child.queue_free()
+		child.queue_free()
 
 	for item in items:
 		print(system_name, "Item in inventory:", item.name, "Description:", item.description)
-		var item_btn_instance = item_btn.instantiate() as Button
-		item_container.add_child(item_btn_instance)
+		var item_btn_instance_root = item_btn.instantiate() as Control
+		item_container.add_child(item_btn_instance_root)
+		var item_btn_instance = item_btn_instance_root.get_child(1) as Button
 		item_btn_instance.name = item.name + "_button"
 		item_btn_instance.text = item.name
 		item_btn_instance.connect(
@@ -77,10 +77,11 @@ func _generate_item_buttons() -> void:
 		item_btn_instance.connect("pressed", _on_item_button_pressed.bind(item_btn_instance, item.name))
 
 	if is_boss_open_inventory:
-		var item_btn_instance = item_btn.instantiate() as Button
-		item_container.add_child(item_btn_instance)
+		var item_btn_instance_root = item_btn.instantiate() as Control
+		item_container.add_child(item_btn_instance_root)
+		var item_btn_instance = item_btn_instance_root.get_child(1) as Button
 		item_btn_instance.name = "Give_Nothing__button"
-		item_btn_instance.text = "Give Nothing"
+		item_btn_instance.text = "Nothing"
 		item_btn_instance.connect(
 			"pressed", _on_item_button_pressed.bind(item_btn_instance, "Give Nothing")
 		)

@@ -9,11 +9,11 @@ const DIALOGUE_PITCHES = {
 
 
 @onready var talk_sound: AudioStreamPlayer = $TalkSound
-@onready var balloon: ColorRect = $Balloon
-@onready var margin: MarginContainer = $Balloon/Margin
-@onready var character_label: RichTextLabel = $Balloon/Margin/VBox/CharacterLabel
-@onready var dialogue_label := $Balloon/Margin/VBox/DialogueLabel
-@onready var responses_menu: VBoxContainer = $Balloon/Margin/VBox/Responses
+@onready var balloon: Control = $Control
+@onready var margin: MarginContainer = $Control/Margin
+@onready var character_label: RichTextLabel = $Control/Margin/VBox/CharacterLabel
+@onready var dialogue_label := $Control/Margin/VBox/DialogueLabel
+@onready var responses_menu: VBoxContainer = $Control/Margin/VBox/Responses
 @onready var response_template: RichTextLabel = %ResponseTemplate
 
 ## The dialogue resource

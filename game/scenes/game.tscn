@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=35 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -21,7 +21,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_og0sj"]
 radius = 8.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r514v"]
+size = Vector2(12.5, 10)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4osd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyrm1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xtou"]
 
@@ -86,7 +91,8 @@ dialogue_start = "tomas"
 is_always_active = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Tomas/Actionable"]
-shape = SubResource("CircleShape2D_og0sj")
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_r514v")
 
 [node name="DoorTransitionBackPos" type="Node2D" parent="Map/LivingRoom/Object" index="21"]
 position = Vector2(25, 87)
@@ -108,13 +114,15 @@ is_locked = true
 unlocked_item_name = "Key"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Door2/Actionable"]
+position = Vector2(0, 15)
 shape = SubResource("CircleShape2D_4osd1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Map/LivingRoom/Object" index="24"]
 position = Vector2(24, 90)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/StaticBody2D"]
-shape = SubResource("CircleShape2D_0xtou")
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_dyrm1")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Map/LivingRoom/Object" index="25"]
 position = Vector2(152, 102)
@@ -122,11 +130,15 @@ position = Vector2(152, 102)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/StaticBody2D2"]
 shape = SubResource("CircleShape2D_0xtou")
 
-[node name="StaticBody2D" parent="Map/LivingRoom" index="4"]
-visible = false
+[node name="Coco" parent="Map/LivingRoom/Object" index="27" groups=["Player"] instance=ExtResource("2_vv3et")]
+position = Vector2(145, 31)
 
-[node name="PointLight2D" parent="Map/LivingRoom" index="5"]
-visible = false
+[node name="Camera2D" type="Camera2D" parent="Map/LivingRoom/Object/Coco"]
+position = Vector2(-1, -1)
+zoom = Vector2(3.15, 3.15)
+
+[node name="LampLight" parent="Map/LivingRoom/Lights" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="Interactable" type="Node2D" parent="Map/LivingRoom" index="6"]
 
@@ -178,27 +190,6 @@ dialogue_start = " clean_bottle"
 position = Vector2(272.073, -4.98388)
 shape = SubResource("CircleShape2D_gy5jl")
 
-[node name="LivingRoomBlackShadowSingles93" parent="Map/Workshop/Other" index="0"]
-visible = false
-
-[node name="Table5" parent="Map/Workshop/Other" index="1"]
-visible = false
-
-[node name="LivingRoomBlackShadowSingles118" parent="Map/Workshop/Other" index="2"]
-visible = false
-
-[node name="LivingRoomBlackShadowSingles121" parent="Map/Workshop/Other" index="3"]
-visible = false
-
-[node name="LivingRoomBlackShadowSingles122" parent="Map/Workshop/Other" index="4"]
-visible = false
-
-[node name="BathroomBlackShadowSingles1" parent="Map/Workshop/Other" index="5"]
-visible = false
-
-[node name="LivingRoomBlackShadowSingles24" parent="Map/Workshop/Other" index="6"]
-visible = false
-
 [node name="Objects" parent="Map/Workshop" index="3" groups=["OriginObjectContainer"]]
 
 [node name="TransionPos" type="Node2D" parent="Map/Workshop/Objects" index="17"]
@@ -239,13 +230,6 @@ clean_show = NodePath("../../../CartOn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Cart/Actionable"]
 shape = SubResource("CircleShape2D_gy5jl")
-
-[node name="Coco" parent="Map/Workshop/Objects" index="20" groups=["Player"] instance=ExtResource("2_vv3et")]
-position = Vector2(325, -1)
-
-[node name="Camera2D" type="Camera2D" parent="Map/Workshop/Objects/Coco"]
-position = Vector2(-1, -1)
-zoom = Vector2(3.15, 3.15)
 
 [node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="6"]
 polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
@@ -455,9 +439,8 @@ position = Vector2(5, 6)
 shape = SubResource("RectangleShape2D_ngn8n")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="BlackScreen" parent="CanvasLayer" instance=ExtResource("17_dyrm1")]
-grow_horizontal = 2
-grow_vertical = 2
 
 [editable path="Map"]

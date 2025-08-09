@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=7 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" uid="uid://4f4wgfis3vey" path="res://game/dialogue/balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="AudioStream" uid="uid://b5rrrtkgbjtv2" path="res://game/audio/sound/talk.wav" id="2_mbavs"]
+[ext_resource type="Texture2D" uid="uid://ubutjuhj6kvx" path="res://game/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0013.png" id="3_ccsdl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
 content_margin_left = 40.0
@@ -25,47 +26,78 @@ script = ExtResource("1_4u26j")
 [node name="TalkSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_mbavs")
 
-[node name="Balloon" type="ColorRect" parent="."]
-color = Color(0, 0, 0, 1)
-
-[node name="Margin" type="MarginContainer" parent="Balloon"]
-custom_minimum_size = Vector2(0, 250)
-layout_mode = 0
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 172.79)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-offset_bottom = 119.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ccsdl")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 9
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 9
+
+[node name="Margin" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = -2.78999
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 metadata/_edit_layout_mode = 1
 
-[node name="VBox" type="VBoxContainer" parent="Balloon/Margin"]
+[node name="VBox" type="VBoxContainer" parent="Control/Margin"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Margin/VBox"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Control/Margin/VBox"]
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/Margin/VBox" instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Control/Margin/VBox" instance=ExtResource("2_a8ve6")]
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 text = "Dialogue"
 
-[node name="Responses" type="VBoxContainer" parent="Balloon/Margin/VBox"]
+[node name="Responses" type="VBoxContainer" parent="Control/Margin/VBox"]
+modulate = Color(0.435192, 0.435192, 0.435192, 1)
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="ResponseTemplate" type="RichTextLabel" parent="Balloon/Margin/VBox"]
+[node name="ResponseTemplate" type="RichTextLabel" parent="Control/Margin/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
@@ -77,6 +109,12 @@ shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 
-[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]
-[connection signal="spoke" from="Balloon/Margin/VBox/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
+[node name="Balloon" type="ColorRect" parent="Control"]
+offset_top = -387.21
+offset_bottom = -387.21
+color = Color(0, 0, 0, 1)
+
+[connection signal="gui_input" from="Control" to="." method="_on_balloon_gui_input"]
+[connection signal="resized" from="Control/Margin" to="." method="_on_margin_resized"]
+[connection signal="spoke" from="Control/Margin/VBox/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
+[connection signal="gui_input" from="Control/Balloon" to="." method="_on_balloon_gui_input"]
