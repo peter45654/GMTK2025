@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_04o5v")
 name = "Puppet"
-description = ""
+description = "A newly assembled puppet."
 expression = "print(\"TestItemSelect\")"
 metadata/_custom_type_script = "uid://b43niu5gjbdar"

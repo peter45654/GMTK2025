@@ -8,7 +8,7 @@ const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialo
 var system_name: String = "[GameManager]"
 var is_need_wait_for_talking: bool = false
 var start_show_black_block_time: float = 0.0
-var tomas_progress: int = 0
+var tomas_progress: int = 3
 var tomas_is_talking_during_reset: bool = false
 
 
@@ -121,6 +121,16 @@ func tomas_recieve_item(item_name: String) -> void:
 		create_dialogue("boy_item_gear_ans")
 	elif item_name == "Uncarved Wood":
 		create_dialogue("boy_item_nice_wood_ans")
+	elif item_name == "Puppet Arms":
+		create_dialogue("puppet_parts_ans")
+	elif item_name == "Puppet Legs":
+		create_dialogue("puppet_parts_ans")
+	elif item_name == "Puppet Body":
+		create_dialogue("puppet_parts_ans")
+	elif item_name == "Puppet":
+		if tomas_progress < 4:
+			tomas_progress = 4
+		create_dialogue("final")
 	else:
 		print(system_name, "Tomas does not recognize item:", item_name)
 		create_dialogue("tomas_receive_none")

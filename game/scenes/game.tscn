@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
-[ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
+[ext_resource type="Resource" uid="uid://bvypmspy8rw36" path="res://game/item/Key.tres" id="7_l4dfk"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="7_ngn8n"]
 [ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="7_tgyvi"]
 [ext_resource type="Resource" uid="uid://b5j6tycvdiskw" path="res://game/item/boy_item_paper.tres" id="8_2nnov"]
@@ -429,6 +429,42 @@ dialogue_start = "boy_item_nice_wood"
 boss_progress_to_active = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_nice_wood"]
+position = Vector2(10, 4)
+shape = SubResource("RectangleShape2D_avpn4")
+
+[node name="legs" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(84, 203)
+action_type = 3
+item_to_claim = ExtResource("10_oicuu")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_puppet_legs"
+boss_progress_to_active = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/legs"]
+position = Vector2(10, 4)
+shape = SubResource("RectangleShape2D_avpn4")
+
+[node name="body" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(72, 188)
+action_type = 3
+item_to_claim = ExtResource("8_vx5xr")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_puppet_body"
+boss_progress_to_active = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/body"]
+position = Vector2(10, 4)
+shape = SubResource("RectangleShape2D_avpn4")
+
+[node name="arms" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+position = Vector2(64, 220)
+action_type = 3
+item_to_claim = ExtResource("9_skanp")
+dialogue_resource = ExtResource("5_l4dfk")
+dialogue_start = "find_puppet_arms"
+boss_progress_to_active = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actions/arms"]
 position = Vector2(10, 4)
 shape = SubResource("RectangleShape2D_avpn4")
 

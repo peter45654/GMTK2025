@@ -26,7 +26,7 @@ Tomas:
 Tomas:
 	"Hm. Go on, then. Go about your business."
 
-=> END!
+=> END
 ~ overdue_order_ans
 Tomas:
 	"Hm? Little one, what... what have you brought over?"
@@ -287,18 +287,82 @@ you fail gather all items.
 
 => END
 
-~ check_item_head_failed
+~ find_puppet_arms
+Behind a false panel under the bed. A perfectly sanded puppet arm.
+=> END
+~ find_puppet_body
+Tucked away inside the hollowed-out book. The puppet's main body.
+=> END
+~ find_puppet_legs
+Inside the hidden compartment of the toy chest, there are puppet's legs."
+=> END
 
-你沒有收齊三個部件
+~ check_item_head_failed
+The head for the new puppet. If you found all puppet parts, you can put them back together.
 => END
 
 ~ check_item_head_success
-
-收齊三個部件
+Finally, all the pieces are here.
+You carefully connect each part, one by one.
+The new puppet is now whole.
 do Inventory.remove_item_by_name("Puppet Body")
 do Inventory.remove_item_by_name("Puppet Arms")
 do Inventory.remove_item_by_name("Puppet Legs")
 do Inventory.get_puppet_item()
 
 
+=> END
+
+~ final
+Tomas:
+	"...So you found them."
+Tomas:
+	"...They were real, after all."
+Tomas:
+	"But this is all it is, isn't it?"
+Tomas:
+	"Just wood. A hollow shell."
+Tomas:
+	"It won't laugh, it won't run... it won't ever tell me about his dreams again."
+Tomas:
+	"...This puppet... it will never be complete."
+- Complete the puppet.
+	Your small, wooden body begins to move.
+	It moves with a steady, determined purpose.
+	You picks up the small carving knife.
+	With movements that are both clumsy and profoundly certain, the knife begins to carve into the wood.
+	A letter forms. T.O.M.M.Y.
+Tomas:
+	"...That... that handwriting..."
+Tomas:
+	"...That's... his..."
+Tomas:
+	"Youㄧ"
+# TODO: 這裡的黑屏不要加漸變
+do GameManager.tomas_done_begin_talking()
+=> END
+
+~ puppet_parts_ans
+Tomas:
+	"...What is this?"
+Tomas:
+	"The craftsmanship... it looks a little familiar."
+Tomas:
+	"But I can't remember."
+Tomas:
+	"Take it away."
+Tomas:
+	"It doesn't belong here."
+=> END
+
+~ tomas_progress_4_talking
+
+Tomas:
+	"Such a long dream... and I'm finally awake."
+Tomas:
+	"Thank you... for bringing me home."
+Tomas:
+	"Come on, Tommy. We have so much more to do."
+# TODO: 這裡直接END，可以回主選單
+do GameManager.tomas_done_talking()
 => END
