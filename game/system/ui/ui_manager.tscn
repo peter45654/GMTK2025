@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx348aakmkv71"]
+[gd_scene load_steps=12 format=3 uid="uid://cx348aakmkv71"]
 
 [ext_resource type="Script" uid="uid://mbcujmepcgs0" path="res://game/system/ui/ui_manager.gd" id="1_1wf27"]
 [ext_resource type="PackedScene" uid="uid://qj22tpmdsvft" path="res://game/system/ui/ui_component/item_btn.tscn" id="2_q4w7d"]
 [ext_resource type="Texture2D" uid="uid://dn1bfm8ft5dip" path="res://game/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0026.png" id="3_pow7e"]
 [ext_resource type="Texture2D" uid="uid://b3cxb5c1bdyxo" path="res://game/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0001.png" id="4_fvfrf"]
+[ext_resource type="AudioStream" uid="uid://do1rfx6ejnqfj" path="res://game/audio/sound/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav" id="4_m4p05"]
+[ext_resource type="AudioStream" uid="uid://dceyw0wus8wit" path="res://game/audio/sound/JDSherbert - Ultimate UI SFX Pack - Select - 2.wav" id="5_yk85d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pow7e"]
 bg_color = Color(0.6, 0.6, 0.6, 0.388235)
@@ -18,9 +20,11 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_fvfrf"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="UIManager" type="Node"]
+[node name="UIManager" type="Node" node_paths=PackedStringArray("cursor_sound", "select_sound")]
 script = ExtResource("1_1wf27")
 item_btn = ExtResource("2_q4w7d")
+cursor_sound = NodePath("CanvasLayer/UserInterface/func toggle_inventory_ui_btn/cusor_sound")
+select_sound = NodePath("CanvasLayer/UserInterface/func toggle_inventory_ui_btn/select_sound")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -59,6 +63,14 @@ focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_pow7e")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pow7e")
 text = "Inventory"
+
+[node name="cusor_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/func toggle_inventory_ui_btn"]
+stream = ExtResource("4_m4p05")
+volume_db = -10.0
+
+[node name="select_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/func toggle_inventory_ui_btn"]
+stream = ExtResource("5_yk85d")
+volume_db = -10.0
 
 [node name="InventoryPanel" type="Panel" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -166,5 +178,6 @@ label_settings = SubResource("LabelSettings_fvfrf")
 autowrap_mode = 3
 clip_text = true
 
+[connection signal="mouse_entered" from="CanvasLayer/UserInterface/func toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/UserInterface/func toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/InventoryPanel/ScrollContainer/GridContainer/Button" to="." method="_on_item_button_mouse_entered"]

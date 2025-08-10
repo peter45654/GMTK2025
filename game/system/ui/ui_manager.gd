@@ -1,9 +1,12 @@
 extends Node
 
 @export var item_btn: PackedScene
+@export var cursor_sound:AudioStreamPlayer
+@export var select_sound:AudioStreamPlayer
 
 var system_name: String = "[UIManager]"
 var is_boss_open_inventory: bool = false
+ 
 @onready var user_interface: Control = $CanvasLayer/UserInterface
 @onready var inventory_ui: Control = $CanvasLayer/InventoryPanel
 @onready var item_container: Control = $CanvasLayer/InventoryPanel/ScrollContainer/GridContainer
@@ -73,6 +76,7 @@ func _generate_item_buttons() -> void:
 		item_btn_instance.connect(
 			"gui_input", _on_item_button_mouse_entered.bind(item_btn_instance, item)
 		)
+		item_btn_instance.connect("mouse_entered",_on_func_toggle_inventory_ui_btn_mouse_entered)
 		item_btn_instance.connect("mouse_exited", _on_item_button_mouse_exited)
 		item_btn_instance.connect("pressed", _on_item_button_pressed.bind(item_btn_instance, item.name))
 
@@ -92,6 +96,7 @@ func _generate_item_buttons() -> void:
 
 func _on_func_toggle_inventory_ui_btn_pressed() -> void:
 	toggle_inventory_ui()
+	select_sound.play()
 
 
 func _on_item_button_mouse_entered(_event: InputEvent, button: Button, base_item: BaseItem) -> void:
@@ -106,6 +111,7 @@ func _on_item_button_mouse_exited() -> void:
 
 
 func _on_item_button_pressed(_button: Button, selected_item_name: String) -> void:
+	select_sound.play()
 	if !is_boss_open_inventory:
 		print(system_name, "Item button pressed without boss context, ignoring.")
 		return
@@ -115,3 +121,7 @@ func _on_item_button_pressed(_button: Button, selected_item_name: String) -> voi
 	is_boss_open_inventory = false
 
 # endregion signal handlers
+
+
+func _on_func_toggle_inventory_ui_btn_mouse_entered() -> void:
+	cursor_sound.play()
