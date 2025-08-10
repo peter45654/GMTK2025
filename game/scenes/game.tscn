@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cc38lc6r2x5fv"]
+[gd_scene load_steps=40 format=3 uid="uid://cc38lc6r2x5fv"]
 
 [ext_resource type="PackedScene" uid="uid://cvmby2hcmq7n1" path="res://art_test/main.tscn" id="1_7aouk"]
 [ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://game/characters/coco/coco.tscn" id="2_vv3et"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnl1bl0a2235p" path="res://game/characters/tomas/tomas.tscn" id="3_ykdcs"]
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://game/helpers/actionable.tscn" id="4_gy5jl"]
 [ext_resource type="Resource" uid="uid://k4o4lhowpe3o" path="res://game/dialogue/loop.dialogue" id="5_l4dfk"]
-[ext_resource type="Resource" uid="uid://bvypmspy8rw36" path="res://game/item/Key.tres" id="7_l4dfk"]
+[ext_resource type="Resource" uid="uid://ctmok0o3q8rgw" path="res://game/item/Key.tres" id="7_l4dfk"]
 [ext_resource type="Texture2D" uid="uid://dlht2wk3s4cn2" path="res://art_test/TopDownHouse_SmallItems.png" id="7_ngn8n"]
 [ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="7_tgyvi"]
 [ext_resource type="Resource" uid="uid://b5j6tycvdiskw" path="res://game/item/boy_item_paper.tres" id="8_2nnov"]
@@ -49,6 +49,9 @@ size = Vector2(11, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og0sj"]
 size = Vector2(33.9199, 35.6936)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgyvi"]
+size = Vector2(44.1776, 20)
+
 [sub_resource type="Gradient" id="Gradient_l4dfk"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
@@ -78,12 +81,13 @@ size = Vector2(16, 12)
 
 [node name="LivingRoom" parent="Map" index="0" groups=["LivingRoom"]]
 
-[node name="Actionable" parent="Map/LivingRoom/Object/Table/Paper" index="0" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/LivingRoom/Object/Table/Paper" index="0" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 action_type = 3
 item_to_claim = ExtResource("3_l4dfk")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "overdue_order"
 is_always_active = true
+hight_light_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Table/Paper/Actionable"]
 shape = SubResource("CircleShape2D_og0sj")
@@ -91,10 +95,11 @@ shape = SubResource("CircleShape2D_og0sj")
 [node name="Tomas" parent="Map/LivingRoom/Object" index="19" instance=ExtResource("3_ykdcs")]
 position = Vector2(25, 13)
 
-[node name="Actionable" parent="Map/LivingRoom/Object/Tomas" instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/LivingRoom/Object/Tomas" node_paths=PackedStringArray("hight_light_node") instance=ExtResource("4_gy5jl")]
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "tomas"
 is_always_active = true
+hight_light_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/Tomas/Actionable"]
 position = Vector2(0, -3)
@@ -143,6 +148,9 @@ position = Vector2(145, 31)
 position = Vector2(-1, -1)
 zoom = Vector2(3.15, 3.15)
 
+[node name="StaticBody2D" parent="Map/LivingRoom" index="4"]
+visible = false
+
 [node name="LampLight" parent="Map/LivingRoom/Lights" index="0"]
 metadata/_edit_lock_ = true
 
@@ -151,7 +159,7 @@ metadata/_edit_lock_ = true
 [node name="BoyRoom" parent="Map" index="1" groups=["BoyRoom"]]
 visible = true
 
-[node name="Actionable" parent="Map/BoyRoom/Objects/TableR/ClothingStoreBlackShadowSingles6" index="0" instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/BoyRoom/Objects/TableR/ClothingStoreBlackShadowSingles6" index="0" node_paths=PackedStringArray("hight_light_node") instance=ExtResource("4_gy5jl")]
 action_type = 5
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "check_item_head_failed"
@@ -159,6 +167,7 @@ dialogue_option = "check_item_head_success"
 is_always_active = true
 boss_progress_to_active = 3
 items_to_check = Array[ExtResource("7_tgyvi")]([ExtResource("8_vx5xr"), ExtResource("9_skanp"), ExtResource("10_oicuu")])
+hight_light_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/TableR/ClothingStoreBlackShadowSingles6/Actionable"]
 shape = SubResource("RectangleShape2D_j0spt")
@@ -168,13 +177,14 @@ position = Vector2(3, -8)
 rotation = -0.0212241
 texture = SubResource("AtlasTexture_0xtou")
 
-[node name="Actionable" parent="Map/BoyRoom/Objects/TableL/Paper" instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/BoyRoom/Objects/TableL/Paper" node_paths=PackedStringArray("hight_light_node") instance=ExtResource("4_gy5jl")]
 action_type = 3
 item_to_claim = ExtResource("8_2nnov")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "boy_item_paper"
 is_always_active = true
 boss_progress_to_active = 1
+hight_light_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/TableL/Paper/Actionable"]
 shape = SubResource("CircleShape2D_og0sj")
@@ -185,10 +195,11 @@ position = Vector2(16, 108)
 [node name="Door" type="Node2D" parent="Map/BoyRoom/Objects" index="13"]
 position = Vector2(16, 91)
 
-[node name="Actionable" parent="Map/BoyRoom/Objects/Door" node_paths=PackedStringArray("transition_area") instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/BoyRoom/Objects/Door" node_paths=PackedStringArray("transition_area", "hight_light_node") instance=ExtResource("4_gy5jl")]
 action_type = 4
 is_always_active = true
 transition_area = NodePath("../../../../../BoyRoomToLivingRoom")
+hight_light_node = NodePath("../../../FloorWall/CondominiumBlackShadowSingles86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BoyRoom/Objects/Door/Actionable"]
 shape = SubResource("CircleShape2D_4osd1")
@@ -198,11 +209,12 @@ visible = false
 
 [node name="Workshop" parent="Map" index="2" groups=["WorkShop"]]
 
-[node name="Actionable" parent="Map/Workshop/FloorWall/Bottles" index="4" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/Workshop/FloorWall/Bottles" index="4" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(21.9266, 0.983876)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = " clean_bottle"
+hight_light_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/FloorWall/Bottles/Actionable"]
 position = Vector2(272.073, -4.98388)
@@ -213,13 +225,14 @@ shape = SubResource("CircleShape2D_gy5jl")
 [node name="TransionPos" type="Node2D" parent="Map/Workshop/Objects" index="17"]
 position = Vector2(185, 5)
 
-[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Mops" index="0" node_paths=PackedStringArray("clean_body", "clean_show") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Mops" index="0" node_paths=PackedStringArray("clean_body", "clean_show", "hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(21.9266, 0.983876)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = " clean_mop"
 clean_body = NodePath("../../MopBody")
 clean_show = NodePath("../../../MopsOn")
+hight_light_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Mops/Actionable"]
 position = Vector2(-12.9265, 2.01612)
@@ -238,16 +251,18 @@ position = Vector2(263, -9)
 position = Vector2(-5, 8)
 shape = SubResource("RectangleShape2D_og0sj")
 
-[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Cart" index="0" node_paths=PackedStringArray("clean_body", "clean_show") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/Workshop/Objects/Interacts/Cart" index="0" node_paths=PackedStringArray("clean_body", "clean_show", "hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(21.9266, 0.983876)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = " clean_cart"
 clean_body = NodePath("../../CartBody")
 clean_show = NodePath("../../../CartOn")
+hight_light_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Cart/Actionable"]
-shape = SubResource("CircleShape2D_gy5jl")
+position = Vector2(-12.0888, 0)
+shape = SubResource("RectangleShape2D_tgyvi")
 
 [node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="6"]
 polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
@@ -328,153 +343,169 @@ shape = SubResource("RectangleShape2D_4osd1")
 
 [node name="actions" type="Node2D" parent="."]
 
-[node name="find_key_pen_holder" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="find_key_pen_holder" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(58, -6)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_key_pen_holder"
 boss_progress_to_active = 2
+hight_light_node = NodePath("../../Map/LivingRoom/Object/Table3/PenBucket")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_pen_holder"]
 position = Vector2(2.5, 6)
 shape = SubResource("RectangleShape2D_bbyh4")
 
-[node name="find_key_teapot" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="find_key_teapot" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(252, 26)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_key_teapot"
 boss_progress_to_active = 2
+hight_light_node = NodePath("../../Map/Workshop/Objects/JapaneseInteriorsBlackShadowSingles39")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_teapot"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_2nnov")
 
-[node name="find_key_paint_can" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="find_key_paint_can" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(389, -21)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_key_paint_can"
 boss_progress_to_active = 2
+hight_light_node = NodePath("../../Map/Workshop/Objects/CornerCloset/HospitalBlackShadowSingles428")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_paint_can"]
 position = Vector2(1.5, 8)
 shape = SubResource("RectangleShape2D_2nnov")
 
-[node name="find_key_paint_bottle" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="find_key_paint_bottle" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(313, 28)
 action_type = 3
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_key_paint_bottle"
 boss_progress_to_active = 2
+hight_light_node = NodePath("../../Map/Workshop/Objects/WorkshopTable/HospitalBlackShadowSingles207")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_paint_bottle"]
 position = Vector2(1.5, 8)
 shape = SubResource("RectangleShape2D_2nnov")
 
-[node name="find_key_vessal" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="find_key_vessal" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(313, 28)
 action_type = 3
 item_to_claim = ExtResource("7_l4dfk")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_key_vessal"
 boss_progress_to_active = 2
+hight_light_node = NodePath("../../Map/Workshop/Objects/HalloweenShadowSingles63")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/find_key_vessal"]
 position = Vector2(-60, -46)
 shape = SubResource("RectangleShape2D_2nnov")
 
-[node name="failure_wooden_horse" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="failure_wooden_horse" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(124, 1)
 action_type = 3
 item_to_claim = ExtResource("8_4osd1")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "failure_wooden_horse"
 boss_progress_to_active = 1
+hight_light_node = NodePath("../../Map/LivingRoom/Object/Closet2")
+hight_light_color = Color(1, 0.498039, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/failure_wooden_horse"]
 position = Vector2(1.5, 2)
 shape = SubResource("RectangleShape2D_l4dfk")
 
-[node name="failure_mask" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="failure_mask" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(60, 80)
 action_type = 3
 item_to_claim = ExtResource("9_ru4j2")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "failure_mask"
 boss_progress_to_active = 1
+hight_light_node = NodePath("../../Map/LivingRoom/Object/Box7")
+hight_light_color = Color(1, 0.498039, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/failure_mask"]
-position = Vector2(2.5, 6)
+position = Vector2(15, -12)
 shape = SubResource("RectangleShape2D_bbyh4")
 
-[node name="boy_item_carving_knife" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="boy_item_carving_knife" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(-24, 154)
 action_type = 3
 item_to_claim = ExtResource("13_0xtou")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "boy_item_carving_knife"
 boss_progress_to_active = 1
+hight_light_node = NodePath("../../Map/BoyRoom/Objects/BedroomBlackShadowSingles279")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_carving_knife"]
 position = Vector2(10, 4)
 shape = SubResource("RectangleShape2D_avpn4")
 
-[node name="boy_item_nice_wood" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="boy_item_nice_wood" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(39, 186)
 action_type = 3
 item_to_claim = ExtResource("14_dyrm1")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "boy_item_nice_wood"
 boss_progress_to_active = 1
+hight_light_node = NodePath("../../Map/BoyRoom/Objects/Closet")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/boy_item_nice_wood"]
 position = Vector2(10, 4)
 shape = SubResource("RectangleShape2D_avpn4")
 
-[node name="legs" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="legs" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(84, 203)
 action_type = 3
 item_to_claim = ExtResource("10_oicuu")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_puppet_legs"
 boss_progress_to_active = 3
+hight_light_node = NodePath("../../Map/BoyRoom/Objects/ClothingStoreBlackShadowSingles199")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/legs"]
 position = Vector2(10, 4)
 shape = SubResource("RectangleShape2D_avpn4")
 
-[node name="body" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="body" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(72, 188)
 action_type = 3
 item_to_claim = ExtResource("8_vx5xr")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_puppet_body"
 boss_progress_to_active = 3
+hight_light_node = NodePath("../../Map/BoyRoom/Objects/HighCloset")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/body"]
 position = Vector2(10, 4)
 shape = SubResource("RectangleShape2D_avpn4")
 
-[node name="arms" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="arms" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(64, 220)
 action_type = 3
 item_to_claim = ExtResource("9_skanp")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "find_puppet_arms"
 boss_progress_to_active = 3
+hight_light_node = NodePath("../../Map/BoyRoom/Objects/Bed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/arms"]
 position = Vector2(10, 4)
 shape = SubResource("RectangleShape2D_avpn4")
 
-[node name="tommy_craft" parent="actions" groups=["Interactable"] instance=ExtResource("4_gy5jl")]
+[node name="tommy_craft" parent="actions" node_paths=PackedStringArray("hight_light_node") groups=["Interactable"] instance=ExtResource("4_gy5jl")]
 position = Vector2(-23, 0)
 action_type = 3
 item_to_claim = ExtResource("10_ru4j2")
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "tommy_craft"
 boss_progress_to_active = 1
+hight_light_node = NodePath("../../Map/LivingRoom/Object/Closet")
+hight_light_color = Color(1, 0.498039, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actions/tommy_craft"]
 position = Vector2(5, 6)

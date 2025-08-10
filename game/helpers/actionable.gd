@@ -19,6 +19,8 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var is_locked: bool = false
 @export var unlocked_item_name: String = ""
 @export var items_to_check: Array[BaseItem] = []
+@export var hight_light_node:Node2D
+@export var hight_light_color:Color=Color(1,1,0,1)
 
 var system_name: String = "[Actionable]"
 
@@ -193,12 +195,14 @@ func highlight() -> void:
 	if root == null:
 		print(system_name, "Root node is null, cannot highlight.")
 		return
-	root.modulate = Color(1, 1, 0, 1)  # Yellow color for highlight
+	if hight_light_node!=null:
+		hight_light_node.modulate = hight_light_color
 	print(system_name, "Root node highlighted.")
 
 func unhighlight() -> void:
 	if root == null:
 		print(system_name, "Root node is null, cannot unhighlight.")
 		return
-	root.modulate = Color(1, 1, 1, 1)  # Reset to white color
+	if hight_light_node!=null:
+		hight_light_node.modulate = Color(1, 1, 1, 1)  # Reset to white color
 	print(system_name, "Root node unhighlighted.")
