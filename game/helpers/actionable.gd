@@ -16,6 +16,7 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 @export var boss_progress_to_active: int = 0
 @export var clean_body: StaticBody2D
 @export var clean_show: Node2D
+@export var hide_object: Node2D
 @export var is_locked: bool = false
 @export var unlocked_item_name: String = ""
 @export var items_to_check: Array[BaseItem] = []
@@ -82,6 +83,9 @@ func action() -> void:
 			create_dialogue()
 		else:
 			create_option_dialogue()
+			active=false
+			if hide_object != null:
+				hide_object.hide()
 		return
 
 	else:
@@ -142,6 +146,10 @@ func reset() -> void:
 	if clean_show != null:
 		clean_show.hide()
 		print(system_name, "Clean show node reset done.")
+	if active:
+		if hide_object != null:
+			hide_object.show()
+			print(system_name, "Hide object node reset done.")
 
 	print(system_name, "Actionable reset done.")
 

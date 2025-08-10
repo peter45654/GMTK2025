@@ -159,13 +159,14 @@ metadata/_edit_lock_ = true
 [node name="BoyRoom" parent="Map" index="1" groups=["BoyRoom"]]
 visible = true
 
-[node name="Actionable" parent="Map/BoyRoom/Objects/TableR/ClothingStoreBlackShadowSingles6" index="0" node_paths=PackedStringArray("hight_light_node") instance=ExtResource("4_gy5jl")]
+[node name="Actionable" parent="Map/BoyRoom/Objects/TableR/ClothingStoreBlackShadowSingles6" index="0" node_paths=PackedStringArray("hide_object", "hight_light_node") instance=ExtResource("4_gy5jl")]
 action_type = 5
 dialogue_resource = ExtResource("5_l4dfk")
 dialogue_start = "check_item_head_failed"
 dialogue_option = "check_item_head_success"
 is_always_active = true
 boss_progress_to_active = 3
+hide_object = NodePath("..")
 items_to_check = Array[ExtResource("7_tgyvi")]([ExtResource("8_vx5xr"), ExtResource("9_skanp"), ExtResource("10_oicuu")])
 hight_light_node = NodePath("..")
 
