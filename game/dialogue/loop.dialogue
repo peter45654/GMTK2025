@@ -358,11 +358,11 @@ Tomas:
 ~ tomas_progress_4_talking
 
 Tomas:
-	"Such a long dream... and I'm finally awake."
+	"Such a long dream... 
 Tomas:
-	"Thank you... for bringing me home."
+	"I'm finally awake. Thank you... for waking me up...."
 Tomas:
-	"Come on, Tommy. We have so much more to do."
+	"Our work isn't finished yet, is it, Tommy?"
 # TODO: 這裡直接END，可以回主選單
 do GameManager.tomas_done_talking()
 => END
