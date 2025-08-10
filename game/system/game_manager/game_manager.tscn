@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cir3jgpidbmf7"]
+[gd_scene load_steps=3 format=3 uid="uid://cir3jgpidbmf7"]
 
 [ext_resource type="Script" uid="uid://cnnsn73lmrrkl" path="res://game/system/game_manager/game_manager.gd" id="1_huy20"]
+[ext_resource type="AudioStream" uid="uid://b20p3062elons" path="res://game/audio/sound/impact-transition-impact-dramatic-boom-346103.mp3" id="2_p2v6p"]
 
-[node name="GameManager" type="Node"]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("loop_sound")]
 script = ExtResource("1_huy20")
+loop_sound = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p2v6p")

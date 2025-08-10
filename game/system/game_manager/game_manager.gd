@@ -5,6 +5,8 @@ const TRANSITION_DURATION_MS: float = 2000
 const Balloon = preload("res://game/dialogue/balloon.tscn")
 const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialogue")
 
+@export var loop_sound: AudioStreamPlayer
+
 var system_name: String = "[GameManager]"
 var is_need_wait_for_talking: bool = false
 var start_show_black_block_time: float = 0.0
@@ -94,7 +96,7 @@ func tomas_recieve_item(item_name: String) -> void:
 	elif item_name == "Overdue Order":
 		if tomas_progress < 1:
 			tomas_progress = 1
-			create_dialogue("overdue_order_ans")	
+			create_dialogue("overdue_order_ans")
 		else:
 			create_dialogue("tomas_receive_none")
 	elif item_name == "Wooden Horse":
@@ -153,7 +155,10 @@ func tomas_done_talking() -> void:
 
 func tomas_done_begin_talking() -> void:
 	show_black_block()
+	if loop_sound != null:
+		loop_sound.play()
 	soft_reset_game()
+
 
 
 func set_living_room_visable(is_visible: bool) -> void:
