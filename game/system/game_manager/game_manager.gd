@@ -6,11 +6,11 @@ const Balloon = preload("res://game/dialogue/balloon.tscn")
 const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialogue")
 
 @export var loop_sound: AudioStreamPlayer
+@export var tomas_progress: int = 0
 
 var system_name: String = "[GameManager]"
 var is_need_wait_for_talking: bool = false
 var start_show_black_block_time: float = 0.0
-var tomas_progress: int = 3
 var tomas_is_talking_during_reset: bool = false
 
 
@@ -150,13 +150,13 @@ func create_dialogue(title: String) -> void:
 
 func tomas_done_talking() -> void:
 	is_need_wait_for_talking = false
+	if loop_sound != null:
+		loop_sound.play()
 	hide_black_block()
 
 
 func tomas_done_begin_talking() -> void:
 	show_black_block()
-	if loop_sound != null:
-		loop_sound.play()
 	soft_reset_game()
 
 
