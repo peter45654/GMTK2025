@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://dovx8ojro1870"]
+[gd_scene load_steps=28 format=3 uid="uid://dovx8ojro1870"]
 
 [ext_resource type="Texture2D" uid="uid://pvwclvrd4b5s" path="res://game/characters/coco/coco.png" id="1_poon3"]
 [ext_resource type="Script" uid="uid://bld2hl8tqs4ne" path="res://game/characters/coco/coco.gd" id="1_rc0d5"]
 [ext_resource type="SpriteFrames" uid="uid://r7ehq5csoyt4" path="res://art_test/character/hollow_puppet_sprite_frame.tres" id="3_fm7ty"]
+[ext_resource type="AudioStream" uid="uid://ch6cjdpp0ps0v" path="res://game/audio/sound/step.wav" id="4_8ygkq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ux02"]
 radius = 4.0
@@ -439,10 +440,11 @@ states/walk/position = Vector2(579, 148)
 [sub_resource type="CircleShape2D" id="CircleShape2D_drwg8"]
 radius = 8.0
 
-[node name="Coco" type="CharacterBody2D"]
+[node name="Coco" type="CharacterBody2D" node_paths=PackedStringArray("step_sound")]
 texture_filter = 1
 collision_layer = 3
 script = ExtResource("1_rc0d5")
+step_sound = NodePath("step_sound")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -485,3 +487,8 @@ position = Vector2(0, -16)
 sprite_frames = ExtResource("3_fm7ty")
 animation = &"idle_d"
 autoplay = "idle_d"
+
+[node name="step_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8ygkq")
+volume_db = -1.0
+pitch_scale = 0.9

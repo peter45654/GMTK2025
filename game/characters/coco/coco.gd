@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
+@export var step_sound:AudioStreamPlayer
 
 const SPEED = 50
-
 const system_name: String = "[Coco]"
 
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -38,7 +38,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 				actionables[0].action()
 				input_vector = Vector2.ZERO
 				return
-
+	
 	var x_axis: float = Input.get_axis("ui_left", "ui_right")
 	var y_axis: float = Input.get_axis("ui_up", "ui_down")
 	if x_axis:
@@ -47,7 +47,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		input_vector = y_axis * Vector2.DOWN
 	else:
 		input_vector = Vector2.ZERO
-
+		
 	if input_vector == Vector2.RIGHT:
 		animation_tree.set("parameters/idle/blend_position", Vector2.RIGHT)
 		animation_tree.set("parameters/walk/blend_position", Vector2.RIGHT)
@@ -71,6 +71,9 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	if velocity.length() > 0:
+			#if input_vector!=Vector2.ZERO:
+		if !step_sound.playing:
+			step_sound.play()
 		animation_tree.set("parameters/idle/blend_position", velocity)
 		animation_tree.set("parameters/walk/blend_position", velocity)
 		animation_tree.get("parameters/playback").travel("walk")

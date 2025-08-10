@@ -66,11 +66,11 @@ text = "Inventory"
 
 [node name="cusor_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/func toggle_inventory_ui_btn"]
 stream = ExtResource("4_m4p05")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="select_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/func toggle_inventory_ui_btn"]
 stream = ExtResource("5_yk85d")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="InventoryPanel" type="Panel" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
