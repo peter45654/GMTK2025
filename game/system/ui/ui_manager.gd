@@ -29,10 +29,21 @@ func _ready():
 	assert(item_container != null, system_name + " Item container is not set.")
 	assert(item_container is Control, system_name + " Item container must be a Control node.")
 
-	user_interface.visible = true
+	var current_scene_name = get_tree().get_current_scene().get_name()
+	print("目前場景的名稱是：", current_scene_name)
+	if current_scene_name=="Title":
+		user_interface.visible = false
+	else:
+		user_interface.visible = true
 	inventory_ui.visible = false
 	item_attribute_container.visible = false
 	print(system_name, " UI Manager is ready.")
+
+func on_press_start_btn()->void:
+	user_interface.visible = true
+	inventory_ui.visible = false
+	item_attribute_container.visible = false
+	print(system_name, " on_press_start_btn.")
 
 
 func open_inventory_ui(is_open_by_boss: bool) -> void:
@@ -121,7 +132,6 @@ func _on_item_button_pressed(_button: Button, selected_item_name: String) -> voi
 	is_boss_open_inventory = false
 
 # endregion signal handlers
-
 
 func _on_func_toggle_inventory_ui_btn_mouse_entered() -> void:
 	cursor_sound.play()

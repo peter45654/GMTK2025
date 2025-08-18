@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://4cojtoqyld2c"]
+[gd_scene load_steps=4 format=3 uid="uid://4cojtoqyld2c"]
 
 [ext_resource type="Script" uid="uid://dgaabcyg3dbh0" path="res://game/system/inventory/inventory.gd" id="1_nbhwu"]
 [ext_resource type="Resource" uid="uid://iq0kiu2p61ex" path="res://game/item/puppet.tres" id="2_ebxix"]
 [ext_resource type="Script" uid="uid://b43niu5gjbdar" path="res://game/item/item.gd" id="2_nbhwu"]
-[ext_resource type="Resource" uid="uid://bvypmspy8rw36" path="res://game/item/Key.tres" id="4_jlm65"]
-[ext_resource type="Resource" uid="uid://bueld3mfatqtb" path="res://game/item/legs.tres" id="5_vm5co"]
-[ext_resource type="Resource" uid="uid://bphy1lg2aqmv" path="res://game/item/arm.tres" id="6_5el4c"]
-[ext_resource type="Resource" uid="uid://cx30u45v78p8o" path="res://game/item/body.tres" id="7_kea55"]
 
 [node name="Inventory" type="Node"]
 script = ExtResource("1_nbhwu")
 puppet_item = ExtResource("2_ebxix")
-items = Array[ExtResource("2_nbhwu")]([ExtResource("4_jlm65"), ExtResource("5_vm5co"), ExtResource("6_5el4c"), ExtResource("7_kea55")])
+items = Array[ExtResource("2_nbhwu")]([ExtResource("2_ebxix")])

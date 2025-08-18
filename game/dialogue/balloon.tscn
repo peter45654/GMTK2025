@@ -110,6 +110,7 @@ meta_underlined = false
 hint_underlined = false
 
 [node name="Balloon" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_top = -387.21
 offset_bottom = -387.21
 color = Color(0, 0, 0, 1)
