@@ -141,13 +141,6 @@ position = Vector2(152, 102)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/LivingRoom/Object/StaticBody2D2"]
 shape = SubResource("CircleShape2D_0xtou")
 
-[node name="Coco" parent="Map/LivingRoom/Object" index="27" groups=["Player"] instance=ExtResource("2_vv3et")]
-position = Vector2(145, 31)
-
-[node name="Camera2D" type="Camera2D" parent="Map/LivingRoom/Object/Coco"]
-position = Vector2(-1, -1)
-zoom = Vector2(3.15, 3.15)
-
 [node name="StaticBody2D" parent="Map/LivingRoom" index="4"]
 visible = false
 
@@ -264,6 +257,13 @@ hight_light_node = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Workshop/Objects/Interacts/Cart/Actionable"]
 position = Vector2(-12.0888, 0)
 shape = SubResource("RectangleShape2D_tgyvi")
+
+[node name="Coco" parent="Map/Workshop/Objects" index="20" groups=["Player"] instance=ExtResource("2_vv3et")]
+position = Vector2(328, -1)
+
+[node name="Camera2D" type="Camera2D" parent="Map/Workshop/Objects/Coco"]
+position = Vector2(-1, -1)
+zoom = Vector2(3.15, 3.15)
 
 [node name="CollisionPolygon2D" parent="Map/Workshop/StaticBody2D" index="6"]
 polygon = PackedVector2Array(191, 11, 217, 11, 217, 17, 235, 17, 235, 13, 307, 13, 307, 18, 354, 18, 354, 41, 191, 41)
