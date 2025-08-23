@@ -364,5 +364,5 @@ Tomas:
 Tomas:
 	"Our work isn't finished yet, is it, Tommy?"
 # TODO: 這裡直接END，可以回主選單
-do GameManager.tomas_done_talking()
+do GameManager.thank_you_for_playing()
 => END

@@ -1,0 +1,185 @@
+[gd_scene load_steps=6 format=3 uid="uid://c61oedauld0je"]
+
+[ext_resource type="Texture2D" uid="uid://dn1bfm8ft5dip" path="res://game/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0026.png" id="1_8vamh"]
+[ext_resource type="Script" uid="uid://dhcoqdkab1cou" path="res://game/scenes/thank_you_scene.gd" id="2_rjv1l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rjv1l"]
+font_size = 94
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6afd"]
+font_size = 37
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5pw6m"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="ThankYouScene" type="Node"]
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="BG"]
+offset_right = 976.0
+offset_bottom = 561.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BG/TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8vamh")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.0
+offset_top = -176.0
+offset_right = 456.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Thanks For Playing!"
+label_settings = SubResource("LabelSettings_rjv1l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credit" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = 100.0
+offset_right = 432.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Credit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.5
+offset_top = -86.0
+offset_right = -291.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Credit:"
+label_settings = SubResource("LabelSettings_c6afd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Credit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = -86.0
+offset_right = 472.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "FlyingPig (https://peter45654.itch.io/)"
+label_settings = SubResource("LabelSettings_c6afd")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Credit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = -29.0
+offset_right = 472.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "QuittingJack (https://quittingjack.itch.io/)"
+label_settings = SubResource("LabelSettings_c6afd")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="return" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -4.0
+offset_right = 432.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="return"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -65.0
+offset_right = 471.5
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Press any key or click to return to title..."
+label_settings = SubResource("LabelSettings_5pw6m")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("awaitTimer", "returnTimer", "UIToShow")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -18.0
+offset_top = -8.0
+offset_right = 1023.0
+offset_bottom = 572.0
+script = ExtResource("2_rjv1l")
+awaitTimer = NodePath("Timer")
+returnTimer = NodePath("ReturnLabelToggle")
+UIToShow = NodePath("../return")
+
+[node name="Timer" type="Timer" parent="Control"]
+
+[node name="ReturnLabelToggle" type="Timer" parent="Control"]
+wait_time = 1.5
+
+[connection signal="gui_input" from="Control" to="Control" method="_on_gui_input"]
+[connection signal="timeout" from="Control/ReturnLabelToggle" to="Control" method="_on_return_label_toggle_timeout"]

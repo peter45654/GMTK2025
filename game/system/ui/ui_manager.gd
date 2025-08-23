@@ -1,19 +1,21 @@
 extends Node
 
 @export var item_btn: PackedScene
-@export var cursor_sound:AudioStreamPlayer
-@export var select_sound:AudioStreamPlayer
+@export var cursor_sound: AudioStreamPlayer
+@export var select_sound: AudioStreamPlayer
 
 var system_name: String = "[UIManager]"
 var is_boss_open_inventory: bool = false
- 
+
 @onready var user_interface: Control = $CanvasLayer/UserInterface
 @onready var inventory_ui: Control = $CanvasLayer/InventoryPanel
 @onready var item_container: Control = $CanvasLayer/InventoryPanel/ScrollContainer/GridContainer
 @onready var item_attribute_container: Control = $CanvasLayer/ItemAttributePanel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var item_name: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_name
-@onready var item_description: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_description
+@onready
+var item_name: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_name
+@onready
+var item_description: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_description
 
 
 func _ready():
@@ -28,22 +30,36 @@ func _ready():
 	)
 	assert(item_container != null, system_name + " Item container is not set.")
 	assert(item_container is Control, system_name + " Item container must be a Control node.")
-
 	var current_scene_name = get_tree().get_current_scene().get_name()
 	print("目前場景的名稱是：", current_scene_name)
-	if current_scene_name=="Title":
-		user_interface.visible = false
-	else:
+	if current_scene_name == "Game":
 		user_interface.visible = true
+	else:
+		user_interface.visible = false
 	inventory_ui.visible = false
 	item_attribute_container.visible = false
 	print(system_name, " UI Manager is ready.")
 
-func on_press_start_btn()->void:
+
+func on_press_start_btn() -> void:
 	user_interface.visible = true
 	inventory_ui.visible = false
 	item_attribute_container.visible = false
 	print(system_name, " on_press_start_btn.")
+
+
+func on_goto_title_scene() -> void:
+	user_interface.visible = false
+	inventory_ui.visible = false
+	item_attribute_container.visible = false
+	print(system_name, " on_goto_title_scene.")
+
+
+func on_goto_thank_you_scene() -> void:
+	user_interface.visible = false
+	inventory_ui.visible = false
+	item_attribute_container.visible = false
+	print(system_name, " on_goto_thank_you_scene.")
 
 
 func open_inventory_ui(is_open_by_boss: bool) -> void:
@@ -87,9 +103,11 @@ func _generate_item_buttons() -> void:
 		item_btn_instance.connect(
 			"gui_input", _on_item_button_mouse_entered.bind(item_btn_instance, item)
 		)
-		item_btn_instance.connect("mouse_entered",_on_func_toggle_inventory_ui_btn_mouse_entered)
+		item_btn_instance.connect("mouse_entered", _on_func_toggle_inventory_ui_btn_mouse_entered)
 		item_btn_instance.connect("mouse_exited", _on_item_button_mouse_exited)
-		item_btn_instance.connect("pressed", _on_item_button_pressed.bind(item_btn_instance, item.name))
+		item_btn_instance.connect(
+			"pressed", _on_item_button_pressed.bind(item_btn_instance, item.name)
+		)
 
 	if is_boss_open_inventory:
 		var item_btn_instance_root = item_btn.instantiate() as Control
@@ -131,7 +149,9 @@ func _on_item_button_pressed(_button: Button, selected_item_name: String) -> voi
 	close_inventory_ui()
 	is_boss_open_inventory = false
 
+
 # endregion signal handlers
+
 
 func _on_func_toggle_inventory_ui_btn_mouse_entered() -> void:
 	cursor_sound.play()

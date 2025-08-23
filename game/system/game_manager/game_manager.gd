@@ -184,3 +184,13 @@ func set_workshop_visable(is_visible: bool) -> void:
 		print(system_name, "Workshop visibility set to:", is_visible)
 	else:
 		print(system_name, "Transition area not found, cannot set workshop visibility.")
+
+func back_to_title()->void:
+	var title_scene_path="res://game/scenes/title.tscn"
+	UiManager.on_goto_title_scene()
+	get_tree().change_scene_to_file(title_scene_path)
+
+func thank_you_for_playing() -> void:
+	var thank_you_scene_path = "res://game/scenes/thank_you_scene.tscn"
+	UiManager.on_goto_thank_you_scene()
+	get_tree().change_scene_to_file(thank_you_scene_path)
