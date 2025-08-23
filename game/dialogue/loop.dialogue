@@ -338,8 +338,7 @@ Tomas:
 	"...That's... his..."
 Tomas:
 	"Youㄧ"
-# TODO: 這裡的黑屏不要加漸變
-do GameManager.tomas_done_begin_talking()
+do GameManager.tomas_done_begin_talking_without_fade_in()
 => END
 
 ~ puppet_parts_ans
@@ -363,6 +362,5 @@ Tomas:
 	"I'm finally awake. Thank you... for waking me up...."
 Tomas:
 	"Our work isn't finished yet, is it, Tommy?"
-# TODO: 這裡直接END，可以回主選單
 do GameManager.thank_you_for_playing()
 => END

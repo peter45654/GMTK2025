@@ -1,6 +1,6 @@
 extends Node
 
-const INITIAL_POSITION: Vector2 = Vector2(325, -1.0)
+const INITIAL_POSITION: Vector2 = Vector2(328.0, -1.0)
 const TRANSITION_DURATION_MS: float = 2000
 const Balloon = preload("res://game/dialogue/balloon.tscn")
 const DialogueSource: DialogueResource = preload("res://game/dialogue/loop.dialogue")
@@ -75,17 +75,43 @@ func reset_progress() -> void:
 func show_black_block() -> void:
 	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
 	if black_block:
+		black_block.modulate = Color.WHITE
 		black_block.show()
 	start_show_black_block_time = Time.get_ticks_msec()
 	is_need_wait_for_talking = true
 	print(system_name, "Black block visibility shown.")
 
+func black_block_fade_in()->void:
+	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
+	black_block.modulate  = Color(1,1,1,0)
+	black_block.show()
+	var tween = get_tree().create_tween()
+	tween.tween_property(black_block, "modulate",Color.WHITE , 2)
+	start_show_black_block_time = Time.get_ticks_msec()
+	is_need_wait_for_talking = true
+	tween.tween_callback(black_block_fade_in_callback)
+	print(system_name, "Black block fade in called.")
+
+func black_block_fade_in_callback() -> void:
+	soft_reset_game()
+	print(system_name, "Black block fade in completed.")
 
 func hide_black_block() -> void:
 	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
 	if black_block:
+		black_block.modulate = Color.WHITE
 		black_block.hide()
 	print(system_name, "Black block visibility hidden.")
+
+func black_block_fade_out()-> void:
+	var black_block = get_tree().get_nodes_in_group("BlackBlock")[0]
+	var tween = get_tree().create_tween()
+	tween.tween_property(black_block, "modulate", Color(1,1,1,0), 1.5)
+	tween.tween_callback(black_block_fade_out_callback)
+	print(system_name, "Black block fade out called.")
+
+func black_block_fade_out_callback() -> void:
+	hide_black_block()
 
 
 func tomas_recieve_item(item_name: String) -> void:
@@ -147,18 +173,25 @@ func create_dialogue(title: String) -> void:
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_source, title)
 
-
-func tomas_done_talking() -> void:
+func tomas_done_talking_without_fade_out() -> void:
 	is_need_wait_for_talking = false
 	if loop_sound != null:
 		loop_sound.play()
 	hide_black_block()
 
+func tomas_done_talking() -> void:
+	is_need_wait_for_talking = false
+	if loop_sound != null:
+		loop_sound.play()
+	black_block_fade_out()
+
 
 func tomas_done_begin_talking() -> void:
+	black_block_fade_in()
+
+func tomas_done_begin_talking_without_fade_in() -> void:
 	show_black_block()
 	soft_reset_game()
-
 
 
 func set_living_room_visable(is_visible: bool) -> void:
