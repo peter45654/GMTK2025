@@ -164,7 +164,7 @@ label_settings = SubResource("LabelSettings_5pw6m")
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("awaitTimer", "returnTimer", "UIToShow")]
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("await_timer", "return_timer", "ui_to_show")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -18.0
@@ -172,9 +172,9 @@ offset_top = -8.0
 offset_right = 1023.0
 offset_bottom = 572.0
 script = ExtResource("2_rjv1l")
-awaitTimer = NodePath("Timer")
-returnTimer = NodePath("ReturnLabelToggle")
-UIToShow = NodePath("../return")
+await_timer = NodePath("Timer")
+return_timer = NodePath("ReturnLabelToggle")
+ui_to_show = NodePath("../return")
 
 [node name="Timer" type="Timer" parent="Control"]
 

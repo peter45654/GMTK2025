@@ -12,7 +12,7 @@ func _ready() -> void:
 		hide_ui()
 		await_timer.timeout.connect(on_timer_timerout)
 		await_timer.start(3)
-
+	print("Ready thank you scene")
 
 func _unhandled_input(event):
 	if event is InputEventKey:
