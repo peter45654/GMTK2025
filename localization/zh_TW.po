@@ -1,0 +1,847 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2025-08-24 17:02+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+"X-Poedit-Basepath: .\n"
+
+#. TRANSLATORS: Character name
+#: game/dialogue/loop.dialogue
+msgctxt "dialogue"
+msgid "Nathan"
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "[[Hi|Hello|Howdy]], this is some dialogue."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Here are some choices."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You picked the first one."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "First one"
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You picked the second one."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Second one"
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Start again"
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "End the conversation"
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "For more information see the online documentation."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Ah, it's you again, little one. Just sitting here. Same as always.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Do nothing"
+msgstr "甚麼事都不做"
+
+#: game/dialogue/loop.dialogue
+msgid "Give him an item"
+msgstr "給他一個物品"
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Hm. Go on, then. Go about your business.\""
+msgstr ""
+"湯瑪士:\n"
+"\"恩...去忙你的吧。\""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Hm? Little one, what... what have you brought over?\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...Ah. This order form.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Heh... this one. It's for an old client. From a long time ago. Brings back "
+"memories.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Thank you for finding it, little one. But... it's not needed anymore.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Leave"
+msgstr "離開"
+
+#: game/dialogue/loop.dialogue
+msgid "Push the order a little closer."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...You're a persistent one, aren't you?\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I'm... just a bit tired today, little one. I don't much feel like talking "
+"about old jobs.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"It's better to just let things be.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"A new day... that's what's needed now. A fresh start.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You found a wooden horse."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You found a smooth mask."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You found a wooden bird."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"You found a small carving knife. It looks like it was used often, the blade "
+"is dull."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"You found a block of uncarved wood. It has a particularly beautiful grain."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"You found a half-finished wooden mechanism. The gears don't mesh properly "
+"and catch when turned."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You found a large piece of paper, it's a detailed drawing of a puppet."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"He never could get the hang of the whetstone I gave him.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Always said he had his own, better way.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"It was a little treasure I had hidden away for years.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I can't believe he managed to find it.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"He always wanted to add mechanisms to his puppets.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Said that was the only way to make them 'come alive'...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I told him he was being too impatient.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...So you found it.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"His handwriting... just as messy as I always told him it was...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"He was so proud of this plan. He called it 'our secret project'.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"And now... all that's left of that big promise... is this piece of paper.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "An old teapot."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "It feels light. You open the lid and look inside. It's empty."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Some large paint cans in the corner of the workshop."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Inside, there's only a layer of dried, hardened white paint at the bottom, "
+"like a rock."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Nothing underneath."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "There's a row of small watercolor paint bottles."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"You pick them up one by one, hold them up to the light, and give them a "
+"shake."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You don't find anything unusual inside."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "The pen holder on the closet. It's full of all sorts of pens."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"You pour all the pens out and search the bottom, but there's nothing inside."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"On the dusty shelf, there's a lumpy clay vase. It's not smooth and perfect "
+"like the other one."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You reach your hand in. Your fingertips touch the cold, lumpy bottom."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Just as you're about to pull your hand out, your fingernail scrapes against "
+"something small and hard."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "It's a small, cold, brass-colored key."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Its legs weren't steady, just like me now. I don't want to see it.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I've forgotten... how to give them a face.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I've forgotten what joy or sadness even looks like.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"This name... carved on the bottom...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...this isn't mine.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"It shouldn't be here.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I don't... I thought...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Put it down.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I don't want to see it.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Just... make it stop.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"This key... So you found it.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Put it back, little one.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...Just... let it stay locked. Please.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"That order form, reminding me... \""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"that all I make now are failures.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Failures... one after another...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Just left them lying around... in the corner of the living room...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...They're everywhere...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Just... forget it all...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Just left them lying around... on the workshop shelf... in the corner of "
+"the living room...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"He saw you... and wanted to build a secret of his own. A surprise for me.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"But that promise was left unfinished.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I searched everywhere for the parts he'd hidden... and found nothing.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"And in the end, I understood.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"A puppet can be fixed. The little craftsman who dreamed it up... cannot.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I thought I had locked all of his things away in that room.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I even threw the key away...dropped it into some forgotten vessel, so it "
+"would be lost forever.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I told myself that would be the end of it.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"But a memory like that...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"It always finds its way back.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You clean up the bottle."
+msgstr "你清理了破酒瓶。"
+
+#: game/dialogue/loop.dialogue
+msgid "You push the cart back to the corner."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You pick the tools up and put them back."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "This is an order for a custom wooden chair."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "The delivery date was months ago. It was never fulfilled."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "you found there is key in the broken bottle."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "you pick it up."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "the door is locked."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "you gather all items!"
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "you fail gather all items."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Behind a false panel under the bed. A perfectly sanded puppet arm."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Tucked away inside the hollowed-out book. The puppet's main body."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Inside the hidden compartment of the toy chest, there are puppet's legs.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"The head for the new puppet. If you found all puppet parts, you can put them "
+"back together."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Finally, all the pieces are here."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You carefully connect each part, one by one."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "The new puppet is now whole."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...So you found them.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...They were real, after all.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"But this is all it is, isn't it?\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Just wood. A hollow shell.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"It won't laugh, it won't run... it won't ever tell me about his dreams "
+"again.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...This puppet... it will never be complete.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Your small, wooden body begins to move."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "It moves with a steady, determined purpose."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "You picks up the small carving knife."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"With movements that are both clumsy and profoundly certain, the knife begins "
+"to carve into the wood."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "A letter forms. T.O.M.M.Y."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid "Complete the puppet."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...That... that handwriting...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...That's... his...\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Youㄧ\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"...What is this?\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"The craftsmanship... it looks a little familiar.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"But I can't remember.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Take it away.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"It doesn't belong here.\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Such a long dream..."
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"I'm finally awake. Thank you... for waking me up....\""
+msgstr ""
+
+#: game/dialogue/loop.dialogue
+msgid ""
+"Tomas:\n"
+"\"Our work isn't finished yet, is it, Tommy?\""
+msgstr ""
+
+#: game/system/ui/ui_manager.tscn
+msgid "Inventory"
+msgstr "物品欄"
+
+#: game/system/ui/ui_manager.tscn
+msgid "TiltlePlaceHolder"
+msgstr ""
+
+#: game/system/ui/ui_manager.tscn
+msgid ""
+"Content\n"
+"ContentContentContentContentContentContentContentContentContentContentContentContentContent"
+msgstr ""
+
+#: game/item/arm.tres
+msgid "Puppet Arms"
+msgstr ""
+
+#: game/item/arm.tres
+msgid "The arms of the unfinished puppet."
+msgstr ""
+
+#: game/item/body.tres
+msgid "Puppet Body"
+msgstr ""
+
+#: game/item/body.tres
+msgid "The body of the unfinished puppet."
+msgstr ""
+
+#: game/item/boy_item_carving_knife.tres
+msgid "Carving Knife"
+msgstr ""
+
+#: game/item/boy_item_carving_knife.tres
+msgid "This is a dull carving knife."
+msgstr ""
+
+#: game/item/boy_item_gear.tres
+msgid "Unfinished Wooden Mechanism"
+msgstr ""
+
+#: game/item/boy_item_gear.tres
+msgid ""
+"This is a half-finished wooden mechanism. The gears don't mesh properly and "
+"catch when turned."
+msgstr ""
+
+#: game/item/boy_item_nice_wood.tres
+msgid "Uncarved Wood"
+msgstr ""
+
+#: game/item/boy_item_nice_wood.tres
+msgid ""
+"This is a block of uncarved wood. It has a particularly beautiful grain."
+msgstr ""
+
+#: game/item/boy_item_paper.tres
+msgid "Puppet Blueprint"
+msgstr ""
+
+#: game/item/boy_item_paper.tres
+msgid "This is a detailed drawing of a puppet."
+msgstr ""
+
+#: game/item/failure_mask.tres
+msgid "Smooth Mask"
+msgstr ""
+
+#: game/item/failure_mask.tres
+msgid "A smooth wooden mask, but there's no face on it."
+msgstr ""
+
+#: game/item/failure_wooden_horse.tres
+msgid "Wooden Horse"
+msgstr ""
+
+#: game/item/failure_wooden_horse.tres
+msgid ""
+"A wooden horse. It's really well-made, but one of its legs is snapped off."
+msgstr ""
+
+#: game/item/Key.tres
+msgid "Key"
+msgstr ""
+
+#: game/item/Key.tres
+msgid "A brass-colored key."
+msgstr ""
+
+#: game/item/legs.tres
+msgid "Puppet Legs"
+msgstr ""
+
+#: game/item/legs.tres
+msgid "The legs of the unfinished puppet."
+msgstr ""
+
+#: game/item/overdue_order.tres
+msgid "Overdue Order"
+msgstr "過期訂單"
+
+#: game/item/overdue_order.tres
+msgid "This is an overdued order for a custom wooden chair."
+msgstr "這是一張過期的木椅訂單。"
+
+#: game/item/puppet.tres
+msgid "Puppet"
+msgstr ""
+
+#: game/item/puppet.tres
+msgid "A newly assembled puppet."
+msgstr ""
+
+#: game/item/testItem.tres
+msgid "TestItem"
+msgstr ""
+
+#: game/item/testItem.tres
+msgid "Abababa"
+msgstr ""
+
+#: game/item/tommy_craft.tres
+msgid "Wooden Bird"
+msgstr ""
+
+#: game/item/tommy_craft.tres
+msgid ""
+"A little wooden bird. It's a bit wobbly. There's a name carved on the "
+"bottom. It says 'Tommy'."
+msgstr ""
+
+#: game/scenes/thank_you_scene.tscn
+msgid "Thanks For Playing!"
+msgstr "感謝遊玩!"
+
+#: game/scenes/thank_you_scene.tscn
+msgid "Credit:"
+msgstr "作者:"
+
+#: game/scenes/thank_you_scene.tscn
+msgid "FlyingPig (https://peter45654.itch.io/)"
+msgstr ""
+
+#: game/scenes/thank_you_scene.tscn
+msgid "QuittingJack (https://quittingjack.itch.io/)"
+msgstr ""
+
+#: game/scenes/thank_you_scene.tscn
+msgid "Press any key or click to return to title..."
+msgstr ""
+
+#: game/scenes/title.tscn
+msgid "The Echoing Workshop"
+msgstr "回響工作室"
+
+#: game/scenes/title.tscn
+msgid "Start"
+msgstr "開始"

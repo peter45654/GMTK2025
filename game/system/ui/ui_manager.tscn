@@ -20,11 +20,12 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_fvfrf"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="UIManager" type="Node" node_paths=PackedStringArray("cursor_sound", "select_sound")]
+[node name="UIManager" type="Node" node_paths=PackedStringArray("cursor_sound", "select_sound", "inventort_btn")]
 script = ExtResource("1_1wf27")
 item_btn = ExtResource("2_q4w7d")
-cursor_sound = NodePath("CanvasLayer/UserInterface/func toggle_inventory_ui_btn/cusor_sound")
-select_sound = NodePath("CanvasLayer/UserInterface/func toggle_inventory_ui_btn/select_sound")
+cursor_sound = NodePath("CanvasLayer/UserInterface/inventory_ui_btn/func_toggle_inventory_ui_btn/cusor_sound")
+select_sound = NodePath("CanvasLayer/UserInterface/inventory_ui_btn/func_toggle_inventory_ui_btn/select_sound")
+inventort_btn = NodePath("CanvasLayer/UserInterface/inventory_ui_btn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -34,7 +35,42 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UserInterface"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer/UserInterface"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 18.0
+offset_right = 224.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_fvfrf")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 9
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 9
+
+[node name="func_switch_language_btn" type="Button" parent="CanvasLayer/UserInterface"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 18.0
+offset_right = 264.0
+offset_bottom = 58.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_pow7e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pow7e")
+text = "繁體中文"
+
+[node name="inventory_ui_btn" type="Control" parent="CanvasLayer/UserInterface"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UserInterface/inventory_ui_btn"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -53,7 +89,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 9
 
-[node name="func toggle_inventory_ui_btn" type="Button" parent="CanvasLayer/UserInterface"]
+[node name="func_toggle_inventory_ui_btn" type="Button" parent="CanvasLayer/UserInterface/inventory_ui_btn"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 18.0
@@ -64,11 +100,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_pow7e")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pow7e")
 text = "Inventory"
 
-[node name="cusor_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/func toggle_inventory_ui_btn"]
+[node name="cusor_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/inventory_ui_btn/func_toggle_inventory_ui_btn"]
 stream = ExtResource("4_m4p05")
 volume_db = -15.0
 
-[node name="select_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/func toggle_inventory_ui_btn"]
+[node name="select_sound" type="AudioStreamPlayer" parent="CanvasLayer/UserInterface/inventory_ui_btn/func_toggle_inventory_ui_btn"]
 stream = ExtResource("5_yk85d")
 volume_db = -15.0
 
@@ -178,6 +214,8 @@ label_settings = SubResource("LabelSettings_fvfrf")
 autowrap_mode = 3
 clip_text = true
 
-[connection signal="mouse_entered" from="CanvasLayer/UserInterface/func toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/UserInterface/func toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UserInterface/func_switch_language_btn" to="." method="_on_func_toggle_inventory_ui_btn_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/UserInterface/func_switch_language_btn" to="." method="_on_func_switch_language_btn_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UserInterface/inventory_ui_btn/func_toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/UserInterface/inventory_ui_btn/func_toggle_inventory_ui_btn" to="." method="_on_func_toggle_inventory_ui_btn_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/InventoryPanel/ScrollContainer/GridContainer/Button" to="." method="_on_item_button_mouse_entered"]

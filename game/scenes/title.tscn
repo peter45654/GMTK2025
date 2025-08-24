@@ -1176,6 +1176,7 @@ offset_right = 209.0
 offset_bottom = 119.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="panel" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1

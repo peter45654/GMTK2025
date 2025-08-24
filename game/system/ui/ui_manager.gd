@@ -3,6 +3,7 @@ extends Node
 @export var item_btn: PackedScene
 @export var cursor_sound: AudioStreamPlayer
 @export var select_sound: AudioStreamPlayer
+@export var inventort_btn:Control
 
 var system_name: String = "[UIManager]"
 var is_boss_open_inventory: bool = false
@@ -12,6 +13,7 @@ var is_boss_open_inventory: bool = false
 @onready var item_container: Control = $CanvasLayer/InventoryPanel/ScrollContainer/GridContainer
 @onready var item_attribute_container: Control = $CanvasLayer/ItemAttributePanel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var language_btn:Button=$CanvasLayer/UserInterface/func_switch_language_btn
 @onready
 var item_name: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_name
 @onready
@@ -35,9 +37,11 @@ func _ready():
 	if current_scene_name == "Game":
 		user_interface.visible = true
 	else:
-		user_interface.visible = false
+		user_interface.visible = true
+		inventort_btn.visible=false
 	inventory_ui.visible = false
 	item_attribute_container.visible = false
+	setup_language_btn()
 	print(system_name, " UI Manager is ready.")
 
 
@@ -45,6 +49,7 @@ func on_press_start_btn() -> void:
 	user_interface.visible = true
 	inventory_ui.visible = false
 	item_attribute_container.visible = false
+	inventort_btn.visible=true
 	print(system_name, " on_press_start_btn.")
 
 
@@ -99,7 +104,7 @@ func _generate_item_buttons() -> void:
 		item_container.add_child(item_btn_instance_root)
 		var item_btn_instance = item_btn_instance_root.get_child(1) as Button
 		item_btn_instance.name = item.name + "_button"
-		item_btn_instance.text = item.name
+		item_btn_instance.text = tr(item.name)
 		item_btn_instance.connect(
 			"gui_input", _on_item_button_mouse_entered.bind(item_btn_instance, item)
 		)
@@ -113,8 +118,8 @@ func _generate_item_buttons() -> void:
 		var item_btn_instance_root = item_btn.instantiate() as Control
 		item_container.add_child(item_btn_instance_root)
 		var item_btn_instance = item_btn_instance_root.get_child(1) as Button
-		item_btn_instance.name = "Give_Nothing__button"
-		item_btn_instance.text = "Nothing"
+		item_btn_instance.name = tr("Give_Nothing__button")
+		item_btn_instance.text = tr("Nothing")
 		item_btn_instance.connect(
 			"pressed", _on_item_button_pressed.bind(item_btn_instance, "Give Nothing")
 		)
@@ -131,8 +136,8 @@ func _on_func_toggle_inventory_ui_btn_pressed() -> void:
 func _on_item_button_mouse_entered(_event: InputEvent, button: Button, base_item: BaseItem) -> void:
 	item_attribute_container.visible = true
 	item_attribute_container.position = button.get_global_mouse_position()
-	item_name.text = base_item.name
-	item_description.text = base_item.description
+	item_name.text = tr(base_item.name)
+	item_description.text = tr(base_item.description)
 
 
 func _on_item_button_mouse_exited() -> void:
@@ -155,3 +160,24 @@ func _on_item_button_pressed(_button: Button, selected_item_name: String) -> voi
 
 func _on_func_toggle_inventory_ui_btn_mouse_entered() -> void:
 	cursor_sound.play()
+
+
+func _on_func_switch_language_btn_pressed() -> void:
+	var language:=TranslationServer.get_locale() 
+	if language=="en":
+		language="zn_TW"
+	else:
+		language="en"
+	TranslationServer.set_locale(language) 
+	select_sound.play()
+	setup_language_btn()
+
+	print(system_name, " Language set to ",language)
+
+func setup_language_btn():
+	var language:=TranslationServer.get_locale() 
+	if language=="en":
+		language_btn.text="繁體中文"	
+	else:
+		language_btn.text="English"
+	
