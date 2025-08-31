@@ -13,7 +13,6 @@
 # res://game/item/legs.tres
 # res://game/item/overdue_order.tres
 # res://game/item/puppet.tres
-# res://game/item/testItem.tres
 # res://game/item/tommy_craft.tres
 # res://game/scenes/thank_you_scene.tscn
 # res://game/scenes/title.tscn
@@ -677,6 +676,10 @@ msgid ""
 msgstr ""
 
 #: game/system/ui/ui_manager.tscn
+msgid "繁體中文"
+msgstr ""
+
+#: game/system/ui/ui_manager.tscn
 msgid "Inventory"
 msgstr ""
 
@@ -784,14 +787,6 @@ msgstr ""
 
 #: game/item/puppet.tres
 msgid "A newly assembled puppet."
-msgstr ""
-
-#: game/item/testItem.tres
-msgid "TestItem"
-msgstr ""
-
-#: game/item/testItem.tres
-msgid "Abababa"
 msgstr ""
 
 #: game/item/tommy_craft.tres

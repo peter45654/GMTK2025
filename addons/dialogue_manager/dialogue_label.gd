@@ -89,7 +89,11 @@ func _process(delta: float) -> void:
 ## Sets the label's text from the current dialogue line. Override if you want
 ## to do something more interesting in your subclass.
 func _update_text() -> void:
-	text = dialogue_line.text
+	text = tr(dialogue_line.text)
+
+func refresh_language():
+	text = tr(dialogue_line.translation_key)
+	skip_typing()
 
 
 ## Start typing out the text

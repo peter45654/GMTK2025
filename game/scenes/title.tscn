@@ -1239,6 +1239,7 @@ patch_margin_right = 8
 patch_margin_bottom = 9
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/panel/label"]
+auto_translate_mode = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

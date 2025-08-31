@@ -3,17 +3,18 @@ extends Node
 @export var item_btn: PackedScene
 @export var cursor_sound: AudioStreamPlayer
 @export var select_sound: AudioStreamPlayer
-@export var inventort_btn:Control
+@export var inventort_btn: Control
 
 var system_name: String = "[UIManager]"
 var is_boss_open_inventory: bool = false
 
 @onready var user_interface: Control = $CanvasLayer/UserInterface
 @onready var inventory_ui: Control = $CanvasLayer/InventoryPanel
+@onready var inventory_btn:Button = $CanvasLayer/UserInterface/inventory_ui_btn/func_toggle_inventory_ui_btn
 @onready var item_container: Control = $CanvasLayer/InventoryPanel/ScrollContainer/GridContainer
 @onready var item_attribute_container: Control = $CanvasLayer/ItemAttributePanel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var language_btn:Button=$CanvasLayer/UserInterface/func_switch_language_btn
+@onready var language_btn: Button = $CanvasLayer/UserInterface/func_switch_language_btn
 @onready
 var item_name: Label = $CanvasLayer/ItemAttributePanel/MarginContainer/VBoxContainer/item_name
 @onready
@@ -38,7 +39,7 @@ func _ready():
 		user_interface.visible = true
 	else:
 		user_interface.visible = true
-		inventort_btn.visible=false
+		inventort_btn.visible = false
 	inventory_ui.visible = false
 	item_attribute_container.visible = false
 	setup_language_btn()
@@ -49,7 +50,7 @@ func on_press_start_btn() -> void:
 	user_interface.visible = true
 	inventory_ui.visible = false
 	item_attribute_container.visible = false
-	inventort_btn.visible=true
+	inventort_btn.visible = true
 	print(system_name, " on_press_start_btn.")
 
 
@@ -163,21 +164,23 @@ func _on_func_toggle_inventory_ui_btn_mouse_entered() -> void:
 
 
 func _on_func_switch_language_btn_pressed() -> void:
-	var language:=TranslationServer.get_locale() 
-	if language=="en":
-		language="zn_TW"
+	var language := TranslationServer.get_locale()
+	if language == "en":
+		language = "zh_TW"
 	else:
-		language="en"
-	TranslationServer.set_locale(language) 
+		language = "en"
+	TranslationServer.set_locale(language)
 	select_sound.play()
 	setup_language_btn()
+	inventory_btn.text=tr("Inventory")
+	if inventory_ui.visible:
+		_generate_item_buttons()
+	print(system_name, " Language set to ", language)
 
-	print(system_name, " Language set to ",language)
 
 func setup_language_btn():
-	var language:=TranslationServer.get_locale() 
-	if language=="en":
-		language_btn.text="繁體中文"	
+	var language := TranslationServer.get_locale()
+	if language == "en":
+		language_btn.text = "繁體中文"
 	else:
-		language_btn.text="English"
-	
+		language_btn.text = "English"

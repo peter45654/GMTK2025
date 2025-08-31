@@ -38,6 +38,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/item/plugin.cfg")
 
+[global]
+
+gui=false
+
 [global_group]
 
 Interactable=""
@@ -48,8 +52,11 @@ BoyRoom=""
 WorkShop=""
 OriginObjectContainer=""
 
+[gui]
+
+theme/custom_font="uid://ctd76sxj7dnix"
+
 [internationalization]
 
 locale/translations=PackedStringArray("res://localization/zh_TW.po")
-locale/translations_pot_files=PackedStringArray("res://game/dialogue/loop.dialogue", "res://game/system/ui/ui_manager.tscn", "res://game/item/arm.tres", "res://game/item/body.tres", "res://game/item/boy_item_carving_knife.tres", "res://game/item/boy_item_gear.tres", "res://game/item/boy_item_nice_wood.tres", "res://game/item/boy_item_paper.tres", "res://game/item/failure_mask.tres", "res://game/item/failure_wooden_horse.tres", "res://game/item/Key.tres", "res://game/item/legs.tres", "res://game/item/overdue_order.tres", "res://game/item/puppet.tres", "res://game/item/testItem.tres", "res://game/item/tommy_craft.tres", "res://game/scenes/thank_you_scene.tscn", "res://game/scenes/title.tscn")
-locale/fallback="zn_TW"
+locale/translations_pot_files=PackedStringArray("res://game/dialogue/loop.dialogue", "res://game/system/ui/ui_manager.tscn", "res://game/item/arm.tres", "res://game/item/body.tres", "res://game/item/boy_item_carving_knife.tres", "res://game/item/boy_item_gear.tres", "res://game/item/boy_item_nice_wood.tres", "res://game/item/boy_item_paper.tres", "res://game/item/failure_mask.tres", "res://game/item/failure_wooden_horse.tres", "res://game/item/Key.tres", "res://game/item/legs.tres", "res://game/item/overdue_order.tres", "res://game/item/puppet.tres", "res://game/item/tommy_craft.tres", "res://game/scenes/thank_you_scene.tscn", "res://game/scenes/title.tscn", "res://game/dialogue/main.dialogue")

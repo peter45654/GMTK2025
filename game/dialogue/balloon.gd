@@ -12,7 +12,7 @@ const DIALOGUE_PITCHES = {
 @onready var balloon: Control = $Control
 @onready var margin: MarginContainer = $Control/Margin
 @onready var character_label: RichTextLabel = $Control/Margin/VBox/CharacterLabel
-@onready var dialogue_label := $Control/Margin/VBox/DialogueLabel
+@onready var dialogue_label :DialogueLabel= $Control/Margin/VBox/DialogueLabel
 @onready var responses_menu: VBoxContainer = $Control/Margin/VBox/Responses
 @onready var response_template: RichTextLabel = %ResponseTemplate
 
@@ -226,3 +226,32 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 			talk_sound.play()
 			var pitch = DIALOGUE_PITCHES.get(dialogue_line.character, 1)
 			talk_sound.pitch_scale = randf_range(pitch - 0.1, pitch + 0.1)
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_TRANSLATION_CHANGED:
+		var language := TranslationServer.get_locale()
+		print("-------")
+		print("language:",language)
+		if not is_node_ready():
+			await ready
+		if dialogue_line==null:
+			return
+		
+
+		if not dialogue_line.character.is_empty():
+			character_label.text = tr(dialogue_line.character, "dialogue")
+				
+		dialogue_label.refresh_language()
+		
+		# Show any responses we have
+		if dialogue_line.responses.size() > 0:
+			var amount_counter=0
+			for response in dialogue_line.responses:
+				# Duplicate the template so we can grab the fonts, sizing, etc
+				var items:= responses_menu.get_children()
+				var item_name = "Response%d" % amount_counter
+				if items[amount_counter].name==item_name:
+					items[amount_counter].text = tr(response.translation_key)
+				amount_counter+=1
+			
+		

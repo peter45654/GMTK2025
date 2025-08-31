@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-24 17:02+0800\n"
+"PO-Revision-Date: 2025-08-31 16:06+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -59,6 +59,8 @@ msgid ""
 "Tomas:\n"
 "\"Ah, it's you again, little one. Just sitting here. Same as always.\""
 msgstr ""
+"湯瑪士:\n"
+"\"嘿，坐到這來吧，就像往常一樣。\""
 
 #: game/dialogue/loop.dialogue
 msgid "Do nothing"
@@ -81,12 +83,16 @@ msgid ""
 "Tomas:\n"
 "\"Hm? Little one, what... what have you brought over?\""
 msgstr ""
+"湯瑪士:\n"
+"\"恩?小傢伙，你帶來了甚麼?\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...Ah. This order form.\""
 msgstr ""
+"湯瑪士:\n"
+"\"阿...這個訂單\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
@@ -94,12 +100,16 @@ msgid ""
 "\"Heh... this one. It's for an old client. From a long time ago. Brings back "
 "memories.\""
 msgstr ""
+"湯瑪士:\n"
+"\"嘿...想起了很久以前的事了，這是一個老客戶的訂單。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Thank you for finding it, little one. But... it's not needed anymore.\""
 msgstr ""
+"湯瑪士:\n"
+"\"感謝你找到他，小傢伙，儘管這訂單已經作廢了。\""
 
 #: game/dialogue/loop.dialogue
 msgid "Leave"
@@ -107,13 +117,15 @@ msgstr "離開"
 
 #: game/dialogue/loop.dialogue
 msgid "Push the order a little closer."
-msgstr ""
+msgstr "將訂單往前遞。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...You're a persistent one, aren't you?\""
 msgstr ""
+"湯瑪士:\n"
+"\"你可真是個不放棄的人啊。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
@@ -121,302 +133,370 @@ msgid ""
 "\"I'm... just a bit tired today, little one. I don't much feel like talking "
 "about old jobs.\""
 msgstr ""
+"湯瑪士:\n"
+"\"我有點累了...小傢伙，我不太想聊以前的工作。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"It's better to just let things be.\""
 msgstr ""
+"湯瑪士:\n"
+"\"就這樣順其自然吧。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"A new day... that's what's needed now. A fresh start.\""
 msgstr ""
+"湯瑪士:\n"
+"\"現在正需要的是...一個新的開始\""
 
 #: game/dialogue/loop.dialogue
 msgid "You found a wooden horse."
-msgstr ""
+msgstr "你找到一尊木製馬雕刻。"
 
 #: game/dialogue/loop.dialogue
 msgid "You found a smooth mask."
-msgstr ""
+msgstr "你找到一個木製面具。"
 
 #: game/dialogue/loop.dialogue
 msgid "You found a wooden bird."
-msgstr ""
+msgstr "你找到了一尊木製鳥雕刻。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "You found a small carving knife. It looks like it was used often, the blade "
 "is dull."
-msgstr ""
+msgstr "你找到了一把小雕刻刀。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "You found a block of uncarved wood. It has a particularly beautiful grain."
-msgstr ""
+msgstr "你找到了一塊未經雕刻的原木，上面有非常漂亮的木紋。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "You found a half-finished wooden mechanism. The gears don't mesh properly "
 "and catch when turned."
-msgstr ""
+msgstr "你發現了一個半成品的木製機械裝置。齒輪嚙合不正常，轉動時會卡住。"
 
 #: game/dialogue/loop.dialogue
 msgid "You found a large piece of paper, it's a detailed drawing of a puppet."
-msgstr ""
+msgstr "你找到一張大紙，上面畫著一個木偶的結構圖。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"He never could get the hang of the whetstone I gave him.\""
 msgstr ""
+"湯瑪士:\n"
+"“他總是抓不到使用磨刀石的竅門。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Always said he had his own, better way.\""
 msgstr ""
+"湯瑪士:\n"
+"“他總是說他有自己的、更好的方法。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"It was a little treasure I had hidden away for years.\""
 msgstr ""
+"湯瑪士:\n"
+"“這是我藏起來多年的一個小寶貝。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I can't believe he managed to find it.\""
 msgstr ""
+"湯瑪士:\n"
+"“不敢相信他竟然找到了。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"He always wanted to add mechanisms to his puppets.\""
 msgstr ""
+"湯瑪士:\n"
+"“他總是想給他的木偶加上機械裝置。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Said that was the only way to make them 'come alive'...\""
 msgstr ""
+"湯瑪士:\n"
+"“說這是讓他們‘活過來’的唯一方法…”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I told him he was being too impatient.\""
 msgstr ""
+"湯瑪士:\n"
+"“我告訴他，他太沒有耐心了。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...So you found it.\""
 msgstr ""
+"湯瑪士:\n"
+"“……所以你找到了。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"His handwriting... just as messy as I always told him it was...\""
 msgstr ""
+"湯瑪士:\n"
+"“他的筆跡……就像我一直跟他說的一樣亂……”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"He was so proud of this plan. He called it 'our secret project'.\""
 msgstr ""
+"湯瑪士:\n"
+"“他對這個計劃感到很自豪。他說這是‘我們的秘密項目’。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"And now... all that's left of that big promise... is this piece of paper.\""
 msgstr ""
+"湯瑪士:\n"
+"\"而現在……那個偉大的承諾……只剩下這張紙了。\""
 
 #: game/dialogue/loop.dialogue
 msgid "An old teapot."
-msgstr ""
+msgstr "一個舊茶壺。"
 
 #: game/dialogue/loop.dialogue
 msgid "It feels light. You open the lid and look inside. It's empty."
-msgstr ""
+msgstr "感覺很輕。你打開蓋子，往裡面看了看。裡面是空的。"
 
 #: game/dialogue/loop.dialogue
 msgid "Some large paint cans in the corner of the workshop."
-msgstr ""
+msgstr "工作坊角落裡的一些大油漆罐。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Inside, there's only a layer of dried, hardened white paint at the bottom, "
 "like a rock."
-msgstr ""
+msgstr "裡面只有底部有一層乾燥硬化的白色油漆，就像一塊石頭。"
 
 #: game/dialogue/loop.dialogue
 msgid "Nothing underneath."
-msgstr ""
+msgstr "下面什麼都沒有。"
 
 #: game/dialogue/loop.dialogue
 msgid "There's a row of small watercolor paint bottles."
-msgstr ""
+msgstr "一排小水彩顏料瓶。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "You pick them up one by one, hold them up to the light, and give them a "
 "shake."
-msgstr ""
+msgstr "你把它們一個一個撿起來，對著光搖晃。"
 
 #: game/dialogue/loop.dialogue
 msgid "You don't find anything unusual inside."
-msgstr ""
+msgstr "你沒有發現裡面有什麼異常。"
 
 #: game/dialogue/loop.dialogue
 msgid "The pen holder on the closet. It's full of all sorts of pens."
-msgstr ""
+msgstr "衣櫃上的筆筒。裡面裝滿了各種各樣的筆。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "You pour all the pens out and search the bottom, but there's nothing inside."
-msgstr ""
+msgstr "你把所有的筆都倒出來並蒐索底部，但裡面什麼都沒有。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "On the dusty shelf, there's a lumpy clay vase. It's not smooth and perfect "
 "like the other one."
-msgstr ""
+msgstr "佈滿灰塵的架子上，放著一個凹凸不平的陶土花瓶，不像另一個那麼光滑完美。"
 
 #: game/dialogue/loop.dialogue
 msgid "You reach your hand in. Your fingertips touch the cold, lumpy bottom."
-msgstr ""
+msgstr "你把手伸進去。指尖觸碰到了冰冷、凹凸不平的底部。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Just as you're about to pull your hand out, your fingernail scrapes against "
 "something small and hard."
-msgstr ""
+msgstr "就在您要把手抽出來的時候，您的指甲刮到了某個又小又硬的東西。"
 
 #: game/dialogue/loop.dialogue
 msgid "It's a small, cold, brass-colored key."
-msgstr ""
+msgstr "那是一把小小的、冰冷的黃銅色鑰匙。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Its legs weren't steady, just like me now. I don't want to see it.\""
 msgstr ""
+"湯瑪士:\n"
+"“它的腿不穩，就像現在的我一樣。我不想看到它。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I've forgotten... how to give them a face.\""
 msgstr ""
+"湯瑪士:\n"
+"“我忘了……怎麼為這面具雕上臉了。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I've forgotten what joy or sadness even looks like.\""
 msgstr ""
+"湯瑪士:\n"
+"“我甚至忘了快樂和悲傷是什麼樣子。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"This name... carved on the bottom...\""
 msgstr ""
+"湯瑪士:\n"
+"“刻在底部的…名字…”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...this isn't mine.\""
 msgstr ""
+"湯瑪士:\n"
+"\"...不是我的。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...\""
 msgstr ""
+"湯瑪士:\n"
+"\"...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"It shouldn't be here.\""
 msgstr ""
+"湯瑪士:\n"
+"\"這不應該在這裡。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I don't... I thought...\""
 msgstr ""
+"湯瑪士:\n"
+"\"我...不...我想...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Put it down.\""
 msgstr ""
+"湯瑪士:\n"
+"\"把它放下。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I don't want to see it.\""
 msgstr ""
+"湯瑪士:\n"
+"\"我不想看到他。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Just... make it stop.\""
 msgstr ""
+"湯瑪士:\n"
+"\"拜託...停下來。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"This key... So you found it.\""
 msgstr ""
+"湯瑪士:\n"
+"\"這鑰匙...看起來你找到了。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Put it back, little one.\""
 msgstr ""
+"湯瑪士:\n"
+"\"放回去吧，小傢伙。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...Just... let it stay locked. Please.\""
 msgstr ""
+"湯瑪士:\n"
+"\"讓他留在原地被鎖著...拜託了。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"That order form, reminding me... \""
 msgstr ""
+"湯瑪士:\n"
+"\"這過期的訂單，讓我想起...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"that all I make now are failures.\""
 msgstr ""
+"湯瑪士:\n"
+"\"之前我所做的都是失敗品。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Failures... one after another...\""
 msgstr ""
+"湯瑪士:\n"
+"\"一個又一個的...失敗品...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Just left them lying around... in the corner of the living room...\""
 msgstr ""
+"湯瑪士:\n"
+"\"就讓它隨便丟著吧...散在客廳的角落裡...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...They're everywhere...\""
 msgstr ""
+"湯瑪士:\n"
+"\"...無處不在...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Just... forget it all...\""
 msgstr ""
+"湯瑪士:\n"
+"\"讓我忘記它們吧...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
@@ -424,42 +504,56 @@ msgid ""
 "\"Just left them lying around... on the workshop shelf... in the corner of "
 "the living room...\""
 msgstr ""
+"湯瑪士:\n"
+"\"就讓它們放在哪裡吧……工作室的架子上……客廳的角落……\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"He saw you... and wanted to build a secret of his own. A surprise for me.\""
 msgstr ""
+"湯瑪士:\n"
+"“他看到了你……然後想建立一個屬於他自己的秘密。對我來說是個驚喜。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"But that promise was left unfinished.\""
 msgstr ""
+"湯瑪士:\n"
+"“但這個承諾沒能實現。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I searched everywhere for the parts he'd hidden... and found nothing.\""
 msgstr ""
+"湯瑪士:\n"
+"“我到處尋找他隱藏的部分……但什麼也沒找到。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"And in the end, I understood.\""
 msgstr ""
+"湯瑪士:\n"
+"\"到最後，我明白了。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"A puppet can be fixed. The little craftsman who dreamed it up... cannot.\""
 msgstr ""
+"湯瑪士:\n"
+"\"木偶可以被修復，但夢想著這個的小木匠…不能。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I thought I had locked all of his things away in that room.\""
 msgstr ""
+"湯瑪士:\n"
+"“我以為我已經把他所有的東西都鎖在那個房間裡了。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
@@ -467,24 +561,32 @@ msgid ""
 "\"I even threw the key away...dropped it into some forgotten vessel, so it "
 "would be lost forever.\""
 msgstr ""
+"湯瑪士:\n"
+"\"我甚至把鑰匙扔掉了……把它扔進某個被遺忘的容器裡，這樣它就永遠消失了。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I told myself that would be the end of it.\""
 msgstr ""
+"湯瑪士:\n"
+"“我告訴自己，一切都會結束。”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"But a memory like that...\""
 msgstr ""
+"湯瑪士:\n"
+"\"但像那樣的回憶...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"It always finds its way back.\""
 msgstr ""
+"湯瑪士:\n"
+"\"總是會回來。\""
 
 #: game/dialogue/loop.dialogue
 msgid "You clean up the bottle."
@@ -492,94 +594,102 @@ msgstr "你清理了破酒瓶。"
 
 #: game/dialogue/loop.dialogue
 msgid "You push the cart back to the corner."
-msgstr ""
+msgstr "你將推車推到了角落。"
 
 #: game/dialogue/loop.dialogue
 msgid "You pick the tools up and put them back."
-msgstr ""
+msgstr "你收拾了工具並把它放回原位。"
 
 #: game/dialogue/loop.dialogue
 msgid "This is an order for a custom wooden chair."
-msgstr ""
+msgstr "這是是張客製木椅的訂單。"
 
 #: game/dialogue/loop.dialogue
 msgid "The delivery date was months ago. It was never fulfilled."
-msgstr ""
+msgstr "交期在幾個月前，但從未完成。"
 
 #: game/dialogue/loop.dialogue
 msgid "you found there is key in the broken bottle."
-msgstr ""
+msgstr "你在破碎的瓶子裡找到了一把鑰匙。"
 
 #: game/dialogue/loop.dialogue
 msgid "you pick it up."
-msgstr ""
+msgstr "你撿了起來。"
 
 #: game/dialogue/loop.dialogue
 msgid "the door is locked."
-msgstr ""
+msgstr "房門被鎖起來了。"
 
 #: game/dialogue/loop.dialogue
 msgid "you gather all items!"
-msgstr ""
+msgstr "你找到了所以有物品!"
 
 #: game/dialogue/loop.dialogue
 msgid "you fail gather all items."
-msgstr ""
+msgstr "你還沒有找其所有物品。"
 
 #: game/dialogue/loop.dialogue
 msgid "Behind a false panel under the bed. A perfectly sanded puppet arm."
-msgstr ""
+msgstr "在床鋪的背板下面。找到了一根打磨完美的木偶手臂。"
 
 #: game/dialogue/loop.dialogue
 msgid "Tucked away inside the hollowed-out book. The puppet's main body."
-msgstr ""
+msgstr "你發現木偶的本體藏在挖空的書本裡，。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Inside the hidden compartment of the toy chest, there are puppet's legs.\""
-msgstr ""
+msgstr "玩具箱的隱藏隔間裡面，有木偶的腿。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "The head for the new puppet. If you found all puppet parts, you can put them "
 "back together."
-msgstr ""
+msgstr "新木偶的頭部。如果你找到了木偶的所有部件，就可以將它們重新組裝起來。"
 
 #: game/dialogue/loop.dialogue
 msgid "Finally, all the pieces are here."
-msgstr ""
+msgstr "終於，所有的部件齊全了。"
 
 #: game/dialogue/loop.dialogue
 msgid "You carefully connect each part, one by one."
-msgstr ""
+msgstr "你小心翼翼的拚起每個木偶部件，一個接一個。"
 
 #: game/dialogue/loop.dialogue
 msgid "The new puppet is now whole."
-msgstr ""
+msgstr "新的木偶現在完整了。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...So you found them.\""
 msgstr ""
+"湯瑪士:\n"
+"\"...所以你找到了。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...They were real, after all.\""
 msgstr ""
+"湯瑪士:\n"
+"\"...畢竟、他們也是真實的。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"But this is all it is, isn't it?\""
 msgstr ""
+"湯瑪士:\n"
+"“但就只是這樣了，不是嗎？”"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Just wood. A hollow shell.\""
 msgstr ""
+"湯瑪士:\n"
+"\"只是一塊木頭。木製的空殼。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
@@ -587,103 +697,133 @@ msgid ""
 "\"It won't laugh, it won't run... it won't ever tell me about his dreams "
 "again.\""
 msgstr ""
+"湯瑪士:\n"
+"\"它不會笑，也不會跑...他再也不會訴說他的夢想。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...This puppet... it will never be complete.\""
 msgstr ""
+"湯瑪士:\n"
+"\"...這個木偶...它永遠不會被完成。\""
 
 #: game/dialogue/loop.dialogue
 msgid "Your small, wooden body begins to move."
-msgstr ""
+msgstr "你小小的木頭身體開始行動了。"
 
 #: game/dialogue/loop.dialogue
 msgid "It moves with a steady, determined purpose."
-msgstr ""
+msgstr "並以穩定而堅定的意圖動起來。"
 
 #: game/dialogue/loop.dialogue
 msgid "You picks up the small carving knife."
-msgstr ""
+msgstr "你拿起了雕刻刀。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "With movements that are both clumsy and profoundly certain, the knife begins "
 "to carve into the wood."
-msgstr ""
+msgstr "刀子開始以既笨拙又堅定的動作在木頭上雕刻。"
 
 #: game/dialogue/loop.dialogue
 msgid "A letter forms. T.O.M.M.Y."
-msgstr ""
+msgstr "最後留下了兩個字。湯。米。"
 
 #: game/dialogue/loop.dialogue
 msgid "Complete the puppet."
-msgstr ""
+msgstr "完成木偶。"
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...That... that handwriting...\""
 msgstr ""
+"湯瑪士:\n"
+"\"那個...那個署名...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...That's... his...\""
 msgstr ""
+"湯瑪士:\n"
+"\"...這...是...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Youㄧ\""
 msgstr ""
+"湯瑪士:\n"
+"\"你ㄧ\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"...What is this?\""
 msgstr ""
+"湯瑪士:\n"
+"\"...這是甚麼?\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"The craftsmanship... it looks a little familiar.\""
 msgstr ""
+"湯瑪士:\n"
+"\"這作品……看起來有點眼熟。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"But I can't remember.\""
 msgstr ""
+"湯瑪士:\n"
+"\"但我不記得了。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Take it away.\""
 msgstr ""
+"湯瑪士:\n"
+"\"把它拿走。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"It doesn't belong here.\""
 msgstr ""
+"湯瑪士:\n"
+"\"它不屬於這裡。\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Such a long dream..."
 msgstr ""
+"湯瑪士:\n"
+"\"好長的夢..."
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"I'm finally awake. Thank you... for waking me up....\""
 msgstr ""
+"湯瑪士:\n"
+"\"我...終於醒了。謝謝你...喚醒我...\""
 
 #: game/dialogue/loop.dialogue
 msgid ""
 "Tomas:\n"
 "\"Our work isn't finished yet, is it, Tommy?\""
+msgstr ""
+"湯瑪士:\n"
+"\"我們的工作還沒完成對吧?湯米?\""
+
+#: game/system/ui/ui_manager.tscn
+msgid "繁體中文"
 msgstr ""
 
 #: game/system/ui/ui_manager.tscn
@@ -702,87 +842,87 @@ msgstr ""
 
 #: game/item/arm.tres
 msgid "Puppet Arms"
-msgstr ""
+msgstr "木偶手臂"
 
 #: game/item/arm.tres
 msgid "The arms of the unfinished puppet."
-msgstr ""
+msgstr "未完成的木偶手臂。"
 
 #: game/item/body.tres
 msgid "Puppet Body"
-msgstr ""
+msgstr "木偶身體"
 
 #: game/item/body.tres
 msgid "The body of the unfinished puppet."
-msgstr ""
+msgstr "未完成木偶的身體。"
 
 #: game/item/boy_item_carving_knife.tres
 msgid "Carving Knife"
-msgstr ""
+msgstr "雕刻刀"
 
 #: game/item/boy_item_carving_knife.tres
 msgid "This is a dull carving knife."
-msgstr ""
+msgstr "鈍掉的雕刻刀。"
 
 #: game/item/boy_item_gear.tres
 msgid "Unfinished Wooden Mechanism"
-msgstr ""
+msgstr "未完成的木製齒輪"
 
 #: game/item/boy_item_gear.tres
 msgid ""
 "This is a half-finished wooden mechanism. The gears don't mesh properly and "
 "catch when turned."
-msgstr ""
+msgstr "這是一個半成品的木製機械裝置。齒輪嚙合不正常，轉動時會卡住。"
 
 #: game/item/boy_item_nice_wood.tres
 msgid "Uncarved Wood"
-msgstr ""
+msgstr "未精雕刻的原木"
 
 #: game/item/boy_item_nice_wood.tres
 msgid ""
 "This is a block of uncarved wood. It has a particularly beautiful grain."
-msgstr ""
+msgstr "一個未雕琢的原木，上有漂亮的木紋。"
 
 #: game/item/boy_item_paper.tres
 msgid "Puppet Blueprint"
-msgstr ""
+msgstr "木偶藍圖"
 
 #: game/item/boy_item_paper.tres
 msgid "This is a detailed drawing of a puppet."
-msgstr ""
+msgstr "詳盡的木偶設計圖。"
 
 #: game/item/failure_mask.tres
 msgid "Smooth Mask"
-msgstr ""
+msgstr "光滑面具"
 
 #: game/item/failure_mask.tres
 msgid "A smooth wooden mask, but there's no face on it."
-msgstr ""
+msgstr "一個光滑的木質面具，但上面沒有臉。"
 
 #: game/item/failure_wooden_horse.tres
 msgid "Wooden Horse"
-msgstr ""
+msgstr "木雕馬"
 
 #: game/item/failure_wooden_horse.tres
 msgid ""
 "A wooden horse. It's really well-made, but one of its legs is snapped off."
-msgstr ""
+msgstr "一個木雕馬，作工精細，但其中一條腿被折斷了。"
 
 #: game/item/Key.tres
 msgid "Key"
-msgstr ""
+msgstr "鑰匙"
 
 #: game/item/Key.tres
 msgid "A brass-colored key."
-msgstr ""
+msgstr "古銅色鑰匙。"
 
 #: game/item/legs.tres
 msgid "Puppet Legs"
-msgstr ""
+msgstr "木偶的腳"
 
 #: game/item/legs.tres
 msgid "The legs of the unfinished puppet."
-msgstr ""
+msgstr "一個未完成木偶的腳。"
 
 #: game/item/overdue_order.tres
 msgid "Overdue Order"
@@ -794,29 +934,21 @@ msgstr "這是一張過期的木椅訂單。"
 
 #: game/item/puppet.tres
 msgid "Puppet"
-msgstr ""
+msgstr "木偶"
 
 #: game/item/puppet.tres
 msgid "A newly assembled puppet."
-msgstr ""
-
-#: game/item/testItem.tres
-msgid "TestItem"
-msgstr ""
-
-#: game/item/testItem.tres
-msgid "Abababa"
-msgstr ""
+msgstr "一個剛組裝完成的木偶。"
 
 #: game/item/tommy_craft.tres
 msgid "Wooden Bird"
-msgstr ""
+msgstr "木製鳥"
 
 #: game/item/tommy_craft.tres
 msgid ""
 "A little wooden bird. It's a bit wobbly. There's a name carved on the "
 "bottom. It says 'Tommy'."
-msgstr ""
+msgstr "一個木雕鳥，結構有些鬆散。底部刻著一個名字，寫著「湯米」。"
 
 #: game/scenes/thank_you_scene.tscn
 msgid "Thanks For Playing!"
@@ -836,7 +968,7 @@ msgstr ""
 
 #: game/scenes/thank_you_scene.tscn
 msgid "Press any key or click to return to title..."
-msgstr ""
+msgstr "按下任意見回到標題頁..."
 
 #: game/scenes/title.tscn
 msgid "The Echoing Workshop"
